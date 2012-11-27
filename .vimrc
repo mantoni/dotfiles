@@ -44,7 +44,11 @@ set cursorline
 " Text-mate style display of invisible characters (tab/newline)
 set listchars=tab:▸\ ,eol:¬
 set list
-highlight NonText ctermfg=black
+if has("macunix")
+  highlight NonText ctermfg=black
+else
+  highlight NonText ctermfg=238
+endif
 " Status bar
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
