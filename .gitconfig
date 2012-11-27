@@ -1,5 +1,8 @@
 [core]
 	editor = vim
+	autocrlf = input
+[push]
+	default = upstream
 [alias]
 	a = add
 	ci = commit
