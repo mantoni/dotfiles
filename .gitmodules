@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = http://github.com/godlygeek/tabular.git
+[submodule ".vim/bundle/powerline"]
+	path = .vim/bundle/powerline
+	url = http://github.com/Lokaltog/vim-powerline.git
