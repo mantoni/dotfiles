@@ -3,10 +3,15 @@
 # Grabed from https://github.com/mathiasbynens/dotfiles
 #
 cd "$(dirname "${BASH_SOURCE}")"
+
 git pull
+git submodule init
+git submodule update
+
 function doIt() {
   rsync --exclude ".git/" --exclude=".gitmodules" --exclude=".vim/bundle/*/.git" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~
 }
+
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   doIt
 else
@@ -16,6 +21,7 @@ else
     doIt
   fi
 fi
+
 unset doIt
 source ~/.bash_profile
 
