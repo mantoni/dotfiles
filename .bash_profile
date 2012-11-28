@@ -1,7 +1,7 @@
 export CLICOLOR=1
 
-alias l='ls -lh --color'
-alias ll='ls -alh --color'
+alias l='ls -lh'
+alias ll='ls -alh'
 
 if [ -e ~/.extras ]; then
   source ~/.extras
