@@ -21,6 +21,8 @@ set autoread
 set undofile
 " Enable mouse
 set mouse=nv
+" Share OS clipboard
+set clipboard=unnamed
 " Auto append suffixes
 set suffixesadd+=.js
 " No delay on ESC
@@ -51,8 +53,16 @@ else
 endif
 " Status bar
 set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set encoding=utf-8
+"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+let g:Powerline_symbols = "fancy"
 
+" Set the leader key to ,
+let mapleader = ","
+" Toggle Nerd Tree
+noremap <Leader>n :NERDTreeToggle<CR>
+" Reveal in Nerd Tree
+noremap <Leader>f :NERDTreeFind<CR>
 " Expand %% to diretory of current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
