@@ -46,15 +46,10 @@ set cursorline
 " Text-mate style display of invisible characters (tab/newline)
 set listchars=tab:▸\ ,eol:¬
 set list
-if has("macunix")
-  highlight NonText ctermfg=black
-else
-  highlight NonText ctermfg=238
-endif
+highlight NonText ctermfg=238
 " Status bar
 set laststatus=2
 set encoding=utf-8
-"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 let g:Powerline_symbols = "fancy"
 
 " Set the leader key to ,
