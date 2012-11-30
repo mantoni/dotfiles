@@ -59,8 +59,8 @@ noremap <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
 noremap <Leader>f :NERDTreeFind<CR>
 " Tabularize on = and :
-vnoremap <Leader>= :Tabularize /=
-vnoremap <Leader>: :Tabularize /:
+vnoremap <Leader>= :Tabularize /=<CR>
+vnoremap <Leader>: :Tabularize /:<CR>
 " Expand %% to diretory of current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
