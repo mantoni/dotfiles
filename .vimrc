@@ -28,6 +28,8 @@ set suffixesadd+=.js
 " No delay on ESC
 set ttimeout
 set ttimeoutlen=50
+" Per project .vimrc
+set exrc
 
 " Enable syntax highlighting
 syntax on
@@ -40,7 +42,7 @@ highlight CursorLineNr ctermfg=yellow
 set colorcolumn=80
 " Highlight text exceeding the print margin
 highlight OverLength ctermbg=red ctermfg=white
-match OverLength /\%81v.\+/
+match OverLength /\%80v.\+/
 " Highlight active line
 set cursorline
 " Text-mate style display of invisible characters (tab/newline)
@@ -57,7 +59,9 @@ let mapleader = ","
 " Toggle Nerd Tree
 noremap <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
-noremap <Leader>f :NERDTreeFind<CR>
+noremap <Leader>. :NERDTreeFind<CR>
+" Find
+noremap <Leader>f :find 
 " Tabularize on = and :
 vnoremap <Leader>= :Tabularize /=<CR>
 vnoremap <Leader>: :Tabularize /:<CR>
