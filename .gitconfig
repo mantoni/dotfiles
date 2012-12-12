@@ -9,6 +9,7 @@
 	s = status
 	st = status
 	br = branch
+	co = checkout
 	d = diff
 	l = log
 [color]
