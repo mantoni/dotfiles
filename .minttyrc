@@ -1,7 +1,7 @@
 BoldAsFont=no
 RightClickAction=paste
-Columns=112
-Rows=29
+Columns=103
+Rows=61
 Term=xterm-256color
 Transparency=off
 Scrollbar=none
