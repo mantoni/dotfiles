@@ -32,6 +32,8 @@ set colorcolumn=80
 " Highlight text exceeding the print margin
 highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%80v.\+/
+" Turn off line wrapping
+set nowrap
 " Highlight active line
 set cursorline
 " Text-mate style display of invisible characters (tab/newline)
