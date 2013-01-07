@@ -21,7 +21,10 @@ else
     doIt
   fi
 fi
-
 unset doIt
+
+# Create cache dirs:
+mkdir -p ~/.cache/vim/{swap,backup,undo}
+
 source ~/.bash_profile
 
