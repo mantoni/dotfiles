@@ -52,6 +52,8 @@ noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>. :NERDTreeFind<CR>
 " Find
 noremap <Leader>f :find 
+" TODOs
+noremap <Leader>t :vimgrep /FIXME\\|TODO/g 
 " Tabularize on = and :
 vnoremap <Leader>= :Tabularize /=<CR>
 vnoremap <Leader>: :Tabularize /:<CR>
