@@ -10,3 +10,10 @@ if [ -e ~/.secrets ]; then
   source ~/.secrets
 fi
 
+function g {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status --short --branch
+  fi
+}
