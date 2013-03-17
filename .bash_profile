@@ -2,6 +2,7 @@ export CLICOLOR=1
 
 alias l='ls -lh'
 alias ll='ls -alh'
+alias v='vim'
 
 if [ -e ~/.extras ]; then
   source ~/.extras
