@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/markdown"]
 	path = .vim/bundle/markdown
 	url = http://github.com/tpope/vim-markdown.git
+[submodule ".vim/bundle/reveal-in-finder"]
+	path = .vim/bundle/reveal-in-finder
+	url = http://github.com/henrik/vim-reveal-in-finder.git
