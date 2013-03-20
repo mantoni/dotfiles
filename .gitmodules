@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/reveal-in-finder"]
 	path = .vim/bundle/reveal-in-finder
 	url = http://github.com/henrik/vim-reveal-in-finder.git
+[submodule ".vim/bundle/snipmate"]
+	path = .vim/bundle/snipmate
+	url = http://github.com/msanders/snipmate.vim.git

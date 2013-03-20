@@ -21,7 +21,7 @@ set clipboard=unnamed
 set suffixesadd+=.js
 " Per project .vimrc
 set exrc
-
+set encoding=utf-8
 " Enable syntax highlighting
 syntax on
 " Color
@@ -40,9 +40,6 @@ set cursorline
 set listchars=tab:>\ ,eol:¬
 set list
 highlight NonText ctermfg=238
-" Status bar
-set encoding=utf-8
-let g:Powerline_symbols = "fancy"
 
 " Set the leader key to ,
 let mapleader = ","
@@ -75,5 +72,8 @@ augroup markdown
 augroup END
 
 " Customize Powerline
+let g:Powerline_symbols = "fancy"
 call Pl#Theme#RemoveSegment('fileformat')
 call Pl#Theme#RemoveSegment('lineinfo')
+" Snipmate
+let g:snippets_dir="~/.vim/snippets"

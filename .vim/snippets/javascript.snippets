@@ -1,0 +1,72 @@
+snippet v
+	var ${1:name} = ${2:value};${3}
+
+snippet f
+	function ${1}(${2}) {
+		${3}
+	}
+
+
+snippet if
+	if (${1:condition}) {
+		${2}
+	}
+
+snippet fi
+	var i, l = ${1:array}.length;
+	for (i = 0; i < l; i++) {
+		var ${2:value} = $1[i];
+		${3}
+	}
+
+snippet fk
+	var ${1:key};
+	for ($1 in ${2:map}) {
+		if ($2.hasOwnProperty($1)) {
+			${3}
+		}
+	}
+
+snippet tc
+	try {
+		${1}
+	} catch (e) {
+		${2}
+	}
+
+snippet ?
+	${1:condition} ? ${2:true} : ${3:false};${4}
+
+snippet re
+	var ${1:name} = require('${2:$1}');${3}
+
+snippet ex
+	exports.${1:name} = ${2};
+
+snippet me
+	module.exports = ${1};
+
+snippet ae
+	assert.equal(${1:val}, ${2:expected});${3}
+
+snippet as
+	assert.strictEqual(${1:val}, ${2:expected});${3}
+
+snippet ad
+	assert.deepEqual(${1:val}, ${2:expected});${3}
+
+snippet.sa
+	sinon.assert.${1}
+
+snippet.so
+	sinon.assert.calledOnce(${1:spy});${2}
+
+snippet.sn
+	sinon.assert.notCalled(${1:spy});${2}
+
+snippet.sw
+	sinon.assert.calledWith(${1:spy}, ${3});
+
+snippet.sm
+	sinon.match.${1}
+
