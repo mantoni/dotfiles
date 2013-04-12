@@ -41,13 +41,31 @@ snippet as
 	assert.strictEqual(${1:val}, ${2:expected});${3}
 snippet ad
 	assert.deepEqual(${1:val}, ${2:expected});${3}
+snippet at
+	assert.throws(function () {
+		${2};
+	}, ${1:Error});
+snippet.s
+	var ${1:spy} = sinon.spy();${2}
+snippet.st
+	var ${1:stub} = sinon.stub();${2}
 snippet.sa
-	sinon.assert.${1}
-snippet.so
+	sinon.assert.${1:assertion}(${2:spy}, ${3});
+snippet.s1
 	sinon.assert.calledOnce(${1:spy});${2}
+snippet.s2
+	sinon.assert.calledTwice(${1:spy});${2}
+snippet.s3
+	sinon.assert.calledThrice(${1:spy});${2}
 snippet.sn
 	sinon.assert.notCalled(${1:spy});${2}
 snippet.sw
 	sinon.assert.calledWith(${1:spy}, ${2});
+snippet.swm
+	sinon.assert.calledWithMatch(${1:spy}, ${2});
+snippet.swe
+	sinon.assert.calledWithExactly(${1:spy}, ${2});
+snippet.snw
+	sinon.assert.neverCalledWith(${1:spy}, ${2});
 snippet.sm
 	sinon.match.${1}
