@@ -18,9 +18,12 @@ function g {
   fi
 }
 
+F_CMD='find . -type d \( -path "**/node_modules" -o -path "**/.*" -o -path "**/public" \) -prune -o -wholename "$1"'
 function f {
-  if [[ $# > 0 ]]; then
-    find . -type d \( -path '**/node_modules' -o -path '**/.git' \) -prune -o -name $1 -print
+  if [[ $# > 1 ]]; then
+    eval "$F_CMD -exec grep -nHF \"$2\" {} \; ;"
+  elif [[ $# > 0 ]]; then
+    eval "$F_CMD -print"
   fi
 }
 
@@ -28,16 +31,14 @@ function v {
   if [[ $# > 0 ]]; then
     if [[ $1 == "*"* ]]; then
       RESULTS=$(f "$1*")
-      for RESULT in $RESULTS
-      do
-        IFS='/' read -ra PARTS <<< "$RESULT"
-        PROJECT_DIR=${PARTS[1]}
-        if [ -e $PROJECT_DIR/.git ]; then
-          cd $PROJECT_DIR
-          vim $(f "$1*")
+      COUNT=`echo $RESULTS | wc -w`
+      if [[ $COUNT > 5 ]]; then
+        read -p "Found $COUNT results. Open all? (y/n) " -n 1
+        echo
+        if [[ $REPLY =~ ^[Nn]$ ]]; then
           return
         fi
-      done
+      fi
       vim $RESULTS
     else
       vim $1
