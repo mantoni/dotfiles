@@ -10,7 +10,7 @@
 	st = status
 	br = branch
 	co = checkout
-	d = diff --color-words
+	d = diff
 	l = log
 [color]
 	ui = true
