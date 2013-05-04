@@ -2,6 +2,13 @@ export CLICOLOR=1
 
 alias l='ls -lh'
 alias ll='ls -alh'
+alias ga='git add .'
+alias gA='git add -A .'
+alias gci='git commit'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gl='git log'
+alias gs='git status'
 
 if [ -e ~/.extras ]; then
   source ~/.extras
@@ -24,6 +31,8 @@ function f {
     eval "$F_CMD -exec grep -nHF \"$2\" {} \; ;"
   elif [[ $# > 0 ]]; then
     eval "$F_CMD -print"
+  else
+    echo 'Usage: f file_name [file_content]'
   fi
 }
 
@@ -33,7 +42,7 @@ function v {
       RESULTS=$(f "$1*")
       COUNT=`echo $RESULTS | wc -w`
       if [[ $COUNT > 5 ]]; then
-        read -p "Found $COUNT results. Open all? (y/n) " -n 1
+        read -p "Found $COUNT results. Open all? (Y/n) " -n 1
         echo
         if [[ $REPLY =~ ^[Nn]$ ]]; then
           return
