@@ -12,5 +12,6 @@
 	co = checkout
 	d = diff
 	l = log
+  re = rebase
 [color]
 	ui = true

@@ -2,26 +2,27 @@ export CLICOLOR=1
 
 alias l='ls -lh'
 alias ll='ls -alh'
-alias ga='git add .'
 alias gA='git add -A .'
 alias gci='git commit'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git log'
 alias gs='git status'
-
-if [ -e ~/.extras ]; then
-  source ~/.extras
-fi
-if [ -e ~/.secrets ]; then
-  source ~/.secrets
-fi
+alias gre='git rebase'
 
 function g {
   if [[ $# > 0 ]]; then
     git $@
   else
     git status --short --branch
+  fi
+}
+
+function ga {
+  if [[ $# > 0 ]]; then
+    git add $@
+  else
+    git add .
   fi
 }
 
@@ -56,3 +57,10 @@ function v {
     vim
   fi
 }
+
+if [ -e ~/.extras ]; then
+  source ~/.extras
+fi
+if [ -e ~/.secrets ]; then
+  source ~/.secrets
+fi
