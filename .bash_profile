@@ -1,4 +1,8 @@
+export TERM='xterm-256color'
 export CLICOLOR=1
+export EDITOR=vim
+
+. ~/.base16-default.dark.sh
 
 alias l='ls -lh'
 alias ll='ls -alh'
@@ -57,6 +61,21 @@ function v {
     vim
   fi
 }
+
+function parse_git_branch() {
+  NAME=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`
+  if [ "$NAME" == "master" ]; then
+    echo -e -n "\e[35m$NAME\e[0m"
+  else
+    echo -e -n "\e[32m$NAME\e[0m"
+  fi
+}
+function parse_user() {
+  if [ "$USER" == "root" ]; then
+    echo -e -n "\e[41mroot\e[0m"
+  fi
+}
+PS1="\$(parse_user)[\[\e[33m\]\W\[\e[0m\] \$(parse_git_branch)]# "
 
 if [ -e ~/.extras ]; then
   source ~/.extras
