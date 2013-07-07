@@ -65,14 +65,14 @@ function v {
 function parse_git_branch() {
   local NAME=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`
   if [ "$NAME" == "master" ]; then
-    echo -e -n "\033[35m$NAME\033[0m"
+    echo -ne "\033[35m$NAME\033[0m"
   else
-    echo -e -n "\033[32m$NAME\033[0m"
+    echo -ne "\033[32m$NAME\033[0m"
   fi
 }
 function parse_user() {
   if [ "$USER" == "root" ]; then
-    echo -e -n "\033[41mroot\033[0m"
+    echo -ne "\033[41mroot\033[0m"
   fi
 }
 PS1="\$(parse_user)[\[\033[33m\]\W\[\033[0m\] \$(parse_git_branch)]# "
