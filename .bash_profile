@@ -44,8 +44,8 @@ function f {
 function v {
   if [[ $# > 0 ]]; then
     if [[ $1 == "*"* ]]; then
-      RESULTS=$(f "$1*")
-      COUNT=`echo $RESULTS | wc -w`
+      local RESULTS=$(f "$1*")
+      local COUNT=`echo $RESULTS | wc -w`
       if [[ $COUNT > 5 ]]; then
         read -p "Found $COUNT results. Open all? (Y/n) " -n 1
         echo
@@ -63,19 +63,19 @@ function v {
 }
 
 function parse_git_branch() {
-  NAME=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`
+  local NAME=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`
   if [ "$NAME" == "master" ]; then
-    echo -e -n "\e[35m$NAME\e[0m"
+    echo -e -n "\033[35m$NAME\033[0m"
   else
-    echo -e -n "\e[32m$NAME\e[0m"
+    echo -e -n "\033[32m$NAME\033[0m"
   fi
 }
 function parse_user() {
   if [ "$USER" == "root" ]; then
-    echo -e -n "\e[41mroot\e[0m"
+    echo -e -n "\033[41mroot\033[0m"
   fi
 }
-PS1="\$(parse_user)[\[\e[33m\]\W\[\e[0m\] \$(parse_git_branch)]# "
+PS1="\$(parse_user)[\[\033[33m\]\W\[\033[0m\] \$(parse_git_branch)]# "
 
 if [ -e ~/.extras ]; then
   source ~/.extras
