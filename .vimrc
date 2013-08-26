@@ -11,9 +11,6 @@ set smartindent
 set shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 " Show line numbers
 set number
-" Show context around cursor line (overrides sensible)
-set scrolloff=5
-set sidescrolloff=1
 " Put buffers with changes in the background without warning
 set hidden
 set history=100
@@ -44,6 +41,9 @@ match OverLength /\%80v.\+/
 set nowrap
 " Highlight active line
 set cursorline
+" Show context around cursor line
+set scrolloff=5
+set sidescrolloff=1
 " Text-mate style display of invisible characters (tab/newline)
 set listchars=tab:>\ ,eol:¬
 set list
@@ -59,6 +59,9 @@ noremap <Leader>. :NERDTreeFind<CR>
 noremap <Leader>f :find 
 " TODOs
 noremap <Leader>t :vimgrep /FIXME\\|TODO/g 
+" Copy / Nocopy
+noremap <Leader>c :set nolist<CR>:set nonumber<CR>:set colorcolumn=<CR>
+noremap <Leader>C :set list<CR>:set number<CR>:set colorcolumn=80<CR>
 " Paste / Nopaste
 noremap <Leader>p :set paste<CR>
 noremap <Leader>P :set nopaste<CR>
