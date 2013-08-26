@@ -282,7 +282,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Function", s:blue, "", "")
 	call <SID>X("Constant", s:orange, "", "")
 	call <SID>X("String", s:green, "", "")
-	call <SID>X("Special", s:foreground, "", "")
+	call <SID>X("Special", s:red, "", "")
 	call <SID>X("PreProc", s:purple, "", "")
 	call <SID>X("Operator", s:aqua, "", "none")
 	call <SID>X("Type", s:blue, "", "none")
@@ -326,16 +326,18 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("pythonFunction", s:blue, "", "")
 
 	" JavaScript Highlighting
-	call <SID>X("jsBrackes", s:foreground, "", "")
+	call <SID>X("jsBrackets", s:aqua, "", "")
 	call <SID>X("jsFunction", s:purple, "", "")
+	call <SID>X("jsFuncName", s:foreground, "", "")
+	call <SID>X("jsGlobalObjects", s:foreground, "", "")
 	call <SID>X("jsConditional", s:purple, "", "")
-	call <SID>X("jsStatement", s:purple, "", "")
+	call <SID>X("jsTernaryIfOperator", s:purple, "", "")
 	call <SID>X("jsRepeat", s:purple, "", "")
 	call <SID>X("jsException", s:purple, "", "")
 	call <SID>X("jsLabel", s:purple, "", "")
-	call <SID>X("jsNumber", s:orange, "", "")
-	call <SID>X("jsMember", s:orange, "", "")
-	call <SID>X("jsNull", s:blue, "", "")
+	call <SID>X("jsReturn", s:purple, "", "")
+	call <SID>X("jsNull", s:orange, "", "")
+	call <SID>X("jsUndefined", s:orange, "", "")
 
 	" HTML Highlighting
 	call <SID>X("htmlTag", s:red, "", "")
