@@ -326,16 +326,16 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("pythonFunction", s:blue, "", "")
 
 	" JavaScript Highlighting
-	call <SID>X("javaScriptBraces", s:foreground, "", "")
-	call <SID>X("javaScriptFunction", s:purple, "", "")
-	call <SID>X("javaScriptConditional", s:purple, "", "")
-	call <SID>X("javaScriptStatement", s:purple, "", "")
-	call <SID>X("javaScriptException", s:purple, "", "")
-	call <SID>X("javaScriptLabel", s:purple, "", "")
-	call <SID>X("javaScriptRepeat", s:purple, "", "")
-	call <SID>X("javaScriptNumber", s:orange, "", "")
-	call <SID>X("javaScriptMember", s:orange, "", "")
-	call <SID>X("javaScriptNull", s:blue, "", "")
+	call <SID>X("jsBrackes", s:foreground, "", "")
+	call <SID>X("jsFunction", s:purple, "", "")
+	call <SID>X("jsConditional", s:purple, "", "")
+	call <SID>X("jsStatement", s:purple, "", "")
+	call <SID>X("jsRepeat", s:purple, "", "")
+	call <SID>X("jsException", s:purple, "", "")
+	call <SID>X("jsLabel", s:purple, "", "")
+	call <SID>X("jsNumber", s:orange, "", "")
+	call <SID>X("jsMember", s:orange, "", "")
+	call <SID>X("jsNull", s:blue, "", "")
 
 	" HTML Highlighting
 	call <SID>X("htmlTag", s:red, "", "")

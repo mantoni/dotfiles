@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/dispatch"]
 	path = .vim/bundle/dispatch
 	url = http://github.com/tpope/vim-dispatch.git
+[submodule ".vim/bundle/javascript"]
+	path = .vim/bundle/javascript
+	url = http://github.com/pangloss/vim-javascript.git
