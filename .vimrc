@@ -63,7 +63,7 @@ noremap <Leader>t :vimgrep /FIXME\\|TODO/g
 noremap <Leader>c :set nolist<CR>:set nonumber<CR>:set colorcolumn=<CR>
 noremap <Leader>C :set list<CR>:set number<CR>:set colorcolumn=80<CR>
 " Paste / Nopaste
-noremap <Leader>p :set paste<CR>
+noremap <Leader>p :set paste<CR>i
 noremap <Leader>P :set nopaste<CR>
 " Tabularize on = and :
 vnoremap <Leader>= :Tabularize /=<CR>
