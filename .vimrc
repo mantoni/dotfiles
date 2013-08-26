@@ -1,11 +1,19 @@
 call pathogen#infect()
+runtime! plugin/sensible.vim
 set nocompatible
 
+" Smooth redraws
+set ttyfast
+" Sound off
+set noerrorbells
 " Indentation
 set smartindent
 set shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 " Show line numbers
 set number
+" Show context around cursor line (overrides sensible)
+set scrolloff=5
+set sidescrolloff=1
 " Put buffers with changes in the background without warning
 set hidden
 set history=100
