@@ -13,6 +13,8 @@ alias gdc='git diff --cached'
 alias gl='git log'
 alias gs='git status'
 alias gre='git rebase'
+alias t='tmux'
+alias ta='tmux attach'
 
 function g {
   if [[ $# > 0 ]]; then
