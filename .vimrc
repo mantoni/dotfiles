@@ -6,6 +6,8 @@ set nocompatible
 set t_ut=
 " Smooth redraws
 set ttyfast
+" Faster escape sequences
+set timeoutlen=300
 " Do not redraw when running macros
 set lazyredraw
 " Sound off
