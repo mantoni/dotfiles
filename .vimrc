@@ -2,8 +2,12 @@ call pathogen#infect()
 runtime! plugin/sensible.vim
 set nocompatible
 
+" Fix background erase in tmux
+set t_ut=
 " Smooth redraws
 set ttyfast
+" Do not redraw when running macros
+set lazyredraw
 " Sound off
 set noerrorbells
 " Indentation
@@ -60,11 +64,44 @@ noremap <Leader>f :find
 " TODOs
 noremap <Leader>t :vimgrep /FIXME\\|TODO/g 
 " Copy / Nocopy
-noremap <Leader>c :set nolist<CR>:set nonumber<CR>:set colorcolumn=<CR>
-noremap <Leader>C :set list<CR>:set number<CR>:set colorcolumn=80<CR>
+function! ToggleCopyMode()
+  if &number
+    set nolist
+    set nonumber
+    set colorcolumn=
+  else
+    set list
+    set number
+    set colorcolumn=80
+  endif
+endfunction
+noremap <Leader>c :call ToggleCopyMode()<CR>
 " Paste / Nopaste
-noremap <Leader>p :set paste<CR>i
-noremap <Leader>P :set nopaste<CR>
+function! TogglePasteMode(below)
+  if &paste
+    set nopaste
+  else
+    set paste
+    if a:below
+      normal o
+    else
+      normal O
+    endif
+    startinsert
+  endif
+endfunction
+noremap <Leader>p :call TogglePasteMode(1)<CR>
+noremap <Leader>P :call TogglePasteMode(0)<CR>
+" Move around in insert mode
+inoremap <M-o> <C-O>o
+inoremap <M-O> <C-O>O
+inoremap <M-i> <Left>
+inoremap <M-I> <C-O>^
+inoremap <M-A> <C-O>$
+" Append semicolon
+inoremap ; <C-o>A;
+" Type semicolon in place
+inoremap ;; ;
 " Tabularize on = and :
 vnoremap <Leader>= :Tabularize /=<CR>
 vnoremap <Leader>: :Tabularize /:<CR>
@@ -85,9 +122,12 @@ augroup markdown
   au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
-" Customize Powerline
+" Powerline
 let g:Powerline_symbols = "fancy"
 call Pl#Theme#RemoveSegment('fileformat')
 call Pl#Theme#RemoveSegment('lineinfo')
 " Snipmate
 let g:snippets_dir="~/.vim/snippets"
+" delimitMate
+let g:delimitMate_expand_cr=1
+let g:delimitMate_balance_matchpairs=1
