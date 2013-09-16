@@ -8,8 +8,6 @@ set t_ut=
 set ttyfast
 " Faster escape sequences
 set timeoutlen=300
-" Do not redraw when running macros
-set lazyredraw
 " Sound off
 set noerrorbells
 " Indentation
@@ -107,7 +105,7 @@ inoremap ;; ;
 " Tabularize on = and :
 vnoremap <Leader>= :Tabularize /=<CR>
 vnoremap <Leader>: :Tabularize /:<CR>
-" Expand %% to diretory of current buffer
+" Expand %% to directory of current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " File types
