@@ -123,7 +123,7 @@ augroup markdown
 augroup END
 
 " Powerline
-let g:Powerline_symbols = "fancy"
+let g:Powerline_symbols="fancy"
 call Pl#Theme#RemoveSegment('fileformat')
 call Pl#Theme#RemoveSegment('lineinfo')
 " Snipmate
@@ -131,3 +131,6 @@ let g:snippets_dir="~/.vim/snippets"
 " delimitMate
 let g:delimitMate_expand_cr=1
 let g:delimitMate_balance_matchpairs=1
+" NERDtree
+let NERDTreeMinimalUI=1
+let NERDTreeAutoDeleteBuffer=1
