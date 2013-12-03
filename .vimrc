@@ -60,16 +60,16 @@ set wildignore=node_modules/**
 
 " Set the leader key to ,
 let mapleader = ","
+" Find
+noremap <Leader>f :find 
 " Search for word under cursor
-map <leader>s :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw<CR> 5
+map <leader>s :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw<CR>
+" TODOs
+noremap <Leader>t :vimgrep /FIXME\\|TODO/gj **/*.* <Bar> cw<CR>
 " Toggle Nerd Tree
 noremap <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
 noremap <Leader>. :NERDTreeFind<CR>
-" Find
-noremap <Leader>f :find 
-" TODOs
-noremap <Leader>t :vimgrep /FIXME\\|TODO/g 
 " Copy / Nocopy
 function! ToggleCopyMode()
   if &number
@@ -101,14 +101,13 @@ noremap <Leader>p :call TogglePasteMode(1)<CR>
 noremap <Leader>P :call TogglePasteMode(0)<CR>
 " Move around in insert mode
 inoremap <M-o> <C-O>o
+inoremap ø <C-O>o
 inoremap <M-O> <C-O>O
-inoremap <M-i> <Left>
+inoremap Ø <C-O>O
 inoremap <M-I> <C-O>^
+inoremap È <C-O>^
 inoremap <M-A> <C-O>$
-" Append semicolon
-inoremap ; <C-o>A;
-" Type semicolon in place
-inoremap ;; ;
+inoremap å <C-O>$
 " Tabularize on = and :
 vnoremap <Leader>= :Tabularize /=<CR>
 vnoremap <Leader>: :Tabularize /:<CR>
