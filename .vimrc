@@ -24,8 +24,10 @@ set nowritebackup
 set noswapfile
 " Enable mouse
 set mouse=nv
-" Share OS clipboard
-set clipboard=unnamed
+if $TMUX == ''
+  " Share OS clipboard if not running under tmux
+  set clipboard=unnamed
+endif
 " Auto append suffixes
 set suffixesadd+=.js
 " Per project .vimrc
