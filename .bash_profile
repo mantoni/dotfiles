@@ -65,7 +65,7 @@ function v {
 }
 
 function parse_git_branch() {
-  local NAME=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`
+  local NAME=`git symbolic-ref --short HEAD 2>/dev/null`
   if [ "$NAME" == "master" ]; then
     echo -ne "\033[35m$NAME\033[0m"
   else
