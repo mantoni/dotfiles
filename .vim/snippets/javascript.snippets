@@ -1,3 +1,5 @@
+snippet use
+	'use strict';${1}
 snippet v
 	var ${1:name} = ${2:value};${3}
 snippet f
@@ -21,6 +23,10 @@ snippet fk
 			${3}
 		}
 	}
+snippet fe
+	forEach(function (${1:item}) {
+		${2}
+	});
 snippet tc
 	try {
 		${1}
