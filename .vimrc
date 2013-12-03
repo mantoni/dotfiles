@@ -52,9 +52,16 @@ set sidescrolloff=1
 set listchars=tab:>\ ,eol:¬
 set list
 highlight NonText ctermfg=238
+" Enable omni completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+" Do not search here
+set wildignore=node_modules/**
 
 " Set the leader key to ,
 let mapleader = ","
+" Search for word under cursor
+map <leader>s :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw<CR> 5
 " Toggle Nerd Tree
 noremap <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
