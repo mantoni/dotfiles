@@ -7,7 +7,16 @@ set t_ut=
 " Smooth redraws
 set ttyfast
 " Faster escape sequences
-set timeoutlen=300
+set ttimeoutlen=10
+augroup FastEscape
+  autocmd!
+  au InsertEnter * set timeoutlen=0
+  au InsertLeave * set timeoutlen=500
+augroup END
+" Update things faster (e.g. GitGutter)
+set updatetime=1000
+" Leave --insert-- to AirLine
+set noshowmode
 " Sound off
 set noerrorbells
 " Indentation
