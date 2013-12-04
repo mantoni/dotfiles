@@ -78,11 +78,11 @@ map <leader>s :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **
 " TODOs
 noremap <Leader>t :vimgrep /FIXME\\|TODO/gj **/*.* <Bar> cw<CR>
 " Toggle Nerd Tree
-noremap <Leader>n :NERDTreeToggle<CR>
+noremap <silent> <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
-noremap <Leader>. :NERDTreeFind<CR>
+noremap <silent> <Leader>. :NERDTreeFind<CR>
 " Toggle GitGutter
-noremap <Leader>g :GitGutterToggle<CR>
+noremap <silent> <Leader>g :GitGutterToggle<CR>
 " Copy / Nocopy
 function! ToggleCopyMode()
   if &number
@@ -127,8 +127,6 @@ vnoremap <Leader>: :Tabularize /:<CR>
 " Expand %% to directory of current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" File types
-autocmd BufEnter *.json set filetype=javascript
 " Do not keep fugitive Git browsing buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
@@ -141,10 +139,34 @@ augroup markdown
   au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
-" Powerline
-let g:Powerline_symbols="fancy"
-call Pl#Theme#RemoveSegment('fileformat')
-call Pl#Theme#RemoveSegment('lineinfo')
+" AirLine
+let g:airline_theme='base16'
+function! AirlineInit()
+  let g:airline_section_b=''
+  let g:airline_section_x=''
+  let g:airline_section_y=airline#section#create(['branch'])
+  let g:airline_section_z=airline#section#create(['hunks'])
+endfunction
+autocmd VimEnter * call AirlineInit()
+let g:airline#extensions#hunks#non_zero_only=1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+let g:bufferline_echo=0
+" Tmuxline
+let g:tmuxline_separators = {
+  \ 'left' : '⮀',
+  \ 'left_alt': '⮁',
+  \ 'right' : '⮂',
+  \ 'right_alt' : '⮃',
+  \ 'space' : ' ' }
 " Snipmate
 let g:snippets_dir="~/.vim/snippets"
 " delimitMate
