@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/bufferline"]
 	path = .vim/bundle/bufferline
 	url = https://github.com/bling/vim-bufferline.git
+[submodule ".vim/bundle/tmuxline"]
+	path = .vim/bundle/tmuxline
+	url = https://github.com/edkolev/tmuxline.vim.git
