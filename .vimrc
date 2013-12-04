@@ -81,6 +81,8 @@ noremap <Leader>t :vimgrep /FIXME\\|TODO/gj **/*.* <Bar> cw<CR>
 noremap <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
 noremap <Leader>. :NERDTreeFind<CR>
+" Toggle GitGutter
+noremap <Leader>g :GitGutterToggle<CR>
 " Copy / Nocopy
 function! ToggleCopyMode()
   if &number
