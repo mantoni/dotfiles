@@ -10,9 +10,14 @@ Nicked that [bootstrap](https://github.com/mathiasbynens/dotfiles) script.
 source bootstrap.sh
 ```
 
+## Additional setup
+
+Syntastic needs jsl (command line JSLint):
+<http://www.javascriptlint.com/download.htm>
+
 ## Secrets
 
-I keep my environment specific stuff in `.secrets`.
+I keep my environment specific stuff in `.extras` and `.secrets`.
 
 ```bash
 export GIT_AUTHOR_NAME='Dude'
