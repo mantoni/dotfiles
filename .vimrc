@@ -140,14 +140,8 @@ augroup markdown
 augroup END
 
 " AirLine
-let g:airline_theme='base16'
-function! AirlineInit()
-  let g:airline_section_b=''
-  let g:airline_section_x=''
-  let g:airline_section_y=airline#section#create(['branch'])
-  let g:airline_section_z=airline#section#create(['hunks'])
-endfunction
-autocmd VimEnter * call AirlineInit()
+let g:airline_theme='zenburn'
+let g:airline_section_z='%3p%%'
 let g:airline#extensions#hunks#non_zero_only=1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -158,7 +152,6 @@ let g:airline_right_sep = '⮂'
 let g:airline_right_alt_sep = '⮃'
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
 let g:bufferline_echo=0
 " Tmuxline
 let g:tmuxline_separators = {
