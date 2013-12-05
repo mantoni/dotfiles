@@ -12,8 +12,15 @@ source bootstrap.sh
 
 ## Additional setup
 
-Syntastic needs jsl (command line JSLint):
-<http://www.javascriptlint.com/download.htm>
+### Syntastic
+
+JSLint support via jsl: <http://www.javascriptlint.com/download.htm>
+
+JSONLint support:
+
+```
+$ npm install jsonlint -g
+```
 
 ## Secrets
 
