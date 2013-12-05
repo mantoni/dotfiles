@@ -12,6 +12,8 @@
 	co = checkout
 	d = diff
 	l = log
-  re = rebase
+	re = rebase
 [color]
 	ui = true
+[credential]
+	helper = cache --timeout 86400
