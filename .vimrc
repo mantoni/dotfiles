@@ -154,6 +154,8 @@ let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:bufferline_echo=0
 " Tmuxline
+let g:tmuxline_theme='zenburn'
+let g:tmuxline_preset='full'
 let g:tmuxline_separators = {
   \ 'left' : '⮀',
   \ 'left_alt': '⮁',
