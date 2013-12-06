@@ -140,43 +140,50 @@ augroup markdown
 augroup END
 
 " AirLine
-let g:airline_theme='zenburn'
-let g:airline_section_z='%3p%%'
-let g:airline#extensions#hunks#non_zero_only=1
+let g:airline_theme     = 'zenburn'
+let g:airline_section_z = '%3p%%'
+let g:airline#extensions#hunks#non_zero_only = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
+let g:airline_left_sep         = '⮀'
+let g:airline_left_alt_sep     = '⮁'
+let g:airline_right_sep        = '⮂'
+let g:airline_right_alt_sep    = '⮃'
+let g:airline_symbols.branch   = '⭠'
 let g:airline_symbols.readonly = '⭤'
+let g:airline#extensions#default#section_truncate_width={
+  \ 'b' : 88,
+  \ 'x' : 110,
+  \ 'y' : 100,
+  \ 'z' : 88
+  \ }
 let g:bufferline_echo=0
 " Tmuxline
-let g:tmuxline_theme='zenburn'
-let g:tmuxline_preset='full'
+let g:tmuxline_theme      = 'zenburn'
+let g:tmuxline_preset     = 'full'
 let g:tmuxline_separators = {
-  \ 'left' : '⮀',
-  \ 'left_alt': '⮁',
-  \ 'right' : '⮂',
+  \ 'left'      : '⮀',
+  \ 'left_alt'  : '⮁',
+  \ 'right'     : '⮂',
   \ 'right_alt' : '⮃',
-  \ 'space' : ' ' }
+  \ 'space'     : ' '
+  \ }
 " Snipmate
 let g:snippets_dir="~/.vim/snippets"
 " delimitMate
-let g:delimitMate_expand_cr=1
-let g:delimitMate_balance_matchpairs=1
+let g:delimitMate_expand_cr          = 1
+let g:delimitMate_balance_matchpairs = 1
 " NERDtree
-let NERDTreeMinimalUI=1
-let NERDTreeAutoDeleteBuffer=1
+let NERDTreeMinimalUI        = 1
+let NERDTreeAutoDeleteBuffer = 1
 " Syntastic (jshint is a symlint to autolint)
-let g:syntastic_javascript_checkers=['jsl']
-let g:syntastic_check_on_open=1
-let g:syntastic_error_symbol='X'
-let g:syntastic_warning_symbol='△'
-let g:syntastic_loc_list_height=5
-highlight SyntasticErrorSign ctermfg=red
-highlight SyntasticWarningSign ctermfg=yellow
+let g:syntastic_javascript_checkers = ['jsl']
+let g:syntastic_check_on_open       = 1
+let g:syntastic_error_symbol        = 'X'
+let g:syntastic_warning_symbol      = '△'
+let g:syntastic_loc_list_height     = 5
+highlight SyntasticErrorSign ctermfg   = red
+highlight SyntasticWarningSign ctermfg = yellow
 " JSON
-let g:vim_json_syntax_conceal=0
+let g:vim_json_syntax_conceal = 0
