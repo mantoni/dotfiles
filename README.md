@@ -15,6 +15,7 @@ source bootstrap.sh
 ### Syntastic
 
 JSLint support via jsl: <http://www.javascriptlint.com/download.htm>
+Installing jsl on Linux: <http://stackoverflow.com/questions/8863888/how-do-i-install-jslint-on-ubuntu>
 
 JSONLint support:
 
