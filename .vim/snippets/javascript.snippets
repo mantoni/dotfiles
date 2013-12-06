@@ -41,6 +41,32 @@ snippet ex
 	exports.${1:name} = ${2};
 snippet me
 	module.exports = ${1};
+snippet desc
+	describe('${1}', function () {
+
+		${2}
+
+	});
+snippet it
+	it('${1}', function () {
+		${2}
+	});
+snippet before
+	before(function () {
+		${1}
+	});
+snippet after
+	after(function () {
+		${1}
+	});
+snippet beforeE
+	beforeEach(function () {
+		${1}
+	});
+snippet afterEach
+	afterEach(function () {
+		${1}
+	});
 snippet ae
 	assert.equal(${1:val}, ${2:expected});${3}
 snippet as
