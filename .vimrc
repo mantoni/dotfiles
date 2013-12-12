@@ -143,15 +143,7 @@ augroup END
 let g:airline_theme     = 'zenburn'
 let g:airline_section_z = '%3p%%'
 let g:airline#extensions#hunks#non_zero_only = 1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_left_sep         = '⮀'
-let g:airline_left_alt_sep     = '⮁'
-let g:airline_right_sep        = '⮂'
-let g:airline_right_alt_sep    = '⮃'
-let g:airline_symbols.branch   = '⭠'
-let g:airline_symbols.readonly = '⭤'
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#default#section_truncate_width={
   \ 'b' : 88,
   \ 'x' : 110,
@@ -162,13 +154,6 @@ let g:bufferline_echo=0
 " Tmuxline
 let g:tmuxline_theme      = 'zenburn'
 let g:tmuxline_preset     = 'full'
-let g:tmuxline_separators = {
-  \ 'left'      : '⮀',
-  \ 'left_alt'  : '⮁',
-  \ 'right'     : '⮂',
-  \ 'right_alt' : '⮃',
-  \ 'space'     : ' '
-  \ }
 " Snipmate
 let g:snippets_dir="~/.vim/snippets"
 " delimitMate
