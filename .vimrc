@@ -83,6 +83,10 @@ noremap <silent> <Leader>n :NERDTreeToggle<CR>
 noremap <silent> <Leader>. :NERDTreeFind<CR>
 " Toggle GitGutter
 noremap <silent> <Leader>g :GitGutterToggle<CR>
+" Tern commands
+noremap <silent> <Leader>d :TernDef<CR>
+noremap <silent> <Leader>r :TernRefs<CR>
+noremap <silent> <Leader>R :TernRename<CR>
 " Copy / Nocopy
 function! ToggleCopyMode()
   if &number

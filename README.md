@@ -26,6 +26,23 @@ JSONLint support:
 $ npm install jsonlint -g
 ```
 
+### Tern
+
+```
+cd .vim/bundle/tern
+npm install
+```
+
+Node `.tern-project` file:
+
+```
+{
+  "plugins": {
+    "node": {}
+  }
+}
+```
+
 ## Secrets
 
 I keep my environment specific stuff in `.extras` and `.secrets`.
