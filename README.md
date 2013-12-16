@@ -12,6 +12,12 @@ source bootstrap.sh
 
 ## Additional setup
 
+### Vim
+
+```
+./configure --with-features=huge --enable-multibyte --enable-pythoninterp --with-python-config-dir=/usr/local/lib/python2.7/config
+```
+
 ### Syntastic
 
 JSLint support:
