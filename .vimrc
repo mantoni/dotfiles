@@ -117,14 +117,17 @@ endfunction
 noremap <Leader>p :call TogglePasteMode(1)<CR>
 noremap <Leader>P :call TogglePasteMode(0)<CR>
 " Move around in insert mode
-inoremap <M-o> <C-O>o
-inoremap ø <C-O>o
-inoremap <M-O> <C-O>O
-inoremap Ø <C-O>O
-inoremap <M-I> <C-O>^
-inoremap È <C-O>^
-inoremap <M-A> <C-O>$
-inoremap å <C-O>$
+if system('uname') =~ 'Darwin'
+  inoremap ø <C-O>o
+  inoremap Ø <C-O>O
+  inoremap È <C-O>^
+  inoremap å <C-O>$
+else
+  inoremap <M-o> <C-O>o
+  inoremap <M-O> <C-O>O
+  inoremap <M-I> <C-O>^
+  inoremap <M-A> <C-O>$
+endif
 " Tabularize on = and :
 vnoremap <Leader>= :Tabularize /=<CR>
 vnoremap <Leader>: :Tabularize /:<CR>
@@ -143,21 +146,23 @@ augroup markdown
   au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
-" AirLine
-let g:airline_theme     = 'zenburn'
-let g:airline_section_z = '%3p%%'
-let g:airline#extensions#hunks#non_zero_only = 1
+" Airline
+let g:airline_theme           = 'zenburn'
+let g:airline_section_z       = '%3p%%'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#default#section_truncate_width={
   \ 'b' : 88,
   \ 'x' : 110,
   \ 'y' : 100,
   \ 'z' : 88
   \ }
-let g:bufferline_echo=0
+" Bufferline
+let g:bufferline_echo   = 0
+let g:bufferline_rotate = 1
 " Tmuxline
-let g:tmuxline_theme      = 'zenburn'
-let g:tmuxline_preset     = 'full'
+let g:tmuxline_theme  = 'zenburn'
+let g:tmuxline_preset = 'full'
 " Snipmate
 let g:snippets_dir="~/.vim/snippets"
 " delimitMate
@@ -176,3 +181,6 @@ highlight SyntasticErrorSign ctermfg   = red
 highlight SyntasticWarningSign ctermfg = yellow
 " JSON
 let g:vim_json_syntax_conceal = 0
+" Gitgutter
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager    = 0
