@@ -158,8 +158,9 @@ let g:airline#extensions#default#section_truncate_width={
   \ 'z' : 88
   \ }
 " Bufferline
-let g:bufferline_echo   = 0
-let g:bufferline_rotate = 1
+let g:bufferline_echo        = 0
+let g:bufferline_rotate      = 1
+let g:bufferline_fixed_index = -1
 " Tmuxline
 let g:tmuxline_theme  = 'zenburn'
 let g:tmuxline_preset = 'full'
