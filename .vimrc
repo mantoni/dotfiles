@@ -71,6 +71,8 @@ set wildignore=node_modules/**
 
 " Set the leader key to ,
 let mapleader = ","
+" Tab through open buffers
+noremap <Leader>b :b<space>
 " Find
 noremap <Leader>f :find 
 " Search for word under cursor
