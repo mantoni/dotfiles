@@ -1,5 +1,7 @@
 snippet use
 	'use strict';${1}
+snippet "use"
+	"use strict";${1}
 snippet v
 	var ${1:name} = ${2:value};${3}
 snippet f
@@ -63,7 +65,7 @@ snippet beforeE
 	beforeEach(function () {
 		${1}
 	});
-snippet afterEach
+snippet afterE
 	afterEach(function () {
 		${1}
 	});
@@ -101,3 +103,11 @@ snippet.snw
 	sinon.assert.neverCalledWith(${1:spy}, ${2});
 snippet.sm
 	sinon.match.${1}
+snippet.unparam
+	/*jslint unparam: true*/
+snippet.regexp
+	/*jslint regexp: true*/
+snippet.glo
+	/*global describe, it*/
+snippet.noop
+	function () { return; }
