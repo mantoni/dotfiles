@@ -12,6 +12,7 @@
 	co = checkout
 	d = diff
 	l = log
+  t = tag
 	re = rebase
 [color]
 	ui = true
