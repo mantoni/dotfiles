@@ -77,6 +77,8 @@ noremap <Leader>b :b<space>
 noremap <Leader>f :find 
 " Search for word under cursor
 map <leader>s :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw<CR>
+" Show npm version for package name under cursor
+map <leader>v yi":!npm show <C-r>0 version<CR>
 " TODOs
 noremap <Leader>t :vimgrep /FIXME\\|TODO/gj **/*.* <Bar> cw<CR>
 " Toggle Nerd Tree
@@ -176,6 +178,7 @@ let NERDTreeMinimalUI        = 1
 let NERDTreeAutoDeleteBuffer = 1
 " Syntastic
 let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_javascript_jslint_args = ''
 let g:syntastic_check_on_open       = 1
 let g:syntastic_error_symbol        = 'X'
 let g:syntastic_warning_symbol      = '△'
