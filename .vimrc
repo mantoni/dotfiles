@@ -177,16 +177,20 @@ let g:delimitMate_balance_matchpairs = 1
 let NERDTreeMinimalUI        = 1
 let NERDTreeAutoDeleteBuffer = 1
 " Syntastic
-let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_javascript_checkers    = ['jslint']
 let g:syntastic_javascript_jslint_args = ''
-let g:syntastic_check_on_open       = 1
-let g:syntastic_error_symbol        = 'X'
-let g:syntastic_warning_symbol      = '△'
-let g:syntastic_loc_list_height     = 5
+let g:syntastic_check_on_open          = 1
+let g:syntastic_error_symbol           = 'X'
+let g:syntastic_warning_symbol         = '△'
+let g:syntastic_loc_list_height        = 5
 highlight SyntasticErrorSign ctermfg   = red
 highlight SyntasticWarningSign ctermfg = yellow
 " JSON
 let g:vim_json_syntax_conceal = 0
 " Gitgutter
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager    = 0
+let g:gitgutter_realtime              = 0
+let g:gitgutter_eager                 = 0
+let g:gitgutter_sign_added            = '┃'
+let g:gitgutter_sign_modified         = '┃'
+let g:gitgutter_sign_removed          = '┃'
+let g:gitgutter_sign_modified_removed = '┃'
