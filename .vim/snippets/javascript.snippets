@@ -1,7 +1,5 @@
 snippet use
 	'use strict';${1}
-snippet "use"
-	"use strict";${1}
 snippet v
 	var ${1:name} = ${2:value};${3}
 snippet f
@@ -13,9 +11,9 @@ snippet if
 		${2}
 	}
 snippet fi
-	var i, l = ${1:array}.length;
+	var i, l = ${1:array}.length, ${2:value};
 	for (i = 0; i < l; i++) {
-		var ${2:value} = $1[i];
+		${2} = $1[i];
 		${3}
 	}
 snippet fk
@@ -108,6 +106,6 @@ snippet.unparam
 snippet.regexp
 	/*jslint regexp: true*/
 snippet.glo
-	/*global describe, it*/
+	/*global describe, it, beforeEach, afterEach*/
 snippet.noop
 	function () { return; }
