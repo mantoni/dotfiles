@@ -65,6 +65,11 @@ function v {
   fi
 }
 
+function changes {
+  local VERSION=$(node -p "require('./package.json').version")
+  git log v$VERSION..HEAD --format="- %s (%an)" | sed -e 's/ (Maximilian Antoni)//g'
+}
+
 function parse_git_branch() {
   local NAME=`git symbolic-ref --short HEAD 2>/dev/null`
   if [ "$NAME" == "master" ]; then
