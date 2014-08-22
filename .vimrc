@@ -93,6 +93,8 @@ noremap <silent> <Leader>g :GitGutterToggle<CR>
 noremap <silent> <Leader>d :TernDef<CR>
 noremap <silent> <Leader>r :TernRefs<CR>
 noremap <silent> <Leader>R :TernRename<CR>
+" Run current file in Mochify
+noremap <silent> <Leader>m :!node_modules/.bin/mochify ./%<CR>
 " Copy / Nocopy
 function! ToggleCopyMode()
   if &number
