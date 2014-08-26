@@ -6,8 +6,6 @@ set nocompatible
 set t_ut=
 " Smooth redraws
 set ttyfast
-" Faster escape sequences
-set ttimeoutlen=10
 augroup FastEscape
   autocmd!
   au InsertEnter * set timeoutlen=0
