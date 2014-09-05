@@ -68,7 +68,7 @@ function v {
 
 function changes {
   local VERSION=$(node -p "require('./package.json').version")
-  git log v$VERSION..HEAD --format="- %s (%an)" | sed -e 's/ (Maximilian Antoni)//g'
+  git log v$VERSION..HEAD --format="- %s (%an)" --reverse | sed -e 's/ (Maximilian Antoni)//g'
 }
 
 function parse_git_branch() {
