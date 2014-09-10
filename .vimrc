@@ -87,6 +87,8 @@ noremap <silent> <Leader>n :NERDTreeToggle<CR>
 noremap <silent> <Leader>. :NERDTreeFind<CR>
 " Toggle GitGutter
 noremap <silent> <Leader>g :GitGutterToggle<CR>
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 " Tern commands
 noremap <silent> <Leader>d :TernDef<CR>
 noremap <silent> <Leader>r :TernRefs<CR>
