@@ -49,7 +49,16 @@ highlight CursorLineNr ctermfg=yellow
 set colorcolumn=80
 " Highlight text exceeding the print margin
 highlight OverLength ctermbg=red ctermfg=white
-match OverLength /\%80v.\+/
+function! ToggleOverLength()
+  if exists('w:long_line_match')
+    match OverLength //
+    unlet w:long_line_match
+  else
+    match OverLength /\%80v.\+/
+    let w:long_line_match = 1
+  endif
+endfunction
+call ToggleOverLength()
 " Turn off line wrapping
 set nowrap
 " Highlight active line
@@ -75,6 +84,8 @@ let mapleader = ","
 noremap <Leader>b :b<space>
 " Find
 noremap <Leader>f :find 
+" Toggle overlength highlighting
+noremap <Leader>h :call ToggleOverLength()<CR>
 " Search for word under cursor
 map <leader>s :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw<CR>
 " Show npm version for package name under cursor
@@ -86,7 +97,9 @@ noremap <silent> <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
 noremap <silent> <Leader>. :NERDTreeFind<CR>
 " Toggle GitGutter
-noremap <silent> <Leader>g :GitGutterToggle<CR>
+noremap <silent> <Leader>gg :GitGutterToggle<CR>
+" Git log
+nnoremap <silent> <Leader>gh :Glog -- %<CR>:set nofoldenable<CR>
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
 " Tern commands
