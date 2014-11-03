@@ -15,8 +15,7 @@ alias gl='git log --graph --decorate'
 alias gs='git status'
 alias gre='git rebase'
 alias gt='git tag'
-alias t='tmux'
-alias ta='tmux attach'
+alias t='tmux attach -t dev || tmux new-session -s dev'
 
 function g {
   if [[ $# > 0 ]]; then
