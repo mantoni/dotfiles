@@ -58,7 +58,6 @@ function! ToggleOverLength()
     let w:long_line_match = 1
   endif
 endfunction
-call ToggleOverLength()
 " Turn off line wrapping
 set nowrap
 " Highlight active line
