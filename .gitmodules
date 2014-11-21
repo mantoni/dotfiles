@@ -76,3 +76,6 @@
 [submodule ".vim/bundle/editorconfig"]
 	path = .vim/bundle/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
+[submodule ".vim/bundle/bufonly"]
+	path = .vim/bundle/bufonly
+	url = git@github.com:duff/vim-bufonly.git
