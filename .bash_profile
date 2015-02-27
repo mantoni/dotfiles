@@ -83,7 +83,7 @@ function parse_user() {
     echo -ne "\033[41mroot\033[0m"
   fi
 }
-PS1="\$(parse_user)[\[\033[33m\]\W\[\033[0m\] \$(parse_git_branch)]# "
+PS1="\$(parse_user)[\[\033[33m\]\W\[\033[0m\] \$(parse_git_branch)]$ "
 
 if [ -e ~/.extras ]; then
   source ~/.extras
