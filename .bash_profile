@@ -16,6 +16,7 @@ alias gs='git status'
 alias gre='git rebase'
 alias gt='git tag'
 alias t='tmux attach -t dev || tmux new-session -s dev'
+alias grep='grep --color'
 
 function g {
   if [[ $# > 0 ]]; then
