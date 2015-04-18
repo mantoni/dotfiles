@@ -183,7 +183,12 @@ let g:bufferline_rotate      = 1
 let g:bufferline_fixed_index = -1
 " Tmuxline
 let g:tmuxline_theme  = 'zenburn'
-let g:tmuxline_preset = 'full'
+let g:tmuxline_preset = {
+  \'a'    : '#H',
+  \'win'  : ['#I #W'],
+  \'cwin' : ['#I #W'],
+  \'x'    : '%d. %b',
+  \'z'    : '%R'}
 " Snipmate
 let g:snippets_dir="~/.vim/snippets"
 " delimitMate

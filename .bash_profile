@@ -84,7 +84,12 @@ function parse_user() {
     echo -ne "\033[41mroot\033[0m"
   fi
 }
-PS1="\$(parse_user)[\[\033[33m\]\W\[\033[0m\] \$(parse_git_branch)]$ "
+function set_tmux_window_name() {
+  if [ $TMUX ]; then
+    tmux rename-window $(basename $PWD)
+  fi
+}
+PS1="\$(parse_user)[\[\033[33m\]\W\[\033[0m\] \$(parse_git_branch)]$ \$(set_tmux_window_name)"
 
 if [ -e ~/.extras ]; then
   source ~/.extras
