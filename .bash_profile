@@ -71,25 +71,39 @@ function changes {
   git log v$VERSION..HEAD --format="- %s (%an)" --reverse | sed -e 's/ (Maximilian Antoni)//g'
 }
 
-function parse_git_branch() {
-  local NAME=`git symbolic-ref --short HEAD 2>/dev/null`
-  if [ "$NAME" == "master" ]; then
-    echo -ne "\033[35m$NAME\033[0m"
-  else
-    echo -ne "\033[32m$NAME\033[0m"
-  fi
-}
-function parse_user() {
+function render_prompt() {
   if [ "$USER" == "root" ]; then
     echo -ne "\033[41mroot\033[0m"
   fi
-}
-function set_tmux_window_name() {
+  local BRANCHNAME=`git symbolic-ref --short HEAD 2>/dev/null`
+
+  if [ $PWD = $HOME ]; then
+    local DIRNAME="~"
+  else
+    local DIRNAME=${PWD##*/}
+  fi
   if [ $TMUX ]; then
-    tmux rename-window $(basename $PWD)
+    tmux rename-window $DIRNAME
+    DIRNAME=
+  else
+    local DIRNAME="\033[33m$DIRNAME\033[0m"
+  fi
+  if [ "$BRANCHNAME" == "master" ]; then
+    local BRANCHNAME="\033[35m$BRANCHNAME\033[0m"
+  elif [ $BRANCHNAME ]; then
+    local BRANCHNAME="\033[32m$BRANCHNAME\033[0m"
+  fi
+  if [[ $DIRNAME && $BRANCHNAME ]]; then
+    echo -ne "[$DIRNAME $BRANCHNAME]$ "
+  elif [ $BRANCHNAME ]; then
+    echo -ne "[$BRANCHNAME]$ "
+  elif [ $DIRNAME ]; then
+    echo -ne "[$DIRNAME]$ "
+  else
+    echo -ne "$ "
   fi
 }
-PS1="\$(parse_user)[\[\033[33m\]\W\[\033[0m\] \$(parse_git_branch)]$ \$(set_tmux_window_name)"
+PS1="\$(render_prompt)"
 
 if [ -e ~/.extras ]; then
   source ~/.extras
