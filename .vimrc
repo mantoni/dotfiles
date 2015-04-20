@@ -184,7 +184,7 @@ let g:bufferline_fixed_index = -1
 " Tmuxline
 let g:tmuxline_theme  = 'zenburn'
 let g:tmuxline_preset = {
-  \'a'    : '#H',
+  \'a'    : '#(hostname -s)',
   \'win'  : ['#I #W'],
   \'cwin' : ['#I #W'],
   \'x'    : '%d. %b',
