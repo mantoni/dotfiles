@@ -71,6 +71,15 @@ function changes {
   git log v$VERSION..HEAD --format="- %s (%an)" --reverse | sed -e 's/ (Maximilian Antoni)//g'
 }
 
+settitle() {
+  printf "\033k$1\033\\"
+}
+
+function ssh() {
+  settitle "$*"
+  command ssh "$@"
+}
+
 function render_prompt() {
   if [ "$USER" == "root" ]; then
     echo -ne "\033[41mroot\033[0m"
@@ -83,7 +92,7 @@ function render_prompt() {
     local DIRNAME=${PWD##*/}
   fi
   if [ $TMUX ]; then
-    tmux rename-window $DIRNAME
+    settitle $DIRNAME
     DIRNAME=
   else
     local DIRNAME="\033[33m$DIRNAME\033[0m"
