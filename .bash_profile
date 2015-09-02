@@ -103,11 +103,14 @@ function render_prompt() {
     local BRANCHNAME="\033[32m$BRANCHNAME\033[0m"
   fi
   if [[ $DIRNAME && $BRANCHNAME ]]; then
-    echo -ne "[$DIRNAME $BRANCHNAME]$ "
+    echo -ne "[$DIRNAME $BRANCHNAME]"
   elif [ $BRANCHNAME ]; then
-    echo -ne "[$BRANCHNAME]$ "
+    echo -ne "[$BRANCHNAME]"
   elif [ $DIRNAME ]; then
-    echo -ne "[$DIRNAME]$ "
+    echo -ne "[$DIRNAME]"
+  fi
+  if [ "$USER" == "root" ]; then
+    echo -ne "# "
   else
     echo -ne "$ "
   fi
