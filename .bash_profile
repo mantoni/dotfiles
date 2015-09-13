@@ -86,7 +86,7 @@ function render_prompt() {
   fi
   local BRANCHNAME=`git symbolic-ref --short HEAD 2>/dev/null`
 
-  if [ $PWD = $HOME ]; then
+  if [ "$PWD" = $HOME ]; then
     local DIRNAME="~"
   else
     local DIRNAME=${PWD##*/}
