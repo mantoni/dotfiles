@@ -46,7 +46,7 @@ syntax on
 colorscheme Tomorrow-Night
 highlight CursorLineNr ctermfg=yellow
 " Print margin
-set colorcolumn=80
+set colorcolumn=81
 " Highlight text exceeding the print margin
 highlight OverLength ctermbg=red ctermfg=white
 function! ToggleOverLength()
