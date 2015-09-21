@@ -200,8 +200,8 @@ let NERDTreeAutoDeleteBuffer = 1
 " Syntastic
 if filereadable('.eslintrc')
   let g:syntastic_javascript_checkers = ['eslint']
-endif
-if filereadable('.jslintrc')
+  let g:syntastic_javascript_eslint_exec = 'eslint_d'
+elseif filereadable('.jslintrc')
   let g:syntastic_javascript_checkers    = ['jslint']
   let g:syntastic_javascript_jslint_args = '--edition=latest'
 endif
