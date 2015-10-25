@@ -6,8 +6,6 @@ export EDITOR=vim
 
 alias l='ls -lh'
 alias ll='ls -alh'
-alias gA='git add -A .'
-alias gci='git commit'
 alias gd='git diff'
 alias gdw='git diff -w'
 alias gdc='git diff --cached'
@@ -20,7 +18,7 @@ alias grep='grep --color'
 
 function g {
   if [[ $# > 0 ]]; then
-    git $@
+    git "$@"
   else
     git status --short --branch
   fi
@@ -28,10 +26,22 @@ function g {
 
 function ga {
   if [[ $# > 0 ]]; then
-    git add $@
+    git add "$@"
   else
     git add .
   fi
+}
+
+function gA {
+  if [[ $# > 0 ]]; then
+    git add -A "$@"
+  else
+    git add -A .
+  fi
+}
+
+function gci {
+  git commit "$@"
 }
 
 F_CMD='find . -type d \( -path "**/node_modules" -o -path "**/.*" -o -path "**/public" \) -prune -o -wholename "$1"'
