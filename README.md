@@ -1,10 +1,10 @@
 # Max' dotfiles
 
-This is my personal life saver. If you're looking for more inspireation, threre
+This is my personal life saver. If you're looking for more inspiration, there
 are great [dotfile suggestions from GitHub][dotfiles].
 
-I've chosen to go with the bootstrap script from [@mathiasbynens][] and bunch
-of git submodules in `.vim/bundle`. The whole thing works by closing this repo
+I've chosen to go with the bootstrap script from [@mathiasbynens][] and a bunch
+of git submodules in `.vim/bundle`. The whole thing works by cloning this repo
 into your projects folder and running the bootstrap script:
 
 ```bash
