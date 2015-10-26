@@ -127,9 +127,6 @@ function render_prompt() {
 }
 PS1="\$(render_prompt)"
 
-if [ -e ~/.extras ]; then
-  source ~/.extras
-fi
 if [ -e ~/.secrets ]; then
   source ~/.secrets
 fi
