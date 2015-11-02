@@ -13,6 +13,7 @@ alias gl='git log --graph --decorate --date=relative --format="%C(yellow)%h%C(re
 alias gs='git status'
 alias gre='git rebase'
 alias gt='git tag'
+alias gp='git pull'
 alias t='tmux attach -t dev || tmux new-session -s dev'
 alias grep='grep --color'
 
