@@ -82,6 +82,22 @@ function changes {
   git log v$VERSION..HEAD --format="- %s (%an)" --reverse | sed -e 's/ (Maximilian Antoni)//g'
 }
 
+function npmcp {
+  NPM_PREFIX=`npm config get prefix`
+  SOURCE="$NPM_PREFIX/lib/node_modules/$1"
+  if [ ! -e $SOURCE ]; then
+    echo "$SOURCE not found"
+    return 1
+  fi
+  TARGET="node_modules/$1"
+  rm -rf $TARGET
+  mkdir -p $TARGET
+  FILES=`ls $SOURCE | grep -v node_modules`
+  for FILE in $FILES; do
+    cp -r $SOURCE/$FILE $TARGET/$FILE
+  done
+}
+
 settitle() {
   printf "\033k$1\033\\"
 }
