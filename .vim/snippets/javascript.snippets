@@ -2,6 +2,10 @@ snippet use
 	'use strict';${1}
 snippet v
 	var ${1:name} = ${2:value};${3}
+snippet l
+	let ${1:name} = ${2:value};${3}
+snippet c
+	const ${1:name} = ${2:value};${3}
 snippet f
 	function ${1}(${2}) {
 		${3}
@@ -13,7 +17,7 @@ snippet if
 snippet fi
 	var i, l = ${1:array}.length, ${2:value};
 	for (i = 0; i < l; i++) {
-		${2} = $1[i];
+		$2 = $1[i];
 		${3}
 	}
 snippet fk
@@ -27,6 +31,10 @@ snippet fe
 	forEach(function (${1:item}) {
 		${2}
 	});
+snippet fe=
+	forEach(${1:item} => {
+		${2}
+	});
 snippet tc
 	try {
 		${1}
@@ -37,6 +45,8 @@ snippet ?
 	${1:condition} ? ${2:true} : ${3:false};${4}
 snippet re
 	var ${1:name} = require('${2:$1}');${3}
+snippet R
+	const ${1:name} = require('${2:$1}');${3}
 snippet ex
 	exports.${1:name} = ${2};
 snippet me
@@ -47,24 +57,50 @@ snippet desc
 		${2}
 
 	});
+snippet desc=
+	describe('${1}', () => {
+
+		${2}
+
+	});
 snippet it
 	it('${1}', function () {
+		${2}
+	});
+snippet it=
+	it('${1}', () => {
 		${2}
 	});
 snippet before
 	before(function () {
 		${1}
 	});
+snippet before=
+	before(() => {
+		${1}
+	});
 snippet after
 	after(function () {
+		${1}
+	});
+snippet after=
+	after(() => {
 		${1}
 	});
 snippet beforeE
 	beforeEach(function () {
 		${1}
 	});
+snippet beforeE=
+	beforeEach(() => {
+		${1}
+	});
 snippet afterE
 	afterEach(function () {
+		${1}
+	});
+snippet afterE=
+	afterEach(() => {
 		${1}
 	});
 snippet ae
@@ -75,6 +111,10 @@ snippet ad
 	assert.deepEqual(${1:val}, ${2:expected});${3}
 snippet at
 	assert.throws(function () {
+		${2};
+	}, ${1:Error});
+snippet at=
+	assert.throws(() => {
 		${2};
 	}, ${1:Error});
 snippet.s
