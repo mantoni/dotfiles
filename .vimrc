@@ -174,7 +174,7 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#default#section_truncate_width={
   \ 'b' : 88,
   \ 'x' : 110,
-  \ 'y' : 100,
+  \ 'y' : 130,
   \ 'z' : 88
   \ }
 " Bufferline
