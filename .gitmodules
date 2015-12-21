@@ -36,7 +36,7 @@
 	url = http://github.com/henrik/vim-reveal-in-finder.git
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
-	url = http://github.com/msanders/snipmate.vim.git
+	url = http://github.com/garbas/vim-snipmate.git
 [submodule ".vim/bundle/dispatch"]
 	path = .vim/bundle/dispatch
 	url = http://github.com/tpope/vim-dispatch.git
