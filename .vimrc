@@ -198,12 +198,12 @@ let g:delimitMate_balance_matchpairs = 1
 let NERDTreeMinimalUI        = 1
 let NERDTreeAutoDeleteBuffer = 1
 " Syntastic
-if filereadable('.eslintrc') || filereadable('.eslintrc.yaml')
-  let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_javascript_eslint_exec = 'eslint_d'
-elseif filereadable('.jslintrc')
+if filereadable('.jslintrc')
   let g:syntastic_javascript_checkers    = ['jslint']
   let g:syntastic_javascript_jslint_args = '--edition=latest'
+else
+  let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_javascript_eslint_exec = 'eslint_d'
 endif
 let g:syntastic_check_on_open          = 1
 let g:syntastic_error_symbol           = 'X'
