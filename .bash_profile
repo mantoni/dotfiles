@@ -1,6 +1,7 @@
 export TERM='xterm-256color'
 export CLICOLOR=1
 export EDITOR=vim
+export HISTCONTROL=ignoreboth:erasedups
 
 . ~/.base16-default.dark.sh
 
