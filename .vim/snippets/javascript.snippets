@@ -1,5 +1,26 @@
+snippet mo
+	/*eslint-env mocha*/${1}
 snippet use
 	'use strict';${1}
+snippet test
+	/*jslint-env mocha*/
+	'use strict';
+
+	const assert = require('assert');
+	const ${1:module} = require('../lib/$1');
+
+
+	describe('$1', () => {
+
+		it('${2}') => {
+			${3}
+		}
+
+	});
+snippet glo
+	/*global ${1}*/
+snippet )
+	) => {${1}}
 snippet v
 	var ${1:name} = ${2:value};${3}
 snippet l
@@ -15,27 +36,41 @@ snippet if
 		${2}
 	}
 snippet fi
-	var i, l = ${1:array}.length, ${2:value};
-	for (i = 0; i < l; i++) {
-		$2 = $1[i];
+	for (let i = 0; i < ${1:array}.length; i++) {
+		${2:value} = $1[i];
 		${3}
 	}
 snippet fk
-	var ${1:key};
-	for ($1 in ${2:map}) {
+	for (let ${1:key} in ${2:map}) {
 		if ($2.hasOwnProperty($1)) {
 			${3}
 		}
 	}
 snippet fe
-	forEach(function (${1:item}) {
+	forEach((${1:item}) => {
 		${2}
 	});
-snippet fe=
-	forEach(${1:item} => {
-		${2}
+snippet map
+	map((${1:item}) => {
+		return ${2};
 	});
-snippet tc
+snippet filter
+	filter((${1:item}) => {
+		return ${2};
+	});
+snippet some
+	some((${1:item}) => {
+		return ${2};
+	});
+snippet every
+	every((${1:item}) => {
+		return ${2};
+	});
+snippet reduce
+	map((${2:arr}, ${3:item}) => {
+		${4}
+	}, ${1:[]});
+snippet try
 	try {
 		${1}
 	} catch (e) {
@@ -44,62 +79,34 @@ snippet tc
 snippet ?
 	${1:condition} ? ${2:true} : ${3:false};${4}
 snippet re
-	var ${1:name} = require('${2:$1}');${3}
-snippet R
 	const ${1:name} = require('${2:$1}');${3}
 snippet ex
 	exports.${1:name} = ${2};
 snippet me
 	module.exports = ${1};
 snippet desc
-	describe('${1}', function () {
-
-		${2}
-
-	});
-snippet desc=
 	describe('${1}', () => {
 
 		${2}
 
 	});
 snippet it
-	it('${1}', function () {
-		${2}
-	});
-snippet it=
 	it('${1}', () => {
 		${2}
 	});
 snippet before
-	before(function () {
-		${1}
-	});
-snippet before=
 	before(() => {
 		${1}
 	});
 snippet after
-	after(function () {
-		${1}
-	});
-snippet after=
 	after(() => {
 		${1}
 	});
 snippet beforeE
-	beforeEach(function () {
-		${1}
-	});
-snippet beforeE=
 	beforeEach(() => {
 		${1}
 	});
 snippet afterE
-	afterEach(function () {
-		${1}
-	});
-snippet afterE=
 	afterEach(() => {
 		${1}
 	});
@@ -110,42 +117,30 @@ snippet as
 snippet ad
 	assert.deepEqual(${1:val}, ${2:expected});${3}
 snippet at
-	assert.throws(function () {
-		${2};
-	}, ${1:Error});
-snippet at=
 	assert.throws(() => {
 		${2};
 	}, ${1:Error});
-snippet.s
-	var ${1:spy} = sinon.spy();${2}
-snippet.st
-	var ${1:stub} = sinon.stub();${2}
-snippet.sa
+snippet s
+	const ${1:spy} = sinon.spy();${2}
+snippet st
+	const ${1:stub} = sinon.stub();${2}
+snippet sa
 	sinon.assert.${1:assertion}(${2:spy}, ${3});
-snippet.s1
+snippet s1
 	sinon.assert.calledOnce(${1:spy});${2}
-snippet.s2
+snippet s2
 	sinon.assert.calledTwice(${1:spy});${2}
-snippet.s3
+snippet s3
 	sinon.assert.calledThrice(${1:spy});${2}
-snippet.sn
+snippet sn
 	sinon.assert.notCalled(${1:spy});${2}
-snippet.sw
+snippet sw
 	sinon.assert.calledWith(${1:spy}, ${2});
-snippet.swm
+snippet swm
 	sinon.assert.calledWithMatch(${1:spy}, ${2});
-snippet.swe
+snippet swe
 	sinon.assert.calledWithExactly(${1:spy}, ${2});
-snippet.snw
+snippet snw
 	sinon.assert.neverCalledWith(${1:spy}, ${2});
-snippet.sm
+snippet sm
 	sinon.match.${1}
-snippet.unparam
-	/*jslint unparam: true*/
-snippet.regexp
-	/*jslint regexp: true*/
-snippet.glo
-	/*global describe, it, beforeEach, afterEach*/
-snippet.noop
-	function () { return; }
