@@ -12,6 +12,11 @@ function doIt() {
   rsync --exclude ".git/" --exclude=".gitmodules" --exclude=".vim/bundle/*/.git" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~
 }
 
+if [ "$1" == "--update" ]; then
+  git submodule foreach git pull origin master
+  exit 0
+fi
+
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   doIt
 else
