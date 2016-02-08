@@ -94,3 +94,6 @@
 [submodule ".vim/bundle/eunuch"]
 	path = .vim/bundle/eunuch
 	url = git@github.com:tpope/vim-eunuch.git
+[submodule ".vim/bundle/hybrid-material"]
+	path = .vim/bundle/hybrid-material
+	url = git@github.com:kristijanhusak/vim-hybrid-material.git
