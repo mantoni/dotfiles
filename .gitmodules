@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/addon-mw-utils"]
 	path = .vim/bundle/addon-mw-utils
 	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
+[submodule ".vim/bundle/hybrid"]
+	path = .vim/bundle/hybrid
+	url = git@github.com:w0ng/vim-hybrid.git

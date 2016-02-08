@@ -43,7 +43,8 @@ set encoding=utf-8
 " Enable syntax highlighting
 syntax on
 " Color
-colorscheme Tomorrow-Night
+set background=dark
+colorscheme hybrid
 highlight CursorLineNr ctermfg=yellow
 " Print margin
 set colorcolumn=81
