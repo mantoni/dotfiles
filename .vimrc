@@ -45,20 +45,8 @@ syntax on
 " Color
 set background=dark
 colorscheme hybrid
-highlight CursorLineNr ctermfg=yellow
 " Print margin
 set colorcolumn=81
-" Highlight text exceeding the print margin
-highlight OverLength ctermbg=red ctermfg=white
-function! ToggleOverLength()
-  if exists('w:long_line_match')
-    match OverLength //
-    unlet w:long_line_match
-  else
-    match OverLength /\%80v.\+/
-    let w:long_line_match = 1
-  endif
-endfunction
 " Turn off line wrapping
 set nowrap
 " Highlight active line
@@ -80,18 +68,10 @@ set wildignore=*/node_modules/*
 
 " Set the leader key to ,
 let mapleader = ","
-" Tab through open buffers
-noremap <Leader>b :b<space>
-" Find
-noremap <Leader>f :find 
-" Toggle overlength highlighting
-noremap <Leader>h :call ToggleOverLength()<CR>
 " Search for word under cursor
 map <leader>s :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw<CR>
 " Show npm version for package name under cursor
 map <leader>v yi":!npm show <C-r>0 version<CR>
-" TODOs
-noremap <Leader>t :vimgrep /FIXME\\|TODO/gj **/*.* <Bar> cw<CR>
 " Toggle Nerd Tree
 noremap <silent> <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
