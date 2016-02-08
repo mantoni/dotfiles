@@ -78,6 +78,8 @@ noremap <silent> <Leader>n :NERDTreeToggle<CR>
 noremap <silent> <Leader>. :NERDTreeFind<CR>
 " Toggle GitGutter
 noremap <silent> <Leader>gg :GitGutterToggle<CR>
+" Git status
+noremap <silent> <Leader>gs :Gstatus<CR>
 " Git log
 nnoremap <silent> <Leader>gh :Glog -- %<CR>:set nofoldenable<CR>
 nmap ]h <Plug>GitGutterNextHunk
