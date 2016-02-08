@@ -43,8 +43,9 @@ set encoding=utf-8
 " Enable syntax highlighting
 syntax on
 " Color
+let base16colorspace=256
 set background=dark
-colorscheme hybrid
+colorscheme hybrid_reverse
 " Print margin
 set colorcolumn=81
 " Turn off line wrapping
@@ -147,7 +148,7 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | di
 let g:markdown_fenced_languages = ['js=javascript', 'bash=sh']
 
 " Airline
-let g:airline_theme           = 'zenburn'
+let g:airline_theme           = 'hybrid'
 let g:airline_section_z       = '%3p%%'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#non_zero_only = 1
@@ -157,10 +158,13 @@ let g:airline#extensions#default#section_truncate_width={
   \ 'y' : 130,
   \ 'z' : 88
   \ }
+let g:airline#extensions#ctrlp#color_template = 'normal'
+let airline#extensions#tmuxline#snapshot_file = '~/.tmux/tmuxline.conf'
 " Bufferline
-let g:bufferline_echo        = 0
-let g:bufferline_rotate      = 1
-let g:bufferline_fixed_index = -1
+let g:bufferline_echo           = 0
+let g:bufferline_rotate         = 1
+let g:bufferline_fixed_index    = -1
+let g:bufferline_solo_highlight = 1
 " Tmuxline
 let g:tmuxline_theme  = 'zenburn'
 let g:tmuxline_preset = {
