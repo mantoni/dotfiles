@@ -3,8 +3,7 @@ export CLICOLOR=1
 export EDITOR=vim
 export HISTCONTROL=ignoreboth:erasedups
 
-#. ~/.base16-default.dark.sh
-. ~/.vim/bundle/hybrid-material/base16-material/base16-material.dark.sh
+. ~/.base16-material.dark.sh
 
 alias l='ls -lh'
 alias ll='ls -alh'
