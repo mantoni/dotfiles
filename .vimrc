@@ -140,6 +140,9 @@ vnoremap <Leader>: :Tabularize /:<CR>
 " Expand %% to directory of current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+" Spell checking
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+
 " Do not keep fugitive Git browsing buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
