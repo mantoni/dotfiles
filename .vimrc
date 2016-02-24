@@ -191,15 +191,20 @@ if filereadable('.jslintrc')
   let g:syntastic_javascript_checkers    = ['jslint']
   let g:syntastic_javascript_jslint_args = '--edition=latest'
 else
-  let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_javascript_checkers    = ['eslint']
   let g:syntastic_javascript_eslint_exec = 'eslint_d'
 endif
-let g:syntastic_check_on_open          = 1
-let g:syntastic_error_symbol           = 'X'
-let g:syntastic_warning_symbol         = '△'
-let g:syntastic_loc_list_height        = 5
-highlight SyntasticErrorSign ctermfg   = red
-highlight SyntasticWarningSign ctermfg = yellow
+let g:syntastic_check_on_open            = 1
+let g:syntastic_check_on_wq              = 0
+let g:syntastic_error_symbol             = 'X'
+let g:syntastic_warning_symbol           = '△'
+let g:syntastic_stl_format               = '#%F'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list            = 2 " Auto close only, no auto open
+let g:syntastic_loc_list_height          = 5
+let g:syntastic_ignore_files             = ['\m/node_modules/']
+highlight SyntasticErrorSign ctermfg     = red
+highlight SyntasticWarningSign ctermfg   = yellow
 " JSON
 let g:vim_json_syntax_conceal = 0
 " Gitgutter
