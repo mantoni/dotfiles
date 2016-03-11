@@ -163,7 +163,7 @@ let g:airline#extensions#default#section_truncate_width={
   \ 'y' : 130,
   \ 'z' : 88
   \ }
-let g:airline#extensions#ctrlp#color_template = 'normal'
+let g:airline#extensions#ctrlp#color_template = 'replace'
 let airline#extensions#tmuxline#snapshot_file = '~/.tmux/tmuxline.conf'
 " Bufferline
 let g:bufferline_echo           = 0
