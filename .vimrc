@@ -143,6 +143,9 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Spell checking
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
 
+" Fish syntax
+autocmd BufRead,BufNewFile *.fish setlocal ft=sh
+
 " Do not keep fugitive Git browsing buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
