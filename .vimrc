@@ -153,7 +153,7 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
 " Syntax in markdown
-let g:markdown_fenced_languages = ['js=javascript', 'bash=sh']
+let g:markdown_fenced_languages = ['js=javascript', 'bash=sh', 'json']
 
 " Airline
 let g:airline_theme           = 'hybrid'
