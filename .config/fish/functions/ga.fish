@@ -1,7 +1,7 @@
 function ga
   if count $argv > /dev/null
-    git add $argv
+    git add -A $argv
   else
-    git add .
+    git add -A .
   end
 end
