@@ -34,6 +34,3 @@ mkdir -p ~/.cache/vim/{swap,backup,undo}
 if [ -e ~/.bootstrap-extras.sh ]; then
   ~/.bootstrap-extras.sh
 fi
-
-source ~/.bash_profile
-
