@@ -1,6 +1,6 @@
 set -gx TERM 'xterm-256color'
-set -gx CLICOLOR=1
-set -gx EDITOR=vim
+set -gx CLICOLOR 1
+set -gx EDITOR vim
 
 . ~/.config/fish/base16-material.dark.fish
 
