@@ -79,9 +79,6 @@
 [submodule ".vim/bundle/bufonly"]
 	path = .vim/bundle/bufonly
 	url = git@github.com:duff/vim-bufonly.git
-[submodule ".vim/bundle/supertab"]
-	path = .vim/bundle/supertab
-	url = git@github.com:ervandew/supertab.git
 [submodule ".vim/bundle/tlib"]
 	path = .vim/bundle/tlib
 	url = git@github.com:tomtom/tlib_vim.git
