@@ -19,3 +19,9 @@
 	ui = true
 [credential]
 	helper = cache --timeout 86400
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight
