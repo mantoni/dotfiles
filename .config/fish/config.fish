@@ -1,3 +1,8 @@
+# non-interactive users (ssh, sync)
+if not status --is-interactive
+  exit # skips the rest of this file; does not actually exit the shell!
+end
+
 set -gx TERM 'xterm-256color'
 set -gx CLICOLOR 1
 set -gx EDITOR vim
