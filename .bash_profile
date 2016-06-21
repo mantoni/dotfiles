@@ -100,7 +100,7 @@ function npmcp {
 }
 
 settitle() {
-  printf "\033k$1\033\\"
+  tmux rename-window -t$TMUX_PANE "$dirname"
 }
 
 function ssh() {

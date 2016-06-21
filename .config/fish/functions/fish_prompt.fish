@@ -9,7 +9,7 @@ function fish_prompt
   set dirname (prompt_pwd)
 
   if [ $TMUX ]
-    printf "\033k$dirname\033\\"
+    tmux rename-window -t$TMUX_PANE "$dirname"
     set -e dirname
   end
   if [ "$branchname" = "master" ]
