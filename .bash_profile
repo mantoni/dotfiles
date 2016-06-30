@@ -28,14 +28,6 @@ function g {
 
 function ga {
   if [[ $# > 0 ]]; then
-    git add "$@"
-  else
-    git add .
-  fi
-}
-
-function gA {
-  if [[ $# > 0 ]]; then
     git add -A "$@"
   else
     git add -A .
