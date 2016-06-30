@@ -43,7 +43,7 @@ function gA {
 }
 
 function gci {
-  git commit "$@"
+  git commit -v "$@"
 }
 
 F_CMD='find . -type d \( -path "**/node_modules" -o -path "**/.*" -o -path "**/public" \) -prune -o -wholename "$1"'

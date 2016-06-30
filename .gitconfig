@@ -6,7 +6,7 @@
 	default = upstream
 [alias]
 	a = add
-	ci = commit
+	ci = commit -v
 	s = status
 	st = status
 	br = branch
