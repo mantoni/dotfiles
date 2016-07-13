@@ -7,9 +7,6 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
-	url = http://github.com/godlygeek/tabular.git
 [submodule ".vim/bundle/powerline"]
 	path = .vim/bundle/powerline
 	url = http://github.com/Lokaltog/powerline.git
@@ -25,21 +22,9 @@
 [submodule ".vim/bundle/mustache"]
 	path = .vim/bundle/mustache
 	url = http://github.com/juvenn/mustache.vim.git
-[submodule ".vim/bundle/flavored-markdown"]
-	path = .vim/bundle/flavored-markdown
-	url = http://github.com/jtratner/vim-flavored-markdown.git
-[submodule ".vim/bundle/markdown"]
-	path = .vim/bundle/markdown
-	url = http://github.com/tpope/vim-markdown.git
-[submodule ".vim/bundle/reveal-in-finder"]
-	path = .vim/bundle/reveal-in-finder
-	url = http://github.com/henrik/vim-reveal-in-finder.git
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
 	url = http://github.com/garbas/vim-snipmate.git
-[submodule ".vim/bundle/dispatch"]
-	path = .vim/bundle/dispatch
-	url = http://github.com/tpope/vim-dispatch.git
 [submodule ".vim/bundle/javascript"]
 	path = .vim/bundle/javascript
 	url = http://github.com/pangloss/vim-javascript.git
@@ -79,15 +64,6 @@
 [submodule ".vim/bundle/bufonly"]
 	path = .vim/bundle/bufonly
 	url = git@github.com:duff/vim-bufonly.git
-[submodule ".vim/bundle/tlib"]
-	path = .vim/bundle/tlib
-	url = git@github.com:tomtom/tlib_vim.git
-[submodule ".vim/bundle/addon-mw-utils"]
-	path = .vim/bundle/addon-mw-utils
-	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
-[submodule ".vim/bundle/hybrid"]
-	path = .vim/bundle/hybrid
-	url = git@github.com:w0ng/vim-hybrid.git
 [submodule ".vim/bundle/eunuch"]
 	path = .vim/bundle/eunuch
 	url = git@github.com:tpope/vim-eunuch.git
