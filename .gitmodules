@@ -70,3 +70,6 @@
 [submodule ".vim/bundle/hybrid-material"]
 	path = .vim/bundle/hybrid-material
 	url = git@github.com:kristijanhusak/vim-hybrid-material.git
+[submodule ".vim/bundle/jsbeautify"]
+	path = .vim/bundle/jsbeautify
+	url = git@github.com:maksimr/vim-jsbeautify.git
