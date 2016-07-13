@@ -1,10 +1,13 @@
 ;.editorconfig
+; https://github.com/maksimr/vim-jsbeautify
+; https://github.com/beautify-web/js-beautify
 
 root = true
 
 [**.js]
 indent_style = space
 indent_size = 2
+;vim:space_after_anon_function=true
 
 [**.json]
 indent_style = space
