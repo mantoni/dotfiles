@@ -12,7 +12,7 @@
 	br = branch
 	co = checkout
 	d = diff
-	l = log
+  l = log --graph --decorate --date=relative
   t = tag
 	re = rebase
 [color]
