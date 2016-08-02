@@ -65,6 +65,7 @@ highlight NonText ctermfg=238
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 " Ignore case in searches except if an uppercase letter is used
+set ignorecase
 set smartcase
 " Do not search here
 set wildignore=*/node_modules/*
