@@ -58,5 +58,12 @@ $ ./configure --with-features=huge --enable-multibyte --enable-pythoninterp \
     --with-python-config-dir=/usr/local/lib/python2.7/config
 ```
 
+## Homebrew
+
+```bash
+# UTF-8 support for less
+brew install homebrew/dupes/less
+```
+
 [dotfiles]: http://dotfiles.github.com
 [@mathiasbynens]: https://github.com/mathiasbynens/dotfiles
