@@ -1,3 +1,3 @@
 function gci
-  git commit -v $argv
+  git commit $argv
 end
