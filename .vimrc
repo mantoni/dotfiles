@@ -215,8 +215,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 2 " Auto close only, no auto open
 let g:syntastic_loc_list_height          = 5
 let g:syntastic_ignore_files             = ['\m/node_modules/']
-highlight SyntasticErrorSign ctermfg     = red
-highlight SyntasticWarningSign ctermfg   = yellow
+highlight SyntasticErrorSign ctermbg=none ctermfg=none
+highlight SyntasticWarningSign ctermbg=none ctermfg=none
 " JSON
 let g:vim_json_syntax_conceal = 0
 " Gitgutter
