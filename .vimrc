@@ -32,7 +32,7 @@ set noswapfile
 " Enable mouse
 set mouse=nv
 " Share OS clipboard
-"set clipboard=unnamed For some reason destroys yank under macOS Sierra
+set clipboard=unnamed
 " Auto append suffixes
 set suffixesadd+=.js
 " Per project .vimrc
