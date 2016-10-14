@@ -58,6 +58,15 @@ $ ./configure --with-features=huge --enable-multibyte --enable-pythoninterp \
     --with-python-config-dir=/usr/local/lib/python2.7/config
 ```
 
+## SSH config for macOS Sierra
+
+`~/.ssh/config`:
+
+```
+IdentityFile ~/.ssh/id_rsa
+AddKeysToAgent yes
+```
+
 ## Homebrew
 
 ```bash
