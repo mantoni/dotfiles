@@ -73,3 +73,6 @@
 [submodule ".vim/bundle/jsbeautify"]
 	path = .vim/bundle/jsbeautify
 	url = git@github.com:maksimr/vim-jsbeautify.git
+[submodule ".vim/bundle/addon-mw-utils"]
+	path = .vim/bundle/addon-mw-utils
+	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
