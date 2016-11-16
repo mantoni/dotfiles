@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/tlib"]
 	path = .vim/bundle/tlib
 	url = git@github.com:tomtom/tlib_vim.git
+[submodule ".vim/bundle/airline-themes"]
+	path = .vim/bundle/airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes
