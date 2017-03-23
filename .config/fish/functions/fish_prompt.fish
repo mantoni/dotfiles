@@ -18,29 +18,18 @@ function fish_prompt
     set color_branch green
   end
   if [ "$dirname" -a "$branchname" ]
-    echo -n '['
     set_color yellow
     echo -n "$dirname "
     set_color $color_branch
     echo -n $branchname
-    set_color normal
-    echo -n ']'
   else if [ "$branchname" ]
-    echo -n '['
     set_color $color_branch
     echo -n $branchname
-    set_color normal
-    echo -n ']'
   else if [ "$dirname" ]
-    echo -n '['
     set_color yellow
     echo -n $dirname
-    set_color normal
-    echo -n ']'
   end
-  if [ $USER = "root" ]
-    echo -n '# '
-  else
-    echo -n '$ '
-  end
+  set_color yellow
+  echo -n '❯ '
+  set_color normal
 end
