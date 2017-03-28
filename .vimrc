@@ -204,6 +204,10 @@ else
   let g:syntastic_javascript_checkers    = ['eslint']
   let g:syntastic_javascript_eslint_exec = 'eslint_d'
 endif
+" Autofix entire buffer with eslint_d:
+nnoremap <leader>f mF:%!eslint_d --stdin --fix-to-stdout<CR>`F
+" Autofix visual selection with eslint_d:
+vnoremap <leader>f :!eslint_d --stdin --fix-to-stdout<CR>gv
 let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
 let g:syntastic_error_symbol             = '🚨'
