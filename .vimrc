@@ -46,9 +46,8 @@ set background=dark
 colorscheme hybrid_reverse
 " Print margin
 set colorcolumn=81
-" Turn on line wrapping
-set wrap
-set linebreak
+" Turn off line wrapping
+set nowrap
 " Highlight active line
 set cursorline
 " Show context around cursor line
@@ -150,6 +149,8 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Spell checking
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+" Markdown specific settings
+autocmd FileType markdown set wrap | set linebreak
 
 " Fish syntax
 autocmd BufRead,BufNewFile *.fish setlocal ft=sh
