@@ -46,8 +46,9 @@ set background=dark
 colorscheme hybrid_reverse
 " Print margin
 set colorcolumn=81
-" Turn off line wrapping
-set nowrap
+" Turn on line wrapping
+set wrap
+set linebreak
 " Highlight active line
 set cursorline
 " Show context around cursor line
