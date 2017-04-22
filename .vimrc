@@ -54,7 +54,7 @@ set cursorline
 set scrolloff=5
 set sidescrolloff=1
 " Text-mate style display of invisible characters (tab/newline)
-set listchars=tab:>\ ,trail:·,eol:¬,nbsp:_
+set listchars=tab:>\ ,eol:¬
 " Change vertical bar to more solid version
 set fillchars+=vert:┃
 set list
