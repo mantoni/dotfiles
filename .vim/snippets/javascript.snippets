@@ -9,12 +9,11 @@ snippet test
 	const assert = require('assert');
 	const ${1:module} = require('../lib/$1');
 
-
 	describe('$1', () => {
 
 		it('${2}', () => {
 			${3}
-		}
+		});
 
 	});
 snippet glo
@@ -120,6 +119,8 @@ snippet at
 	assert.throws(() => {
 		${2};
 	}, ${1:Error});
+snippet ai
+	assert.ifError(${1:err});${2}
 snippet s
 	const ${1:spy} = sinon.spy();${2}
 snippet st
@@ -144,5 +145,20 @@ snippet snw
 	sinon.assert.neverCalledWith(${1:spy}, ${2});
 snippet sm
 	sinon.match.${1}
+snippet sand
+	let sandbox;
+
+	beforeEach(() => {
+		sandbox = sinon.sandbox.create();${1}
+	});
+
+	afterEach(() => {
+		sandbox.restore();
+	});
+
+snippet clock
+	clock = sandbox.useFakeTimers();${1}
+snippet ss
+	sandbox.stub(${1:object}, '${2:property}');${3}
 snippet log
 	console.log(String(${1}));
