@@ -48,6 +48,8 @@ colorscheme hybrid_reverse
 set colorcolumn=81
 " Turn off line wrapping
 set nowrap
+" Single space after dot when joining lines
+set nojoinspaces
 " Highlight active line
 set cursorline
 " Show context around cursor line
