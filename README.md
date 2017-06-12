@@ -7,7 +7,18 @@ are great [dotfile suggestions from GitHub][dotfiles].
 
 I've chosen to go with the bootstrap script from [@mathiasbynens][] and a bunch
 of git submodules in `.vim/bundle`. The whole thing works by cloning this repo
-into your projects folder and running the bootstrap script:
+into your projects folder and running the bootstrap script.
+
+## Setup
+
+[Homebrew][]:
+
+```bash
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ brew install git
+```
+
+Dotfiles:
 
 ```bash
 $ git clone git@github.com:mantoni/dotfiles.git
@@ -16,6 +27,14 @@ $ ./bootstrap.sh
 ```
 
 ## Additional setup
+
+[Brewfile][]:
+
+```bash
+# cd dotfiles
+$ brew tap Homebrew/bundle
+$ brew bundle
+```
 
 Syntastic linters:
 
@@ -80,3 +99,5 @@ brew install reattach-to-user-namespace
 
 [dotfiles]: http://dotfiles.github.com
 [@mathiasbynens]: https://github.com/mathiasbynens/dotfiles
+[Homebrew]: https://brew.sh
+[Brewfile]: https://github.com/Homebrew/homebrew-bundle
