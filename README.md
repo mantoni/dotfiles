@@ -97,6 +97,10 @@ brew install homebrew/dupes/less
 brew install reattach-to-user-namespace
 ```
 
+## Updating
+
+To update all submodules, run `./bootstrap --update`.
+
 [dotfiles]: http://dotfiles.github.com
 [@mathiasbynens]: https://github.com/mathiasbynens/dotfiles
 [Homebrew]: https://brew.sh

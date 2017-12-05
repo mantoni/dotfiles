@@ -13,7 +13,7 @@ function doIt() {
 }
 
 if [ "$1" == "--update" ]; then
-  git submodule foreach git pull origin master
+  git submodule update --recursive --remote
   exit 0
 fi
 
