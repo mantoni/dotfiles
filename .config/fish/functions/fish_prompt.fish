@@ -1,9 +1,5 @@
 function fish_prompt
-  if [ $status = 0 ]
-    set color_prompt normal
-  else
-    set color_prompt red
-  end
+  set exit_code $status
   if [ $USER = "root" ]
     set_color white
     set_color -b red
@@ -34,7 +30,11 @@ function fish_prompt
     set_color yellow
     echo -n $dirname
   end
-  set_color $color_prompt
+  if [ $exit_code = 0 ]
+    set_color normal
+  else
+    set_color red
+  end
   echo -n '❯ '
   set_color normal
 end
