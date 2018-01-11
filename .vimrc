@@ -38,6 +38,8 @@ set suffixesadd+=.js
 " Per project .vimrc
 set exrc
 set encoding=utf-8
+setglobal fileencoding=utf-8
+set fileencoding=utf-8
 " Enable syntax highlighting
 syntax on
 " Color
