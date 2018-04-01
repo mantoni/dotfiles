@@ -75,7 +75,7 @@ set wildignore=*/node_modules/*
 " Set the leader key to ,
 let mapleader = ","
 " Search for word under cursor
-map <leader>s :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw<CR>
+map <leader>s :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw
 " Show npm version for package name under cursor
 map <leader>v yi":!npm show <C-r>0 version<CR>
 " Toggle Nerd Tree
