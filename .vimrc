@@ -186,9 +186,6 @@ let g:bufferline_echo           = 0
 let g:bufferline_rotate         = 1
 let g:bufferline_fixed_index    = -1
 let g:bufferline_solo_highlight = 1
-" Disable fugitiveline to work around issue
-" https://github.com/vim-airline/vim-airline/issues/1670
-let g:airline#extensions#fugitiveline#enabled = 0
 " Tmuxline
 let g:tmuxline_theme  = 'zenburn'
 let g:tmuxline_preset = {
