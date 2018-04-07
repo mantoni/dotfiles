@@ -11,7 +11,7 @@
 	st = status
 	br = branch
 	co = checkout
-	d = diff
+  d = diff --color-moved
   l = log --graph --decorate --date=relative
   t = tag
 	re = rebase
