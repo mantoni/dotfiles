@@ -12,7 +12,7 @@ augroup FastEscape
   au InsertLeave * set timeoutlen=500
 augroup END
 " Update things faster (e.g. GitGutter)
-set updatetime=1000
+set updatetime=100
 " Leave --insert-- to AirLine
 set noshowmode
 " Sound off
@@ -226,8 +226,6 @@ let g:syntastic_ignore_files             = ['\m/node_modules/']
 " JSON
 let g:vim_json_syntax_conceal = 0
 " Gitgutter
-let g:gitgutter_realtime              = 0
-let g:gitgutter_eager                 = 0
 let g:gitgutter_sign_added            = '┃'
 let g:gitgutter_sign_modified         = '┃'
 let g:gitgutter_sign_removed          = '┃'
