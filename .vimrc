@@ -88,8 +88,6 @@ noremap <silent> <Leader>gg :GitGutterToggle<CR>
 noremap <silent> <Leader>gs :Gstatus<CR>
 " Git log
 nnoremap <silent> <Leader>gh :Glog -- %<CR>:set nofoldenable<CR>
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
 " Tern commands
 noremap <silent> <Leader>d :TernDef<CR>
 noremap <silent> <Leader>r :TernRefs<CR>
