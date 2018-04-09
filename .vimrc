@@ -13,6 +13,8 @@ augroup FastEscape
 augroup END
 " Update things faster (e.g. GitGutter)
 set updatetime=100
+" Always show sign column (e.g. GitGutter and Syntastic)
+set signcolumn=yes
 " Leave --insert-- to AirLine
 set noshowmode
 " Sound off
