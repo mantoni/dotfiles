@@ -1,3 +1,8 @@
+" https://github.com/vim/vim/issues/3117
+if has('python3')
+  silent! python3 1
+endif
+
 call pathogen#infect()
 runtime! plugin/sensible.vim
 set nocompatible
