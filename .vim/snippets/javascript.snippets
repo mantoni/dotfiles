@@ -6,7 +6,7 @@ snippet test
 	/*eslint-env mocha*/
 	'use strict';
 
-	const { assert, refute, sinon } = require('@sinonjs/referee-sinon');
+	const { assert, refute, match, sinon } = require('@sinonjs/referee-sinon');
 	const ${1:module} = require('../lib/$1');
 
 	describe('$1', () => {
@@ -123,6 +123,10 @@ snippet assert.e
 	assert.equals(${1:actual}, ${2:expected});${3}
 snippet ae
 	assert.equals(${1:actual}, ${2:expected});${3}
+snippet ac
+	assert.called${1:OnceWith}(${2:actual}, ${3:expected});${4}
+snippet rc
+	refute.called(${1:actual});${2}
 snippet refute.e
 	refute.equals(${1:actual}, ${2:expected});${3}
 snippet assert.ex
@@ -182,20 +186,10 @@ snippet assert.isO
 	assert.isObject(${1:object});${2}
 snippet refute.isO
 	refute.isObject(${1:object});${2}
-snippet assert.c1
-	assert.calledOnce(${1:spy});${2}
-snippet assert.c2
-	assert.calledTwice(${1:spy});${2}
-snippet assert.c3
-	assert.calledThrice(${1:spy});${2}
 snippet assert.c
 	assert.called(${1:spy});${2}
 snippet refute.c
 	refute.called(${1:spy});${2}
-snippet assert.cw
-	assert.calledWith(${1:spy}, ${2});
-snippet refute.cw
-	refute.calledWith(${1:spy}, ${2});
 snippet sinon.m
 	sinon.match.
 snippet sinon.r
@@ -204,7 +198,13 @@ snippet clock
 	clock = sinon.useFakeTimers();
 snippet server
 	server = sinon.useFakeServer();
-snippet stub
-	sinon.stub(${1:object}, '${2:property}');${3}
+snippet fa
+	sinon.fake();${1}
+snippet fr
+	sinon.fake.returns(${1});${2}
+snippet ft
+	sinon.fake.throws(new ${1:Error}(${2}));${3}
 snippet log
 	console.log(${1});
+snippet ls
+	console.log(String(${1}));
