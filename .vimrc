@@ -110,7 +110,7 @@ function! ToggleCopyMode()
   else
     set list
     set number
-    set colorcolumn=80
+    set colorcolumn=81
   endif
 endfunction
 noremap <Leader>c :call ToggleCopyMode()<CR>
