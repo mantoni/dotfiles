@@ -11,10 +11,6 @@ snippet test
 
 	describe('$1', () => {
 
-		afterEach(() => {
-			sinon.restore();
-		});
-
 		it('${2}', () => {
 			${3}
 		});
@@ -87,6 +83,12 @@ snippet me
 	module.exports = ${1};
 snippet desc
 	describe('${1}', () => {
+
+		${2}
+
+	});
+snippet context
+	context('${1}', () => {
 
 		${2}
 
@@ -193,17 +195,19 @@ snippet refute.c
 snippet sinon.m
 	sinon.match.
 snippet sinon.r
-	sinon.restore();
+	sinon.restore();${1}
 snippet clock
-	clock = sinon.useFakeTimers();
+	clock = sinon.useFakeTimers();${1}
 snippet server
-	server = sinon.useFakeServer();
+	server = sinon.useFakeServer();${1}
 snippet fa
 	sinon.fake();${1}
 snippet fr
 	sinon.fake.returns(${1});${2}
 snippet ft
 	sinon.fake.throws(new ${1:Error}(${2}));${3}
+snippet fy
+	sinon.fake.yields(${1});${2}
 snippet log
 	console.log(${1});
 snippet ls
