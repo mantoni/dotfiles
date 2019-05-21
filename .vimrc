@@ -186,6 +186,11 @@ let g:airline#extensions#default#section_truncate_width={
   \ }
 let g:airline#extensions#ctrlp#color_template = 'replace'
 let airline#extensions#tmuxline#snapshot_file = '~/.tmux/tmuxline.conf'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.dirty = '*'
+
 " Bufferline
 let g:bufferline_echo           = 0
 let g:bufferline_rotate         = 1
