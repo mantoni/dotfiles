@@ -4,11 +4,14 @@ if not status --is-interactive
 end
 
 # Use dark-mode command to change profile to light (npm i -g dark-mode-cli)
-if type -q dark-mode
-  if [ (dark-mode status) = "off" ]
-    echo -e "\033]50;SetProfile=Light\a"
-    # Also change environment variable to let vim know
-    set -x ITERM_PROFILE "Light"
+if [ ! $ITERM_DARK_MODE_CHECK ]
+  set -gx ITERM_DARK_MODE_CHECK 1
+  if type -q dark-mode
+    if [ (dark-mode status) = "off" ]
+      echo -e "\033]50;SetProfile=Light\a"
+      # Also change environment variable to let vim know
+      set -x ITERM_PROFILE "Light"
+    end
   end
 end
 
