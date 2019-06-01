@@ -3,7 +3,7 @@
 > This is my personal life saver. If you're looking for more inspiration, there
 are great [dotfile suggestions from GitHub][dotfiles].
 
-<img src="screenshot.png">
+<img src="screenshot.jpg">
 
 I've chosen to go with the bootstrap script from [@mathiasbynens][] and a bunch
 of git submodules in `.vim/bundle`. The whole thing works by cloning this repo
