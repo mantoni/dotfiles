@@ -3,11 +3,18 @@ if not status --is-interactive
   exit # skips the rest of this file; does not actually exit the shell!
 end
 
+# Use dark-mode command to change profile to light (npm i -g dark-mode-cli)
+if type -q dark-mode
+  if [ (dark-mode status) = "off" ]
+    echo -e "\033]50;SetProfile=Light\a"
+    # Also change environment variable to let vim know
+    set -x ITERM_PROFILE "Light"
+  end
+end
+
 set -gx TERM 'xterm-256color'
 set -gx CLICOLOR 1
 set -gx EDITOR vim
-
-. ~/.config/fish/base16-material.dark.fish
 
 set -gx fish_greeting
 set -gx fish_color_autosuggestion 707880
