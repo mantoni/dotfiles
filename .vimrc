@@ -52,6 +52,9 @@ syntax on
 " Color
 let base16colorspace=256
 set background=dark
+if $ITERM_PROFILE == "Light"
+  set background=light
+endif
 colorscheme hybrid_reverse
 " Print margin
 set colorcolumn=81
@@ -69,7 +72,6 @@ set listchars=tab:>\ ,eol:¬
 " Change vertical bar to more solid version
 set fillchars+=vert:┃
 set list
-highlight NonText ctermfg=238
 " Enable omni completion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
