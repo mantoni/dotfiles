@@ -1,6 +1,6 @@
 # Max' dotfiles
 
-This is my personal life saver. If you're looking for more inspiration, there
+> This is my personal life saver. If you're looking for more inspiration, there
 are great [dotfile suggestions from GitHub][dotfiles].
 
 <img src="screenshot.png">
@@ -14,16 +14,16 @@ into your projects folder and running the bootstrap script.
 [Homebrew][]:
 
 ```bash
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-$ brew install git
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install git
 ```
 
 Dotfiles:
 
 ```bash
-$ git clone git@github.com:mantoni/dotfiles.git
-$ cd dotfiles
-$ ./bootstrap.sh
+git clone git@github.com:mantoni/dotfiles.git
+cd dotfiles
+./bootstrap.sh
 ```
 
 ## Additional setup
@@ -32,22 +32,23 @@ $ ./bootstrap.sh
 
 ```bash
 # cd dotfiles
-$ brew tap Homebrew/bundle
-$ brew bundle
+brew tap Homebrew/bundle
+brew bundle
 ```
 
-Syntastic linters:
+Global npm modules:
 
 ```bash
-$ npm install eslint_d -g
-$ npm install json -g
-$ npm install diff-so-fancy -g
+npm i -g eslint_d
+npm i -g json
+npm i -g diff-so-fancy
+npm i -g dark-mode-cli
 ```
 
 Tern:
 
 ```bash
-$ cd ~/.vim/bundle/tern && npm install
+cd ~/.vim/bundle/tern && npm install
 ```
 
 ## Environment specific config
