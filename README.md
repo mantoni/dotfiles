@@ -11,14 +11,14 @@ into your projects folder and running the bootstrap script.
 
 ## Setup
 
-[Homebrew][]:
+__[Homebrew][]:__
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install git
 ```
 
-Dotfiles:
+__Dotfiles__:
 
 ```bash
 git clone git@github.com:mantoni/dotfiles.git
@@ -26,9 +26,16 @@ cd dotfiles
 ./bootstrap.sh
 ```
 
+__iTerm:__
+
+Color profiles are in `.vim/pack/mantoni/start/hybrid-material/base16-material/`.
+Two profiles should be created called "Dark" and "Light" with "Dark" being the
+default. If `dark-mode` is installed (see npm modules), the "Light" profile is
+loaded when Mac OS X dark mode is turned off.
+
 ## Additional setup
 
-[Brewfile][]:
+__[Brewfile][]:__
 
 ```bash
 # cd dotfiles
@@ -45,7 +52,7 @@ npm i -g diff-so-fancy
 npm i -g dark-mode-cli
 ```
 
-Tern:
+__Tern:__
 
 ```bash
 cd ~/.vim/bundle/tern && npm install
