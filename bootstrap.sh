@@ -9,7 +9,7 @@ git submodule init
 git submodule update
 
 function doIt() {
-  rsync --exclude ".git/" --exclude=".gitmodules" --exclude=".vim/bundle/*/.git" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude "screenshot.png" -av . ~
+  rsync --exclude ".git/" --exclude=".gitmodules" --exclude=".vim/bundle/*/.git" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude "screenshot.jpg" -av . ~
 }
 
 if [ "$1" == "--update" ]; then
