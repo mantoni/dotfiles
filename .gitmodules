@@ -1,84 +1,84 @@
-[submodule ".vim/bundle/surround"]
+[submodule ".vim/pack/mantoni/start/surround"]
 	path = .vim/pack/mantoni/start/surround
 	url = git@github.com:tpope/vim-surround.git
-[submodule ".vim/bundle/fugitive"]
+[submodule ".vim/pack/mantoni/start/fugitive"]
 	path = .vim/pack/mantoni/start/fugitive
 	url = git@github.com:tpope/vim-fugitive.git
-[submodule ".vim/bundle/nerdtree"]
+[submodule ".vim/pack/mantoni/start/nerdtree"]
 	path = .vim/pack/mantoni/start/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
-[submodule ".vim/bundle/powerline"]
-	path = .vim/bundle/powerline
+[submodule ".vim/pack/mantoni/start/powerline"]
+	path = .vim/pack/mantoni/start/powerline
 	url = git@github.com:Lokaltog/powerline.git
-[submodule ".vim/bundle/unimpaired"]
+[submodule ".vim/pack/mantoni/start/unimpaired"]
 	path = .vim/pack/mantoni/start/unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
-[submodule ".vim/bundle/sensible"]
+[submodule ".vim/pack/mantoni/start/sensible"]
 	path = .vim/pack/mantoni/start/sensible
 	url = git@github.com:tpope/vim-sensible.git
-[submodule ".vim/bundle/mustache"]
+[submodule ".vim/pack/mantoni/start/mustache"]
 	path = .vim/pack/mantoni/start/mustache
 	url = git@github.com:juvenn/mustache.vim.git
-[submodule ".vim/bundle/snipmate"]
+[submodule ".vim/pack/mantoni/start/snipmate"]
 	path = .vim/pack/mantoni/start/snipmate
 	url = git@github.com:garbas/vim-snipmate.git
-[submodule ".vim/bundle/javascript"]
+[submodule ".vim/pack/mantoni/start/javascript"]
 	path = .vim/pack/mantoni/start/javascript
 	url = git@github.com:pangloss/vim-javascript.git
-[submodule ".vim/bundle/delimitMate"]
+[submodule ".vim/pack/mantoni/start/delimitMate"]
 	path = .vim/pack/mantoni/start/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
-[submodule ".vim/bundle/repeat"]
+[submodule ".vim/pack/mantoni/start/repeat"]
 	path = .vim/pack/mantoni/start/repeat
 	url = git@github.com:tpope/vim-repeat.git
-[submodule ".vim/bundle/gitgutter"]
+[submodule ".vim/pack/mantoni/start/gitgutter"]
 	path = .vim/pack/mantoni/start/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
-[submodule ".vim/bundle/syntastic"]
+[submodule ".vim/pack/mantoni/start/syntastic"]
 	path = .vim/pack/mantoni/start/syntastic
 	url = git@github.com:scrooloose/syntastic.git
-[submodule ".vim/bundle/bufferline"]
+[submodule ".vim/pack/mantoni/start/bufferline"]
 	path = .vim/pack/mantoni/start/bufferline
 	url = git@github.com:bling/vim-bufferline.git
-[submodule ".vim/bundle/tmuxline"]
+[submodule ".vim/pack/mantoni/start/tmuxline"]
 	path = .vim/pack/mantoni/start/tmuxline
 	url = git@github.com:edkolev/tmuxline.vim.git
-[submodule ".vim/bundle/airline"]
+[submodule ".vim/pack/mantoni/start/airline"]
 	path = .vim/pack/mantoni/start/airline
 	url = git@github.com:bling/vim-airline.git
-[submodule ".vim/bundle/json"]
+[submodule ".vim/pack/mantoni/start/json"]
 	path = .vim/pack/mantoni/start/json
 	url = git@github.com:elzr/vim-json.git
-[submodule ".vim/bundle/tern"]
+[submodule ".vim/pack/mantoni/start/tern"]
 	path = .vim/pack/mantoni/start/tern
 	url = git@github.com:marijnh/tern_for_vim.git
-[submodule ".vim/bundle/ctrlp"]
+[submodule ".vim/pack/mantoni/start/ctrlp"]
 	path = .vim/pack/mantoni/start/ctrlp
 	url = git@github.com:kien/ctrlp.vim.git
-[submodule ".vim/bundle/editorconfig"]
+[submodule ".vim/pack/mantoni/start/editorconfig"]
 	path = .vim/pack/mantoni/start/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
-[submodule ".vim/bundle/bufonly"]
+[submodule ".vim/pack/mantoni/start/bufonly"]
 	path = .vim/pack/mantoni/start/bufonly
 	url = git@github.com:duff/vim-bufonly.git
-[submodule ".vim/bundle/eunuch"]
+[submodule ".vim/pack/mantoni/start/eunuch"]
 	path = .vim/pack/mantoni/start/eunuch
 	url = git@github.com:tpope/vim-eunuch.git
-[submodule ".vim/bundle/hybrid-material"]
+[submodule ".vim/pack/mantoni/start/hybrid-material"]
 	path = .vim/pack/mantoni/start/hybrid-material
 	url = git@github.com:kristijanhusak/vim-hybrid-material.git
-[submodule ".vim/bundle/jsbeautify"]
+[submodule ".vim/pack/mantoni/start/jsbeautify"]
 	path = .vim/pack/mantoni/start/jsbeautify
 	url = git@github.com:maksimr/vim-jsbeautify.git
-[submodule ".vim/bundle/addon-mw-utils"]
+[submodule ".vim/pack/mantoni/start/addon-mw-utils"]
 	path = .vim/pack/mantoni/start/addon-mw-utils
 	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
-[submodule ".vim/bundle/tlib"]
+[submodule ".vim/pack/mantoni/start/tlib"]
 	path = .vim/pack/mantoni/start/tlib
 	url = git@github.com:tomtom/tlib_vim.git
-[submodule ".vim/bundle/airline-themes"]
+[submodule ".vim/pack/mantoni/start/airline-themes"]
 	path = .vim/pack/mantoni/start/airline-themes
 	url = git@github.com:vim-airline/vim-airline-themes
-[submodule ".vim/bundle/css3-syntax"]
+[submodule ".vim/pack/mantoni/start/css3-syntax"]
 	path = .vim/pack/mantoni/start/css3-syntax
 	url = git@github.com:hail2u/vim-css3-syntax.git
