@@ -3,7 +3,6 @@ if has('python3')
   silent! python3 1
 endif
 
-call pathogen#infect()
 runtime! plugin/sensible.vim
 set nocompatible
 
@@ -209,7 +208,6 @@ let g:tmuxline_preset = {
 " Snipmate
 let g:snippets_dir="~/.vim/snippets"
 " delimitMate
-let g:delimitMate_expand_cr          = 1
 let g:delimitMate_balance_matchpairs = 1
 " NERDtree
 let NERDTreeMinimalUI        = 1
