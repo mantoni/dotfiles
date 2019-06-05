@@ -187,6 +187,8 @@ let g:airline#extensions#default#section_truncate_width={
   \ }
 let g:airline#extensions#ctrlp#color_template = 'replace'
 let airline#extensions#tmuxline#snapshot_file = '~/.tmux/tmuxline.conf'
+let airline#extensions#syntastic#error_symbol = ''
+let airline#extensions#syntastic#warning_symbol = ''
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -228,7 +230,6 @@ let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
 let g:syntastic_error_symbol             = '▲'
 let g:syntastic_warning_symbol           = '△'
-let g:syntastic_stl_format               = '#%F'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 2 " Auto close only, no auto open
 let g:syntastic_loc_list_height          = 5
