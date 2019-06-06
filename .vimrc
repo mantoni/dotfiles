@@ -175,7 +175,7 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | di
 let g:markdown_fenced_languages = ['js=javascript', 'bash=sh', 'json']
 
 " Airline
-let g:airline_theme           = 'hybrid'
+let g:airline_theme           = 'zenburn'
 let g:airline_section_z       = '%3p%%'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#enabled = 0
@@ -185,7 +185,6 @@ let g:airline#extensions#default#section_truncate_width={
   \ 'y' : 130,
   \ 'z' : 88
   \ }
-let g:airline#extensions#ctrlp#color_template = 'replace'
 let airline#extensions#tmuxline#snapshot_file = '~/.tmux/tmuxline.conf'
 let airline#extensions#syntastic#error_symbol = ''
 let airline#extensions#syntastic#warning_symbol = ''
