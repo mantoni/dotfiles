@@ -25,3 +25,15 @@
 	diff = diff-so-fancy | less
 [interactive]
 	diffFilter = diff-so-fancy
+[color "diff-highlight"]
+	oldNormal = red
+	oldHighlight = red bold reverse
+	newNormal = green
+	newHighlight = green bold reverse
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	commit = yellow
+	old = red
+	new = green
+	whitespace = red reverse
