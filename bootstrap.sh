@@ -28,9 +28,6 @@ else
 fi
 unset doIt
 
-# Create cache dirs:
-mkdir -p ~/.cache/vim/{swap,backup,undo}
-
 if [ -e ~/.bootstrap-extras.sh ]; then
   ~/.bootstrap-extras.sh
 fi
