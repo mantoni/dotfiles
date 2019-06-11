@@ -23,15 +23,13 @@
 	log = diff-so-fancy | less
 	show = diff-so-fancy | less
 	diff = diff-so-fancy | less
-[interactive]
-	diffFilter = diff-so-fancy
 [color "diff-highlight"]
 	oldNormal = red
 	oldHighlight = red bold reverse
 	newNormal = green
 	newHighlight = green bold reverse
 [color "diff"]
-	meta = yellow
+	meta = magenta bold
 	frag = magenta
 	commit = yellow
 	old = red
