@@ -235,6 +235,12 @@ let g:syntastic_loc_list_height          = 5
 let g:syntastic_ignore_files             = ['\m/node_modules/']
 "highlight SyntasticErrorSign ctermbg=none ctermfg=none
 "highlight SyntasticWarningSign ctermbg=none ctermfg=none
+" Prettier
+let g:prettier#quickfix_enabled = 0
+let g:prettier#autoformat = 0
+if filereadable('.prettierrc')
+  autocmd BufWritePre,TextChanged,InsertLeave *.js Prettier
+endif
 " JSON
 let g:vim_json_syntax_conceal = 0
 " Gitgutter
