@@ -85,3 +85,6 @@
 [submodule ".vim/pack/mantoni/start/jinja"]
 	path = .vim/pack/mantoni/start/jinja
 	url = git@github.com:lepture/vim-jinja.git
+[submodule ".vim/pack/mantoni/start/prettier"]
+	path = .vim/pack/mantoni/start/prettier
+	url = git@github.com:prettier/vim-prettier.git
