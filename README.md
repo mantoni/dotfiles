@@ -62,7 +62,7 @@ npm i -g dark-mode-cli
 __Tern:__
 
 ```bash
-cd ~/.vim/bundle/tern && npm install
+cd ~/.vim/pack/mantoni/start/tern && npm install
 ```
 
 ## Environment specific config
