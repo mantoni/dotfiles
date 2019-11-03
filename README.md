@@ -108,8 +108,6 @@ AddKeysToAgent yes
 ```bash
 # UTF-8 support for less
 brew install homebrew/dupes/less
-# Fix clipboard on macOS Sierra
-brew install reattach-to-user-namespace
 ```
 
 ## Updating
