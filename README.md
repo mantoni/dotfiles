@@ -43,6 +43,13 @@ brew tap Homebrew/bundle
 brew bundle
 ```
 
+Making fish the default shell:
+
+```bash
+echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+chsh -s `which fish`
+```
+
 Global npm modules:
 
 ```bash
