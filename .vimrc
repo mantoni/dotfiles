@@ -78,7 +78,7 @@ set omnifunc=syntaxcomplete#Complete
 set ignorecase
 set smartcase
 " Do not search here
-set wildignore=*/node_modules/*,*/build/*
+set wildignore=*/node_modules/*,*/build/*,*/source-maps/*,*/coverage/*
 
 " Set the leader key to ,
 let mapleader = ","
