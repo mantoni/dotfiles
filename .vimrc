@@ -213,6 +213,7 @@ let g:delimitMate_balance_matchpairs = 1
 " NERDtree
 let NERDTreeMinimalUI        = 1
 let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeWinSize          = 36
 " Syntastic
 if filereadable('.jslintrc')
   let g:syntastic_javascript_checkers    = ['jslint']
