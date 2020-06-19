@@ -175,7 +175,7 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | di
 let g:markdown_fenced_languages = ['js=javascript', 'bash=sh', 'json']
 
 " Airline
-let g:airline_theme           = 'zenburn'
+let g:airline_theme           = 'tomorrow'
 let g:airline_section_z       = '%3p%%'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#enabled = 0
