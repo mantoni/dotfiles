@@ -226,6 +226,10 @@ endif
 nnoremap <leader>f mF:%!eslint_d --stdin --fix-to-stdout<CR>`F
 " Autofix visual selection with eslint_d:
 vnoremap <leader>f :!eslint_d --stdin --fix-to-stdout<CR>gv
+" Tsuquyomi with Syntastic:
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+
 let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
 let g:syntastic_error_symbol             = '▲'
