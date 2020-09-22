@@ -37,3 +37,7 @@
 	whitespace = red reverse
 [rebase]
 	autosquash = true
+[pull]
+	rebase = true
+[fetch]
+	prune = true
