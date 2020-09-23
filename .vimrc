@@ -40,7 +40,7 @@ set mouse=nv
 " Share OS clipboard
 set clipboard=unnamed
 " Auto append suffixes
-set suffixesadd+=.js
+set suffixesadd+=.js,.ts,.jsx,.tsx
 " Per project .vimrc
 set exrc
 set encoding=utf-8
