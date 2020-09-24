@@ -94,3 +94,6 @@
 [submodule ".vim/pack/mantoni/start/typescript"]
 	path = .vim/pack/mantoni/start/typescript
 	url = git@github.com:leafgarland/typescript-vim.git
+[submodule ".vim/pack/mantoni/start/graphql"]
+	path = .vim/pack/mantoni/start/graphql
+	url = git@github.com:jparise/vim-graphql.git
