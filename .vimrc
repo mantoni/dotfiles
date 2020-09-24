@@ -244,6 +244,9 @@ let g:tsuquyomi_disable_quickfix = 1
 let g:prettier#autoformat = 0
 if filereadable('.prettierrc')
   autocmd BufWritePre *.js PrettierAsync
+  autocmd BufWritePre *.ts PrettierAsync
+  autocmd BufWritePre *.jsx PrettierAsync
+  autocmd BufWritePre *.tsx PrettierAsync
 endif
 " JSON
 let g:vim_json_syntax_conceal = 0
