@@ -219,6 +219,10 @@ if filereadable('.jslintrc')
   let g:syntastic_javascript_checkers    = ['jslint']
   let g:syntastic_javascript_jslint_args = '--edition=latest'
 else
+  let g:syntastic_filetype_map={
+    \ 'javascriptreact': 'javascript',
+    \ 'typescriptreact': 'typescript'
+    \ }
   let g:syntastic_javascript_checkers    = ['eslint']
   let g:syntastic_javascript_eslint_exec = 'eslint_d'
   let g:syntastic_typescript_checkers    = ['eslint']
