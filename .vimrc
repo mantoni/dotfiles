@@ -106,8 +106,6 @@ nnoremap <silent> <Leader>gh :Glog -- %<CR>:set nofoldenable<CR>
 noremap <silent> <Leader>d :TernDef<CR>
 noremap <silent> <Leader>r :TernRefs<CR>
 noremap <silent> <Leader>R :TernRename<CR>
-" Run current file in Mochify
-noremap <silent> <Leader>m :!node_modules/.bin/mochify ./%<CR>
 " Copy / Nocopy
 function! ToggleCopyMode()
   if &number
@@ -149,16 +147,6 @@ else
   inoremap <M-I> <C-O>^
   inoremap <M-A> <C-O>$
 endif
-
-" Beautify
-autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
-autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
-autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
-autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 
 " Expand %% to directory of current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
