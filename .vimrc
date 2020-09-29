@@ -82,8 +82,14 @@ set wildignore=*/node_modules/*,*/build/*,*/source-maps/*,*/coverage/*
 
 " Set the leader key to ,
 let mapleader = ","
+
 " Search for word under cursor
-map <leader>s :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw
+noremap <Leader>s :Ack <cword><cr>
+" Search with ag if available
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --literal'
+endif
+
 " Show npm version for package name under cursor
 map <leader>v yi":!npm show <C-r>0 version<CR>
 " Toggle Nerd Tree
