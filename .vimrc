@@ -201,7 +201,10 @@ let g:tmuxline_preset = {
   \'x'    : '%d. %b',
   \'z'    : '%R'}
 " Snipmate
-let g:snippets_dir="~/.vim/snippets"
+let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
+let g:snipMate.scope_aliases = {
+  \ 'typescript': 'javascript',
+  \ 'typescriptreact': 'javascript'}
 " delimitMate
 let g:delimitMate_balance_matchpairs = 1
 " NERDtree
