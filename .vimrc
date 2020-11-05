@@ -262,8 +262,3 @@ highlight link GitGutterChange Comment
 highlight link GitGutterDelete Special
 " Ctrlp
 let g:ctrlp_open_multiple_files = '1'
-" CSS3
-augroup VimCSS3Syntax
-  autocmd!
-  autocmd FileType css setlocal iskeyword+=-
-augroup END
