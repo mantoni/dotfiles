@@ -103,3 +103,6 @@
 [submodule ".vim/pack/mantoni/opt/onedark"]
 	path = .vim/pack/mantoni/opt/onedark
 	url = git@github.com:joshdick/onedark.vim.git
+[submodule ".vim/pack/mantoni/start/polyglot"]
+	path = .vim/pack/mantoni/start/polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
