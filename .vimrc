@@ -54,7 +54,8 @@ set background=dark
 if $ITERM_PROFILE == "Light"
   set background=light
 endif
-colorscheme hybrid_reverse
+packadd! onedark
+colorscheme onedark
 " Print margin
 set colorcolumn=81
 " Turn off line wrapping
@@ -169,7 +170,7 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | di
 let g:markdown_fenced_languages = ['js=javascript', 'bash=sh', 'json']
 
 " Airline
-let g:airline_theme           = 'tomorrow'
+let g:airline_theme           = 'onedark'
 let g:airline_section_z       = '%3p%%'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#enabled = 0
