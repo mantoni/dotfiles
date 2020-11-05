@@ -106,3 +106,6 @@
 [submodule ".vim/pack/mantoni/start/polyglot"]
 	path = .vim/pack/mantoni/start/polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
+[submodule ".vim/pack/mantoni/start/devicons"]
+	path = .vim/pack/mantoni/start/devicons
+	url = git@github.com:ryanoasis/vim-devicons.git
