@@ -259,3 +259,6 @@ let g:gitgutter_sign_removed          = '┃'
 let g:gitgutter_sign_modified_removed = '┃'
 " Ctrlp
 let g:ctrlp_open_multiple_files = '1'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
