@@ -97,3 +97,6 @@
 [submodule ".vim/pack/mantoni/start/nerdtree-git-plugin"]
 	path = .vim/pack/mantoni/start/nerdtree-git-plugin
 	url = git@github.com:Xuyuanp/nerdtree-git-plugin.git
+[submodule ".vim/pack/mantoni/start/ctrlp"]
+	path = .vim/pack/mantoni/start/ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim
