@@ -253,6 +253,7 @@ endif
 " JSON
 let g:vim_json_syntax_conceal = 0
 " Gitgutter
+let g:gitgutter_sign_priority         = 0
 let g:gitgutter_sign_added            = '┃'
 let g:gitgutter_sign_modified         = '┃'
 let g:gitgutter_sign_removed          = '┃'
