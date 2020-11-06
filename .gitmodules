@@ -7,9 +7,6 @@
 [submodule ".vim/pack/mantoni/start/nerdtree"]
 	path = .vim/pack/mantoni/start/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
-[submodule ".vim/pack/mantoni/start/powerline"]
-	path = .vim/pack/mantoni/start/powerline
-	url = git@github.com:Lokaltog/powerline.git
 [submodule ".vim/pack/mantoni/start/unimpaired"]
 	path = .vim/pack/mantoni/start/unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
@@ -46,15 +43,9 @@
 [submodule ".vim/pack/mantoni/start/airline"]
 	path = .vim/pack/mantoni/start/airline
 	url = git@github.com:bling/vim-airline.git
-[submodule ".vim/pack/mantoni/start/json"]
-	path = .vim/pack/mantoni/start/json
-	url = git@github.com:elzr/vim-json.git
 [submodule ".vim/pack/mantoni/start/tern"]
 	path = .vim/pack/mantoni/start/tern
 	url = git@github.com:marijnh/tern_for_vim.git
-[submodule ".vim/pack/mantoni/start/ctrlp"]
-	path = .vim/pack/mantoni/start/ctrlp
-	url = git@github.com:kien/ctrlp.vim.git
 [submodule ".vim/pack/mantoni/start/editorconfig"]
 	path = .vim/pack/mantoni/start/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
@@ -67,9 +58,6 @@
 [submodule ".vim/pack/mantoni/start/hybrid-material"]
 	path = .vim/pack/mantoni/start/hybrid-material
 	url = git@github.com:kristijanhusak/vim-hybrid-material.git
-[submodule ".vim/pack/mantoni/start/jsbeautify"]
-	path = .vim/pack/mantoni/start/jsbeautify
-	url = git@github.com:maksimr/vim-jsbeautify.git
 [submodule ".vim/pack/mantoni/start/addon-mw-utils"]
 	path = .vim/pack/mantoni/start/addon-mw-utils
 	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
@@ -79,9 +67,6 @@
 [submodule ".vim/pack/mantoni/start/airline-themes"]
 	path = .vim/pack/mantoni/start/airline-themes
 	url = git@github.com:vim-airline/vim-airline-themes
-[submodule ".vim/pack/mantoni/start/css3-syntax"]
-	path = .vim/pack/mantoni/start/css3-syntax
-	url = git@github.com:hail2u/vim-css3-syntax.git
 [submodule ".vim/pack/mantoni/start/jinja"]
 	path = .vim/pack/mantoni/start/jinja
 	url = git@github.com:lepture/vim-jinja.git
