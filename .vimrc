@@ -54,6 +54,7 @@ set background=dark
 if $ITERM_PROFILE == "Light"
   set background=light
 endif
+let g:onedark_hide_endofbuffer = 1
 packadd! onedark
 colorscheme onedark
 " Print margin
