@@ -250,8 +250,6 @@ if filereadable('.prettierrc')
   autocmd BufWritePre *.jsx PrettierAsync
   autocmd BufWritePre *.tsx PrettierAsync
 endif
-" JSON
-let g:vim_json_syntax_conceal = 0
 " Gitgutter
 let g:gitgutter_sign_priority         = 0
 let g:gitgutter_sign_added            = '┃'

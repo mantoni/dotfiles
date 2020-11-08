@@ -109,3 +109,6 @@
 [submodule ".vim/pack/mantoni/start/devicons"]
 	path = .vim/pack/mantoni/start/devicons
 	url = git@github.com:ryanoasis/vim-devicons.git
+[submodule ".vim/pack/mantoni/start/nerdtree-git-plugin"]
+	path = .vim/pack/mantoni/start/nerdtree-git-plugin
+	url = git@github.com:Xuyuanp/nerdtree-git-plugin.git
