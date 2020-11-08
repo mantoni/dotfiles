@@ -234,8 +234,8 @@ vnoremap <leader>f :!eslint_d --stdin --fix-to-stdout<CR>gv
 
 let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
-let g:syntastic_error_symbol             = '▲'
-let g:syntastic_warning_symbol           = '△'
+let g:syntastic_error_symbol             = ''
+let g:syntastic_warning_symbol           = ''
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 2 " Auto close only, no auto open
 let g:syntastic_loc_list_height          = 5
