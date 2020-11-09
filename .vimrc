@@ -86,7 +86,7 @@ set wildignore=*/node_modules/*,*/build/*,*/source-maps/*,*/coverage/*
 let mapleader = ","
 
 " Search for word under cursor
-noremap <Leader>s :Ack <cword><cr>
+noremap <Leader>s :Ack! <cword><cr>
 " Search with ag if available
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --literal'
