@@ -6,7 +6,7 @@
 	url = git@github.com:tpope/vim-fugitive.git
 [submodule ".vim/pack/mantoni/start/nerdtree"]
 	path = .vim/pack/mantoni/start/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
+	url = git@github.com:preservim/nerdtree.git
 [submodule ".vim/pack/mantoni/start/unimpaired"]
 	path = .vim/pack/mantoni/start/unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
