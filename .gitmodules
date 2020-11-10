@@ -13,9 +13,6 @@
 [submodule ".vim/pack/mantoni/start/sensible"]
 	path = .vim/pack/mantoni/start/sensible
 	url = git@github.com:tpope/vim-sensible.git
-[submodule ".vim/pack/mantoni/start/mustache"]
-	path = .vim/pack/mantoni/start/mustache
-	url = git@github.com:juvenn/mustache.vim.git
 [submodule ".vim/pack/mantoni/start/snipmate"]
 	path = .vim/pack/mantoni/start/snipmate
 	url = git@github.com:garbas/vim-snipmate.git
