@@ -13,7 +13,7 @@ function fish_prompt
     tmux rename-window -t$TMUX_PANE "$dirname"
     set -e dirname
   end
-  if [ "$branchname" = "master" ]
+  if [ "$branchname" = "master" -o "$branchname" = "main" ]
     set color_branch magenta
   else if [ "$branchname" ]
     set color_branch green
