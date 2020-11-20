@@ -208,6 +208,8 @@ let g:delimitMate_balance_matchpairs = 1
 let NERDTreeMinimalUI        = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeWinSize          = 36
+" DevIcons
+let DevIconsEnableFoldersOpenClose = 1
 " Syntastic
 if filereadable('.jslintrc')
   let g:syntastic_javascript_checkers    = ['jslint']
