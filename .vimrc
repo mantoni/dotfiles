@@ -239,17 +239,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 2 " Auto close only, no auto open
 let g:syntastic_loc_list_height          = 5
 let g:syntastic_ignore_files             = ['\m/node_modules/']
-"highlight SyntasticErrorSign ctermbg=none ctermfg=none
-"highlight SyntasticWarningSign ctermbg=none ctermfg=none
+" Tsuquyomi (TypeScript)
 let g:tsuquyomi_disable_quickfix = 1
 " Prettier
-let g:prettier#autoformat = 0
-if filereadable('.prettierrc')
-  autocmd BufWritePre *.js PrettierAsync
-  autocmd BufWritePre *.ts PrettierAsync
-  autocmd BufWritePre *.jsx PrettierAsync
-  autocmd BufWritePre *.tsx PrettierAsync
-endif
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1
 " Gitgutter
 let g:gitgutter_sign_priority         = 0
 let g:gitgutter_sign_added            = '┃'
