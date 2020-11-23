@@ -208,7 +208,6 @@ let g:delimitMate_balance_matchpairs = 1
 let NERDTreeMinimalUI        = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeWinSize          = 36
-let NERDTreeLimitedSyntax    = 1
 let NERDTreeSyntaxDisableDefaultPatternMatches = 1
 " DevIcons
 let DevIconsEnableFoldersOpenClose = 1
