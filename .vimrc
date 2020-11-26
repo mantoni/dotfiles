@@ -11,7 +11,7 @@ augroup FastEscape
   au InsertLeave * set timeoutlen=500
 augroup END
 " Update things faster (e.g. GitGutter)
-set updatetime=100
+set updatetime=500
 " Always show sign column (e.g. GitGutter and Syntastic)
 set signcolumn=yes
 " Leave --insert-- to AirLine
@@ -35,7 +35,7 @@ set mouse=nv
 " Share OS clipboard
 set clipboard=unnamed
 " Auto append suffixes
-set suffixesadd+=.js,.ts,.jsx,.tsx
+set suffixesadd+=.js,.ts,.jsx,.tsx,.json,.html
 " Per project .vimrc
 set exrc
 set encoding=utf-8
@@ -79,71 +79,18 @@ set wildignore=*/node_modules/*,*/build/*,*/source-maps/*,*/coverage/*
 
 " Set the leader key to ,
 let mapleader = ","
-
 " Search for word under cursor
 noremap <Leader>s :Ack! <cword><cr>
-" Search with ag if available
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep --literal'
-endif
-
 " Show npm version for package name under cursor
-map <leader>v yi":!npm show <C-r>0 version<CR>
+noremap <leader>v yi":!npm show <C-r>0 version<CR>
 " Toggle Nerd Tree
 noremap <silent> <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
 noremap <silent> <Leader>. :NERDTreeFind<CR>
-" Toggle GitGutter
-noremap <silent> <Leader>gg :GitGutterToggle<CR>
-" Git status
-noremap <silent> <Leader>gs :Gstatus<CR>
-" Git log
-nnoremap <silent> <Leader>gh :Glog -- %<CR>:set nofoldenable<CR>
 " Tern commands
 noremap <silent> <Leader>d :TernDef<CR>
 noremap <silent> <Leader>r :TernRefs<CR>
 noremap <silent> <Leader>R :TernRename<CR>
-" Copy / Nocopy
-function! ToggleCopyMode()
-  if &number
-    set nolist
-    set nonumber
-    set colorcolumn=
-  else
-    set list
-    set number
-    set colorcolumn=81
-  endif
-endfunction
-noremap <Leader>c :call ToggleCopyMode()<CR>
-" Paste / Nopaste
-function! TogglePasteMode(below)
-  if &paste
-    set nopaste
-  else
-    set paste
-    if a:below
-      normal o
-    else
-      normal O
-    endif
-    startinsert
-  endif
-endfunction
-noremap <Leader>p :call TogglePasteMode(1)<CR>
-noremap <Leader>P :call TogglePasteMode(0)<CR>
-" Move around in insert mode
-if system('uname') =~ 'Darwin'
-  inoremap ø <C-O>o
-  inoremap Ø <C-O>O
-  inoremap È <C-O>^
-  inoremap å <C-O>$
-else
-  inoremap <M-o> <C-O>o
-  inoremap <M-O> <C-O>O
-  inoremap <M-I> <C-O>^
-  inoremap <M-A> <C-O>$
-endif
 
 " Expand %% to directory of current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -152,13 +99,10 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
 " Markdown specific settings
 autocmd FileType markdown set wrap | set linebreak
-
 " Fish syntax
 autocmd BufRead,BufNewFile *.fish setlocal ft=sh
-
 " Do not keep fugitive Git browsing buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
-
 " Diff current buffer with original file
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
@@ -176,9 +120,12 @@ let g:airline#extensions#default#section_truncate_width={
   \ 'y' : 130,
   \ 'z' : 88
   \ }
-let airline#extensions#tmuxline#snapshot_file = '~/.tmux/tmuxline.conf'
-let airline#extensions#syntastic#error_symbol = ''
-let airline#extensions#syntastic#warning_symbol = ''
+let g:airline#extensions#branch#displayed_head_limit = 12
+let g:airline#extensions#tmuxline#snapshot_file = '~/.tmux/tmuxline.conf'
+let g:airline#extensions#syntastic#error_symbol = ''
+let g:airline#extensions#syntastic#warning_symbol = ''
+let g:airline#extensions#syntastic#stl_format_err = '%E{%fe}'
+let g:airline#extensions#syntastic#stl_format_warn = '%W{%fw}'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -189,6 +136,7 @@ let g:bufferline_echo           = 0
 let g:bufferline_rotate         = 1
 let g:bufferline_fixed_index    = -1
 let g:bufferline_solo_highlight = 1
+let g:bufferline_fname_mod      = ':r:s?/index??:t'
 " Tmuxline
 let g:tmuxline_theme  = 'zenburn'
 let g:tmuxline_preset = {
@@ -205,26 +153,21 @@ let g:snipMate.scope_aliases = {
 " delimitMate
 let g:delimitMate_balance_matchpairs = 1
 " NERDtree
-let NERDTreeMinimalUI        = 1
-let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeWinSize          = 36
-let NERDTreeSyntaxDisableDefaultPatternMatches = 1
+let g:NERDTreeMinimalUI        = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeWinSize          = 36
+let g:NERDTreeSyntaxDisableDefaultPatternMatches = 1
 " DevIcons
-let DevIconsEnableFoldersOpenClose = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 " Syntastic
-if filereadable('.jslintrc')
-  let g:syntastic_javascript_checkers    = ['jslint']
-  let g:syntastic_javascript_jslint_args = '--edition=latest'
-else
-  let g:syntastic_filetype_map={
-    \ 'javascriptreact': 'javascript',
-    \ 'typescriptreact': 'typescript'
-    \ }
-  let g:syntastic_javascript_checkers    = ['eslint']
-  let g:syntastic_javascript_eslint_exec = 'eslint_d'
-  let g:syntastic_typescript_checkers    = ['eslint', 'tsuquyomi']
-  let g:syntastic_typescript_eslint_exec = 'eslint_d'
-endif
+let g:syntastic_filetype_map={
+  \ 'javascriptreact': 'javascript',
+  \ 'typescriptreact': 'typescript'
+  \ }
+let g:syntastic_javascript_checkers    = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
+let g:syntastic_typescript_checkers    = ['eslint', 'tsuquyomi']
+let g:syntastic_typescript_eslint_exec = 'eslint_d'
 " Autofix entire buffer with eslint_d:
 nnoremap <leader>f mF:%!eslint_d --stdin --fix-to-stdout<CR>`F
 " Autofix visual selection with eslint_d:
@@ -251,6 +194,10 @@ let g:gitgutter_sign_removed          = '┃'
 let g:gitgutter_sign_modified_removed = '┃'
 " Ctrlp
 let g:ctrlp_open_multiple_files = '1'
+" ag
 if executable('ag')
+  " Use ag for ctrlp
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " Use ag for ack
+  let g:ackprg = 'ag --vimgrep --literal'
 endif
