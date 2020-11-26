@@ -28,7 +28,6 @@ cd dotfiles
 
 __iTerm:__
 
-Color profiles are in `.vim/pack/mantoni/start/hybrid-material/base16-material/`.
 Two profiles should be created called "Dark" and "Light" with "Dark" being the
 default. If `dark-mode` is installed (see npm modules), the "Light" profile is
 loaded when Mac OS X dark mode is turned off.
