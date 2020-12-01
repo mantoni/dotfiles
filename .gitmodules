@@ -91,9 +91,6 @@
 [submodule ".vim/pack/mantoni/start/ctrlp"]
 	path = .vim/pack/mantoni/start/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim
-[submodule ".vim/pack/mantoni/start/nerdtree-syntax-highlight"]
-	path = .vim/pack/mantoni/start/nerdtree-syntax-highlight
-	url = git@github.com:tiagofumo/vim-nerdtree-syntax-highlight.git
 [submodule ".vim/pack/mantoni/start/rhubarb"]
 	path = .vim/pack/mantoni/start/rhubarb
 	url = git@github.com:tpope/vim-rhubarb.git
