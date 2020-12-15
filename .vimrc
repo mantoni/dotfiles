@@ -182,7 +182,9 @@ let g:syntastic_auto_loc_list            = 2 " Auto close only, no auto open
 let g:syntastic_loc_list_height          = 5
 let g:syntastic_ignore_files             = ['\m/node_modules/']
 " Tsuquyomi (TypeScript)
-let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_disable_quickfix       = 1
+let g:tsuquyomi_baseurl_import_path    = 1 " doesn't seem to work
+let g:tsuquyomi_ignore_missing_modules = 1
 " Prettier
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#autoformat_config_present = 1
