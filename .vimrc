@@ -154,6 +154,7 @@ let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
 let g:snipMate.scope_aliases = {
   \ 'typescript': 'javascript',
   \ 'typescriptreact': 'javascript'}
+let g:snipMate.snippet_version = 1
 " delimitMate
 let g:delimitMate_balance_matchpairs = 1
 " NERDtree
