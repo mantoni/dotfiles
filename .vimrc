@@ -118,12 +118,17 @@ let g:airline_theme           = 'onedark'
 let g:airline_section_z       = '%3p%%'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#default#layout = [
+    \ [ 'a', 'b', 'c' ],
+    \ [ 'y', 'z', 'error', 'warning' ]
+  \ ]
 let g:airline#extensions#default#section_truncate_width={
   \ 'b' : 88,
   \ 'x' : 110,
   \ 'y' : 130,
   \ 'z' : 88
   \ }
+let g:airline_skip_empty_sections = 1
 let g:airline#extensions#branch#displayed_head_limit = 12
 let g:airline#extensions#tmuxline#snapshot_file = '~/.tmux/tmuxline.conf'
 let g:airline#extensions#syntastic#error_symbol = ''
