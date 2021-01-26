@@ -12,7 +12,7 @@ augroup FastEscape
 augroup END
 " Update things faster (e.g. GitGutter)
 set updatetime=500
-" Always show sign column (e.g. GitGutter and Syntastic)
+" Always show sign column (e.g. GitGutter and Ale)
 set signcolumn=yes
 " Leave --insert-- to AirLine
 set noshowmode
@@ -88,10 +88,10 @@ noremap <leader>v yi":!npm show <C-r>0 version<CR>
 noremap <silent> <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
 noremap <silent> <Leader>. :NERDTreeFind<CR>
-" Tern commands
-noremap <silent> <Leader>d :TernDef<CR>
-noremap <silent> <Leader>r :TernRefs<CR>
-noremap <silent> <Leader>R :TernRename<CR>
+" ALE commands
+noremap <silent> <Leader>d :ALEGoToDefinition<CR>
+noremap <silent> <Leader>r :ALERename<CR>
+noremap <silent> <Leader>R :ALEFindReferences<CR>
 " Autofix entire buffer with eslint_d:
 nnoremap <leader>f mF:%!eslint_d --stdin --fix-to-stdout<CR>`F
 " Autofix visual selection with eslint_d:
@@ -131,10 +131,8 @@ let g:airline#extensions#default#section_truncate_width={
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#branch#displayed_head_limit = 12
 let g:airline#extensions#tmuxline#snapshot_file = '~/.tmux/tmuxline.conf'
-let g:airline#extensions#syntastic#error_symbol = ''
-let g:airline#extensions#syntastic#warning_symbol = ''
-let g:airline#extensions#syntastic#stl_format_err = '%E{%fe}'
-let g:airline#extensions#syntastic#stl_format_warn = '%W{%fw}'
+let g:airline#extensions#ale#error_symbol = ''
+let g:airline#extensions#ale#warning_symbol = ''
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -149,16 +147,18 @@ let g:bufferline_fname_mod      = ':r:s?/index??:t'
 " Tmuxline
 let g:tmuxline_theme  = 'zenburn'
 let g:tmuxline_preset = {
-  \'a'    : '#(hostname -s)',
-  \'win'  : ['#I #W'],
-  \'cwin' : ['#I #W'],
-  \'x'    : '%d. %b',
-  \'z'    : '%R'}
+  \ 'a'    : '#(hostname -s)',
+  \ 'win'  : ['#I #W'],
+  \ 'cwin' : ['#I #W'],
+  \ 'x'    : '%d. %b',
+  \ 'z'    : '%R'
+  \ }
 " Snipmate
 let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
 let g:snipMate.scope_aliases = {
   \ 'typescript': 'javascript',
-  \ 'typescriptreact': 'javascript'}
+  \ 'typescriptreact': 'javascript'
+  \ }
 let g:snipMate.snippet_version = 1
 " delimitMate
 let g:delimitMate_balance_matchpairs = 1
@@ -169,30 +169,36 @@ let g:NERDTreeWinSize          = 36
 let g:NERDTreeSyntaxDisableDefaultPatternMatches = 1
 " DevIcons
 let g:DevIconsEnableFoldersOpenClose = 1
-" Syntastic
-let g:syntastic_filetype_map={
-  \ 'javascriptreact': 'javascript',
-  \ 'typescriptreact': 'typescript'
+" Ale
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = ''
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+  \ 'javascript'      : ['eslint'],
+  \ 'javascriptreact' : ['eslint'],
+  \ 'typescript'      : ['eslint', 'tsserver'],
+  \ 'typescriptreact' : ['eslint', 'tsserver']
   \ }
-let g:syntastic_javascript_checkers    = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
-let g:syntastic_typescript_checkers    = ['eslint', 'tsuquyomi']
-let g:syntastic_typescript_eslint_exec = 'eslint_d'
-let g:syntastic_check_on_open            = 1
-let g:syntastic_check_on_wq              = 0
-let g:syntastic_error_symbol             = ''
-let g:syntastic_warning_symbol           = ''
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list            = 2 " Auto close only, no auto open
-let g:syntastic_loc_list_height          = 5
-let g:syntastic_ignore_files             = ['\m/node_modules/']
-" Tsuquyomi (TypeScript)
-let g:tsuquyomi_disable_quickfix       = 1
-let g:tsuquyomi_baseurl_import_path    = 1 " doesn't seem to work
-let g:tsuquyomi_ignore_missing_modules = 1
-" Prettier
-let g:prettier#autoformat_require_pragma = 0
-let g:prettier#autoformat_config_present = 1
+let g:ale_fixers = {
+  \ '*'               : ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'javascript'      : ['prettier'],
+  \ 'javascriptreact' : ['prettier'],
+  \ 'typescript'      : ['prettier'],
+  \ 'typescriptreact' : ['prettier'],
+  \ 'css'             : ['prettier'],
+  \ 'html'            : ['prettier'],
+  \ 'json'            : ['prettier'],
+  \ 'markdown'        : ['prettier'],
+  \ 'scss'            : ['prettier'],
+  \ 'terraform'       : ['terraform'],
+  \ 'yaml'            : ['prettier']
+  \ }
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save  = 1
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_completion_enabled = 1
 " Gitgutter
 let g:gitgutter_sign_priority         = 0
 let g:gitgutter_sign_added            = '┃'

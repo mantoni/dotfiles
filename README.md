@@ -1,7 +1,7 @@
 # Max' dotfiles
 
 > This is my personal life saver. If you're looking for more inspiration, there
-are great [dotfile suggestions from GitHub][dotfiles].
+> are great [dotfile suggestions from GitHub][dotfiles].
 
 <img src="screenshot.jpg">
 
@@ -11,14 +11,14 @@ into your projects folder and running the bootstrap script.
 
 ## Setup
 
-__[Homebrew][]:__
+**[Homebrew][]:**
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install git
 ```
 
-__Dotfiles__:
+**Dotfiles**:
 
 ```bash
 git clone git@github.com:mantoni/dotfiles.git
@@ -26,7 +26,7 @@ cd dotfiles
 ./bootstrap.sh
 ```
 
-__iTerm:__
+**iTerm:**
 
 Two profiles should be created called "Dark" and "Light" with "Dark" being the
 default. If `dark-mode` is installed (see npm modules), the "Light" profile is
@@ -34,7 +34,7 @@ loaded when Mac OS X dark mode is turned off.
 
 ## Additional setup
 
-__[Brewfile][]:__
+**[Brewfile][]:**
 
 ```bash
 # cd dotfiles
@@ -56,12 +56,6 @@ npm i -g eslint_d
 npm i -g json
 npm i -g diff-so-fancy
 npm i -g dark-mode-cli
-```
-
-__Tern:__
-
-```bash
-cd ~/.vim/pack/mantoni/start/tern && npm install
 ```
 
 ## Environment specific config
@@ -115,5 +109,5 @@ To update all submodules, run `./bootstrap --update`.
 
 [dotfiles]: http://dotfiles.github.com
 [@mathiasbynens]: https://github.com/mathiasbynens/dotfiles
-[Homebrew]: https://brew.sh
-[Brewfile]: https://github.com/Homebrew/homebrew-bundle
+[homebrew]: https://brew.sh
+[brewfile]: https://github.com/Homebrew/homebrew-bundle

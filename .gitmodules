@@ -28,9 +28,6 @@
 [submodule ".vim/pack/mantoni/start/gitgutter"]
 	path = .vim/pack/mantoni/start/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
-[submodule ".vim/pack/mantoni/start/syntastic"]
-	path = .vim/pack/mantoni/start/syntastic
-	url = git@github.com:scrooloose/syntastic.git
 [submodule ".vim/pack/mantoni/start/bufferline"]
 	path = .vim/pack/mantoni/start/bufferline
 	url = git@github.com:bling/vim-bufferline.git
@@ -40,9 +37,6 @@
 [submodule ".vim/pack/mantoni/start/airline"]
 	path = .vim/pack/mantoni/start/airline
 	url = git@github.com:bling/vim-airline.git
-[submodule ".vim/pack/mantoni/start/tern"]
-	path = .vim/pack/mantoni/start/tern
-	url = git@github.com:marijnh/tern_for_vim.git
 [submodule ".vim/pack/mantoni/start/editorconfig"]
 	path = .vim/pack/mantoni/start/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
@@ -67,12 +61,6 @@
 [submodule ".vim/pack/mantoni/start/jinja"]
 	path = .vim/pack/mantoni/start/jinja
 	url = git@github.com:lepture/vim-jinja.git
-[submodule ".vim/pack/mantoni/start/prettier"]
-	path = .vim/pack/mantoni/start/prettier
-	url = git@github.com:prettier/vim-prettier.git
-[submodule ".vim/pack/mantoni/start/tsuquyomi"]
-	path = .vim/pack/mantoni/start/tsuquyomi
-	url = git@github.com:Quramy/tsuquyomi.git
 [submodule ".vim/pack/mantoni/start/graphql"]
 	path = .vim/pack/mantoni/start/graphql
 	url = git@github.com:jparise/vim-graphql.git
@@ -97,3 +85,6 @@
 [submodule ".vim/pack/mantoni/start/nerdtree-devicons-syntax"]
 	path = .vim/pack/mantoni/start/nerdtree-devicons-syntax
 	url = git@github.com:vwxyutarooo/nerdtree-devicons-syntax.git
+[submodule ".vim/pack/mantoni/start/ale"]
+	path = .vim/pack/mantoni/start/ale
+	url = git@github.com:dense-analysis/ale.git
