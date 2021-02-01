@@ -175,8 +175,8 @@ let g:ale_sign_error = '✖'
 let g:ale_sign_warning = ''
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
-  \ 'javascript'      : ['eslint'],
-  \ 'javascriptreact' : ['eslint'],
+  \ 'javascript'      : ['eslint', 'tsserver'],
+  \ 'javascriptreact' : ['eslint', 'tsserver'],
   \ 'typescript'      : ['eslint', 'tsserver'],
   \ 'typescriptreact' : ['eslint', 'tsserver']
   \ }
