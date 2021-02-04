@@ -91,7 +91,7 @@ noremap <silent> <Leader>. :NERDTreeFind<CR>
 " ALE commands
 noremap <silent> <Leader>d :ALEGoToDefinition<CR>
 noremap <silent> <Leader>r :ALERename<CR>
-noremap <silent> <Leader>R :ALEFindReferences<CR>
+noremap <silent> <Leader>R :ALEFindReferences -relative<CR>
 " Autofix entire buffer with eslint_d:
 nnoremap <leader>f mF:%!eslint_d --stdin --fix-to-stdout<CR>`F
 " Autofix visual selection with eslint_d:
