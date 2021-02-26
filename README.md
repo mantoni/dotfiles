@@ -3,10 +3,10 @@
 > This is my personal life saver. If you're looking for more inspiration, there
 > are great [dotfile suggestions from GitHub][dotfiles].
 
-<img src="screenshot.jpg">
+<img src="screenshot.png">
 
 I've chosen to go with the bootstrap script from [@mathiasbynens][] and a bunch
-of git submodules in `.vim/bundle`. The whole thing works by cloning this repo
+of git submodules in `.vim/pack`. The whole thing works by cloning this repo
 into your projects folder and running the bootstrap script.
 
 ## Setup
@@ -61,31 +61,7 @@ npm i -g dark-mode-cli
 ## Environment specific config
 
 My `.bash_profile` sources `.secrets` which is not checked into this
-repository. This is where I keep things like `GIT_` configs and environment
-specific aliases:
-
-```bash
-export GIT_AUTHOR_NAME='Maximilian Antoni'
-export GIT_AUTHOR_EMAIL='...'
-export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
-export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
-```
-
-Or with `fish`:
-
-```bash
-set -gx GIT_AUTHOR_NAME 'Maximilian Antoni'
-set -gx GIT_AUTHOR_EMAIL '...'
-set -gx GIT_COMMITTER_NAME $GIT_AUTHOR_NAME
-set -gx GIT_COMMITTER_EMAIL $GIT_AUTHOR_EMAIL
-```
-
-In case brew is not around and vim needs to be compiled:
-
-```bash
-$ ./configure --with-features=huge --enable-multibyte --enable-pythoninterp \
-    --with-python-config-dir=/usr/local/lib/python2.7/config
-```
+repository.
 
 ## SSH config for macOS Sierra
 
