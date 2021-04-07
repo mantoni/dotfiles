@@ -5,7 +5,15 @@
 cd "$(dirname "${BASH_SOURCE}")"
 
 function doIt() {
-  rsync --exclude ".git/" --exclude=".gitmodules" --exclude=".vim/bundle/*/.git" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude "screenshot.jpg" -av . ~
+  rsync --exclude ".git/" \
+    --exclude=".gitmodules" \
+    --exclude ".DS_Store" \
+    --exclude "README.md" \
+    --exclude "Brewfile" \
+    --exclude "bootstrap.sh" \
+    --exclude "screenshot.png" \
+    --exclude "xterm-256color.terminfo" \
+    -av . ~
 }
 
 if [ "$1" == "--update" ]; then

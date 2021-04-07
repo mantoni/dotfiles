@@ -15,7 +15,6 @@ into your projects folder and running the bootstrap script.
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install git
 ```
 
 **Dotfiles**:
@@ -23,6 +22,7 @@ brew install git
 ```bash
 git clone git@github.com:mantoni/dotfiles.git
 cd dotfiles
+./bootstrap.sh --update
 ./bootstrap.sh
 ```
 
@@ -34,19 +34,17 @@ loaded when Mac OS X dark mode is turned off.
 
 ## Additional setup
 
-**[Brewfile][]:**
-
-```bash
-# cd dotfiles
-brew tap Homebrew/bundle
-brew bundle
-```
-
 Making fish the default shell:
 
 ```bash
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 chsh -s `which fish`
+```
+
+Enable italic fonts in iTerm:
+
+```bash
+tic -o ~/.terminfo xterm-256color.terminfo
 ```
 
 Global npm modules:
@@ -56,20 +54,6 @@ npm i -g eslint_d
 npm i -g json
 npm i -g diff-so-fancy
 npm i -g dark-mode-cli
-```
-
-## Environment specific config
-
-My `.bash_profile` sources `.secrets` which is not checked into this
-repository.
-
-## SSH config for macOS Sierra
-
-`~/.ssh/config`:
-
-```
-IdentityFile ~/.ssh/id_rsa
-AddKeysToAgent yes
 ```
 
 ## Homebrew

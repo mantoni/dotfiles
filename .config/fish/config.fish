@@ -25,7 +25,11 @@ set -gx fish_color_command purple
 set -gx fish_color_param cyan
 set -gx fish_color_selection --background=263238
 set -gx fish_color_search_match --background=263238
-set -g fish_user_paths "/usr/local/bin" "/usr/local/opt/node@14/bin" $fish_user_paths
+if [ -e /opt/homebrew ]
+  set -g fish_user_paths "/opt/homebrew/bin" "/opt/homebrew/opt/node@14/bin" $fish_user_paths
+else
+  set -g fish_user_paths "/usr/local/bin" "/usr/local/opt/node@14/bin" $fish_user_paths
+end
 
 alias l 'ls -lh'
 alias ll 'ls -alh'
