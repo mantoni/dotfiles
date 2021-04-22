@@ -11,7 +11,7 @@ augroup FastEscape
   au InsertLeave * set timeoutlen=500
 augroup END
 " Update things faster (e.g. GitGutter)
-set updatetime=500
+set updatetime=250
 " Always show sign column (e.g. GitGutter and Ale)
 set signcolumn=yes
 " Leave --insert-- to AirLine
