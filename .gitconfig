@@ -16,6 +16,7 @@
 	l = log --graph --decorate --date=relative
 	t = tag
 	re = rebase
+	pr = push --set-upstream origin head
 [color]
 	ui = true
 [credential]
