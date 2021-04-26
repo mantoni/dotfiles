@@ -42,6 +42,7 @@ alias gbr 'git for-each-ref --sort=-committerdate refs/heads/ --format=\'%(HEAD)
 alias gs 'git status'
 alias gre 'git rebase'
 alias gri 'git rebase -i --autostash'
+alias gpr 'git push --set-upstream origin head'
 alias gt 'git tag'
 alias gp 'git pull'
 alias ni 'npm install'
