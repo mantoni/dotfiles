@@ -201,3 +201,5 @@ snippet log
 	console.log(${1});
 snippet ls
 	console.log(String(${1}));
+snippet uuid
+	'`trim(system("node -p 'require(\\\\'uuid\\\\').v4()'"))`'${1}
