@@ -196,4 +196,6 @@ snippet log
 snippet ls
 	console.log(String(${1}));
 snippet uuid
-	'`trim(system("node -p 'require(\\\\'uuid\\\\').v4()'"))`'${1}
+	'`trim(system("uuidgen | string lower"))`'${1}
+snippet nanoid
+	'${1:pre}_`trim(system("node -p 'require(\\\\'nanoid\\\\').nanoid(10)'"))`'
