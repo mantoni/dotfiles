@@ -44,7 +44,6 @@ set fileencoding=utf-8
 " Enable syntax highlighting
 syntax on
 " Color
-let base16colorspace=256
 set background=dark
 if $ITERM_PROFILE == "Light"
   set background=light
@@ -59,8 +58,6 @@ set colorcolumn=81
 set nowrap
 " Single space after dot when joining lines
 set nojoinspaces
-" Highlight active line
-set cursorline
 " Show context around cursor line
 set scrolloff=5
 set sidescrolloff=1
