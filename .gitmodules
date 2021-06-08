@@ -58,9 +58,6 @@
 [submodule ".vim/pack/mantoni/start/jinja"]
 	path = .vim/pack/mantoni/start/jinja
 	url = git@github.com:lepture/vim-jinja.git
-[submodule ".vim/pack/mantoni/start/graphql"]
-	path = .vim/pack/mantoni/start/graphql
-	url = git@github.com:jparise/vim-graphql.git
 [submodule ".vim/pack/mantoni/start/ack"]
 	path = .vim/pack/mantoni/start/ack
 	url = git@github.com:mileszs/ack.vim.git
