@@ -16,10 +16,15 @@ function doIt() {
     -av . ~
 }
 
+if [ "$1" == "--init" ]; then
+  git submodule init
+  git submodule update --init
+  exit 0
+fi
+
 if [ "$1" == "--update" ]; then
   git pull
-  git submodule init
-  git submodule update --recursive --remote
+  git submodule update --remote
   exit 0
 fi
 
