@@ -24,6 +24,7 @@ function merged
     return 1
   end
 
-  git checkout main
+  git checkout $branch
+  git pull
   git branch -D $pr_branch
 end
