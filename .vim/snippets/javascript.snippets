@@ -15,32 +15,13 @@ snippet test
 	});
 snippet glo
 	/*global ${1}*/
-snippet )
-	) => {${1}}
-snippet let
-	let ${1:name} = ${2:value};${3}
-snippet l
-	let ${1:name} = ${2:value};${3}
-snippet c
-	const ${1:name} = ${2:value};${3}
 snippet f
 	function ${1}(${2}) {
 		${3}
 	}
-snippet if
-	if (${1:condition}) {
-		${2}
-	}
-snippet fi
-	for (let i = 0; i < ${1:array}.length; i++) {
-		${2:value} = $1[i];
+snippet af
+	async function ${1}(${2}) {
 		${3}
-	}
-snippet fk
-	for (let ${1:key} in ${2:map}) {
-		if ($2.hasOwnProperty($1)) {
-			${3}
-		}
 	}
 snippet fe
 	forEach((${1:item}) => {
@@ -73,9 +54,9 @@ snippet try
 		${2}
 	}
 snippet re
-	const ${1:name} = require('${2:$1}');${3}
+	const ${1} = require('${2}');${3}
 snippet ex
-	exports.${1:name} = ${2};${3}
+	exports.${1}
 snippet desc
 	describe('${1}', () => {
 		${2}
@@ -197,5 +178,7 @@ snippet ls
 	console.log(String(${1}));
 snippet uuid
 	'`trim(system("uuidgen | string lower"))`'${1}
-snippet nanoid
-	'${1:pre}_`trim(system("node -p 'require(\\\\'nanoid\\\\').nanoid(10)'"))`'
+snippet id
+	'${1:pre}_`trim(system("node -p 'require(\\\\'nanoid\\\\').nanoid(10)'"))`'${2}
+snippet ts
+	`trim(system("node -p 'Date.now() - Math.ceil(Math.random() * 360000 * 24 * 10)'"))`${1}
