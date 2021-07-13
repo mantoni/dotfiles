@@ -92,6 +92,7 @@ noremap <silent> <Leader>r :ALERename<CR>
 noremap <silent> <Leader>R :ALEFindReferences -relative<CR>
 " Test
 let test#strategy = "vimterminal"
+let test#enabled_runners = ["javascript#mocha"]
 noremap <silent> <Leader>t :TestNearest<CR>
 noremap <silent> <Leader>T :TestFile<CR>
 " Autofix entire buffer with eslint_d:
