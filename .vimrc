@@ -90,6 +90,10 @@ noremap <silent> <Leader>. :NERDTreeFind<CR>
 noremap <silent> <Leader>d :ALEGoToDefinition<CR>
 noremap <silent> <Leader>r :ALERename<CR>
 noremap <silent> <Leader>R :ALEFindReferences -relative<CR>
+" Test
+let test#strategy = "vimterminal"
+noremap <silent> <Leader>t :TestNearest<CR>
+noremap <silent> <Leader>T :TestFile<CR>
 " Autofix entire buffer with eslint_d:
 nnoremap <leader>f mF:%!eslint_d --stdin --fix-to-stdout<CR>`F
 " Autofix visual selection with eslint_d:
