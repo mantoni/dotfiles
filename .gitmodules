@@ -85,3 +85,6 @@
 [submodule ".vim/pack/mantoni/start/jsdoc"]
 	path = .vim/pack/mantoni/start/jsdoc
 	url = git@github.com:heavenshell/vim-jsdoc.git
+[submodule ".vim/pack/mantoni/start/test"]
+	path = .vim/pack/mantoni/start/test
+	url = git@github.com:vim-test/vim-test.git
