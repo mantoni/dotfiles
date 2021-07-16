@@ -76,9 +76,6 @@
 [submodule ".vim/pack/mantoni/start/rhubarb"]
 	path = .vim/pack/mantoni/start/rhubarb
 	url = git@github.com:tpope/vim-rhubarb.git
-[submodule ".vim/pack/mantoni/start/nerdtree-devicons-syntax"]
-	path = .vim/pack/mantoni/start/nerdtree-devicons-syntax
-	url = git@github.com:vwxyutarooo/nerdtree-devicons-syntax.git
 [submodule ".vim/pack/mantoni/start/ale"]
 	path = .vim/pack/mantoni/start/ale
 	url = git@github.com:dense-analysis/ale.git
