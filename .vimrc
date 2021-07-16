@@ -169,6 +169,7 @@ let g:delimitMate_balance_matchpairs = 1
 let g:NERDTreeMinimalUI        = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeWinSize          = 36
+let g:NERDTreeLimitedSyntax    = 1
 " DevIcons
 let g:DevIconsEnableFoldersOpenClose = 1
 " Ale
