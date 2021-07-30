@@ -44,15 +44,19 @@ set fileencoding=utf-8
 " Enable syntax highlighting
 syntax on
 " Color
-set background=dark
+set termguicolors
 if $ITERM_PROFILE == "Light"
   set background=light
+  let g:one_allow_italics = 1
+  packadd! one
+  colorscheme one
+else
+  set background=dark
+  let g:onedark_hide_endofbuffer = 1
+  let g:onedark_terminal_italics = 1
+  packadd! onedark
+  colorscheme onedark
 endif
-set termguicolors
-let g:onedark_hide_endofbuffer = 1
-let g:onedark_terminal_italics = 1
-packadd! onedark
-colorscheme onedark
 " Print margin
 set colorcolumn=81
 " Turn off line wrapping
@@ -117,8 +121,12 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | di
 let g:markdown_fenced_languages = ['js=javascript', 'bash=sh', 'json', 'html']
 
 " Airline
-let g:airline_theme           = 'onedark'
-let g:airline_section_z       = '%3p%%'
+if $ITERM_PROFILE == "Light"
+  let g:airline_theme = 'one'
+else
+  let g:airline_theme = 'onedark'
+endif
+let g:airline_section_z = '%3p%%'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#default#layout = [

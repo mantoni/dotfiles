@@ -3,18 +3,6 @@ if not status --is-interactive
   exit # skips the rest of this file; does not actually exit the shell!
 end
 
-# Use dark-mode command to change profile to light (npm i -g dark-mode-cli)
-if [ ! $ITERM_DARK_MODE_CHECK ]
-  set -gx ITERM_DARK_MODE_CHECK 1
-  if type -q dark-mode
-    if [ (dark-mode status) = "off" ]
-      echo -e "\033]50;SetProfile=Light\a"
-      # Also change environment variable to let vim know
-      set -x ITERM_PROFILE "Light"
-    end
-  end
-end
-
 # set -gx TERM 'xterm-256color'
 # set -gx CLICOLOR 1
 set -gx EDITOR vim
@@ -29,6 +17,18 @@ if [ -e /opt/homebrew ]
   set -g fish_user_paths "/opt/homebrew/bin" "/opt/homebrew/opt/node@14/bin" $fish_user_paths
 else
   set -g fish_user_paths "/usr/local/bin" "/usr/local/opt/node@14/bin" $fish_user_paths
+end
+
+# Use dark-mode command to change profile to light (npm i -g dark-mode-cli)
+if [ ! $ITERM_DARK_MODE_CHECK ]
+  set -gx ITERM_DARK_MODE_CHECK 1
+  if type -q dark-mode
+    if [ (dark-mode status) = "off" ]
+      echo -e "\033]50;SetProfile=Light\a"
+      # Also change environment variable to let vim know
+      set -x ITERM_PROFILE "Light"
+    end
+  end
 end
 
 alias l 'ls -lh'

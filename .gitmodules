@@ -88,3 +88,6 @@
 [submodule ".vim/pack/mantoni/start/nerdtree-syntax-highlight"]
 	path = .vim/pack/mantoni/start/nerdtree-syntax-highlight
 	url = git@github.com:tiagofumo/vim-nerdtree-syntax-highlight.git
+[submodule ".vim/pack/mantoni/opt/one"]
+	path = .vim/pack/mantoni/opt/one
+	url = git@github.com:rakr/vim-one.git
