@@ -191,11 +191,6 @@ let g:ale_linters = {
   \ 'typescript'      : ['eslint', 'tsserver'],
   \ 'typescriptreact' : ['eslint', 'tsserver']
   \ }
-" Only use LSP on JS files, ignore messages:
-let g:ale_linters_ignore = {
-  \ 'javascript'      : ['tsserver'],
-  \ 'javascriptreact' : ['tsserver']
-  \ }
 let g:ale_fixers = {
   \ '*'               : ['remove_trailing_lines', 'trim_whitespace'],
   \ 'javascript'      : ['prettier'],
