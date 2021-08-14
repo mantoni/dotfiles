@@ -6,7 +6,7 @@ function fish_prompt
     echo -n "root"
     set_color normal
   end
-  set branchname (git symbolic-ref -q --short HEAD ^ /dev/null)
+  set branchname (git symbolic-ref --quiet --short HEAD 2> /dev/null)
   set dirname (prompt_pwd)
 
   if [ $TMUX ]
