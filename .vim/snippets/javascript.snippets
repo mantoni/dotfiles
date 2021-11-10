@@ -6,11 +6,11 @@ snippet test
 	'use strict';
 
 	const { assert, refute, match, sinon } = require('@sinonjs/referee-sinon');
-	const ${1} = require('${2}');
+	const ${1} = require('./`substitute(expand('%:t'), '\.test\.js$', '', 'g')`');
 
-	describe('${3}', () => {
-		it('${4}', () => {
-			${5}
+	describe('`substitute(@%, '\.test\.js$', '', 'g')`', () => {
+		it('${2}', () => {
+			${3}
 		});
 	});
 snippet glo
