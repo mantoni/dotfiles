@@ -119,6 +119,8 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | di
 
 " Syntax in markdown
 let g:markdown_fenced_languages = ['js=javascript', 'bash=sh', 'json', 'html']
+" JSDoc comments
+let g:javascript_plugin_jsdoc = 1
 
 " Airline
 if $ITERM_PROFILE == "Light"
