@@ -88,3 +88,6 @@
 [submodule ".vim/pack/mantoni/opt/one"]
 	path = .vim/pack/mantoni/opt/one
 	url = git@github.com:rakr/vim-one.git
+[submodule ".vim/pack/mantoni/opt/sonokai"]
+	path = .vim/pack/mantoni/opt/sonokai
+	url = git@github.com:sainnhe/sonokai.git
