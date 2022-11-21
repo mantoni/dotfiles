@@ -126,6 +126,8 @@ else
 endif
 let g:airline_section_z = '%3p%%'
 let g:airline_powerline_fonts = 1
+let g:airline_left_sep = "\ue0b8"
+let g:airline_right_sep = "\ue0be"
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#default#layout = [
     \ [ 'a', 'b', 'c' ],
@@ -162,6 +164,12 @@ let g:tmuxline_preset = {
   \ 'x'    : '%d. %b',
   \ 'z'    : '%R'
   \ }
+let g:tmuxline_separators = {
+  \ 'left' : "\ue0bc",
+  \ 'left_alt': "\ue0bd",
+  \ 'right' : "\ue0ba",
+  \ 'right_alt' : "\ue0bd",
+  \ 'space' : ' '}
 " Snipmate
 let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
 let g:snipMate.scope_aliases = {
