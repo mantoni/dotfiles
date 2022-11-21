@@ -8,11 +8,11 @@ end
 set -gx EDITOR vim
 
 set -gx fish_greeting
-set -gx fish_color_autosuggestion 707880
+# set -gx fish_color_autosuggestion 707880
 set -gx fish_color_command purple
 set -gx fish_color_param cyan
-set -gx fish_color_selection --background=263238
-set -gx fish_color_search_match --background=263238
+# set -gx fish_color_selection --background=263238
+# set -gx fish_color_search_match --background=263238
 if [ -e /opt/homebrew ]
   set -g fish_user_paths "/opt/homebrew/bin" "/opt/homebrew/opt/node@14/bin" $fish_user_paths
 else
