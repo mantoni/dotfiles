@@ -52,10 +52,11 @@ if $ITERM_PROFILE == "Light"
   colorscheme one
 else
   set background=dark
-  let g:onedark_hide_endofbuffer = 1
-  let g:onedark_terminal_italics = 1
-  packadd! onedark
-  colorscheme onedark
+  " let g:onedark_hide_endofbuffer = 1
+  " let g:onedark_terminal_italics = 1
+  let g:sonokai_show_eob = 0
+  packadd! sonokai
+  colorscheme sonokai
 endif
 " Print margin
 set colorcolumn=81
@@ -121,7 +122,7 @@ let g:javascript_plugin_jsdoc = 1
 if $ITERM_PROFILE == "Light"
   let g:airline_theme = 'one'
 else
-  let g:airline_theme = 'onedark'
+  let g:airline_theme = 'sonokai'
 endif
 let g:airline_section_z = '%3p%%'
 let g:airline_powerline_fonts = 1
