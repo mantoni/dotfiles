@@ -126,8 +126,8 @@ else
 endif
 let g:airline_section_z = '%3p%%'
 let g:airline_powerline_fonts = 1
-let g:airline_left_sep = "\ue0b8"
-let g:airline_right_sep = "\ue0be"
+let g:airline_left_sep = "\ue0bc"
+let g:airline_right_sep = "\ue0ba"
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#default#layout = [
     \ [ 'a', 'b', 'c' ],
@@ -165,9 +165,9 @@ let g:tmuxline_preset = {
   \ 'z'    : '%R'
   \ }
 let g:tmuxline_separators = {
-  \ 'left' : "\ue0bc",
+  \ 'left' : "\ue0b8",
   \ 'left_alt': "\ue0bd",
-  \ 'right' : "\ue0ba",
+  \ 'right' : "\ue0be",
   \ 'right_alt' : "\ue0bd",
   \ 'space' : ' '}
 " Snipmate
