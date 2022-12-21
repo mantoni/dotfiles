@@ -103,7 +103,7 @@ vnoremap <leader>f :!eslint_d --stdin --fix-to-stdout<CR>gv
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Spell checking
-autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,de
 " Markdown specific settings
 autocmd FileType markdown set wrap | set linebreak
 " Fish syntax
