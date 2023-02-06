@@ -31,8 +31,8 @@ if [ ! $ITERM_DARK_MODE_CHECK ]
   end
 end
 
-alias l 'ls -lh'
-alias ll 'ls -alh'
+alias l 'lsd -lh'
+alias ll 'lsd -alh'
 alias gd 'git diff --color-moved'
 alias gdw 'git diff --color-moved -w'
 alias gdc 'git diff --color-moved --cached'
