@@ -179,6 +179,6 @@ snippet ls
 snippet uuid
 	'`trim(system("uuidgen | string lower"))`'${1}
 snippet id
-	'${1:pre}_`trim(system("node -p 'require(\\\\'nanoid\\\\').nanoid(10)'"))`'${2}
+	'${1:pre}_`trim(system("node -e 'import(\\\\'nanoid\\\\').then(({ nanoid }) => console.log(nanoid(10)))'"))`'${2}
 snippet ts
 	`trim(system("node -p 'Date.now() - Math.ceil(Math.random() * 360000 * 24 * 10)'"))`${1}
