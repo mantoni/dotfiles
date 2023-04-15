@@ -94,3 +94,6 @@
 [submodule ".vim/pack/mantoni/start/terraform"]
 	path = .vim/pack/mantoni/start/terraform
 	url = git@github.com:hashivim/vim-terraform.git
+[submodule ".vim/pack/mantoni/start/copilot"]
+	path = .vim/pack/mantoni/start/copilot
+	url = git@github.com:github/copilot.vim.git
