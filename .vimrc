@@ -216,6 +216,7 @@ let g:ale_fix_on_save  = 1
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_completion_enabled = 1
+let g:ale_virtualtext_cursor = 0
 " Gitgutter
 let g:gitgutter_sign_priority         = 0
 let g:gitgutter_sign_added            = '┃'
