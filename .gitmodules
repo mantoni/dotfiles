@@ -97,3 +97,6 @@
 [submodule ".vim/pack/mantoni/start/copilot"]
 	path = .vim/pack/mantoni/start/copilot
 	url = git@github.com:github/copilot.vim.git
+[submodule ".vim/pack/mantoni/start/nearley"]
+	path = .vim/pack/mantoni/start/nearley
+	url = git@github.com:tjvr/vim-nearley.git
