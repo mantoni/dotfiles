@@ -235,3 +235,9 @@ endif
 " Copilot
 imap <silent><script><expr> <C-J> copilot#Accept("")
 let g:copilot_no_tab_map = v:true
+"ALT-]
+inoremap ‘ <Plug>(copilot-next)
+"ALT-[
+inoremap “ <Plug>(copilot-previous)
+"ALT-\
+inoremap « <Plug>(copilot-suggest)
