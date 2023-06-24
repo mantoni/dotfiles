@@ -100,3 +100,6 @@
 [submodule ".vim/pack/mantoni/start/nearley"]
 	path = .vim/pack/mantoni/start/nearley
 	url = git@github.com:tjvr/vim-nearley.git
+[submodule ".vim/pack/mantoni/start/commentary"]
+	path = .vim/pack/mantoni/start/commentary
+	url = git@github.com:tpope/vim-commentary.git
