@@ -233,6 +233,5 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep --literal'
 endif
 " Copilot
-imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+imap <silent><script><expr> <C-J> copilot#Accept("")
 let g:copilot_no_tab_map = v:true
-highlight CopilotSuggestion guibg=#4e432f guifg=#e7c664 ctermbg=54 ctermfg=179
