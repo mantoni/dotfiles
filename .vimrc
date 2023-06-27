@@ -190,8 +190,8 @@ let g:NERDTreeLimitedSyntax    = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 " Ale
 let g:ale_sign_column_always = 1
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = ''
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '●'
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
   \ 'javascript'      : ['eslint', 'tsserver'],
