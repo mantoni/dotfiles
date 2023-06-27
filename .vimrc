@@ -14,6 +14,8 @@ augroup END
 set updatetime=250
 " Always show sign column (e.g. GitGutter and Ale)
 set signcolumn=yes
+" Add space on the left
+set foldcolumn=1
 " Leave --insert-- to AirLine
 set noshowmode
 " Sound off
