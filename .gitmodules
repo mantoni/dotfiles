@@ -103,3 +103,6 @@
 [submodule ".vim/pack/mantoni/start/commentary"]
 	path = .vim/pack/mantoni/start/commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule ".vim/pack/mantoni/start/obsession"]
+	path = .vim/pack/mantoni/start/obsession
+	url = git@github.com:tpope/vim-obsession.git
