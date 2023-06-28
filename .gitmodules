@@ -106,3 +106,6 @@
 [submodule ".vim/pack/mantoni/start/obsession"]
 	path = .vim/pack/mantoni/start/obsession
 	url = git@github.com:tpope/vim-obsession.git
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git
