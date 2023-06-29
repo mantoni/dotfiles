@@ -1,9 +1,9 @@
-function v
-  if [ -e .git ]
+function vs
+  if [ -e Session.vim ]
     if count $argv > /dev/null
-      vim +Obsession +"e $argv[1]"
+      vim -S Session.vim $argv
     else
-      vim +Obsession
+      vim -S Session.vim
     end
   else
     if count $argv > /dev/null
