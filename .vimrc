@@ -86,7 +86,7 @@ set wildignore=*/node_modules/*,*/build/*,*/source-maps/*,*/coverage/*
 " Set the leader key to ,
 let mapleader = ","
 " Search for word under cursor
-noremap <Leader>s :Ack! <cword><cr>
+noremap <silent> <Leader>s :Ack! <cword><CR>
 " Show npm version for package name under cursor
 noremap <leader>v yi":!npm show <C-r>0 version<CR>
 " Toggle Nerd Tree
