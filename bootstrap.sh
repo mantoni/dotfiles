@@ -9,7 +9,7 @@ function doIt() {
     --exclude=".gitmodules" \
     --exclude ".DS_Store" \
     --exclude "README.md" \
-    --exclude "Brewfile" \
+    --exclude "Session.vim" \
     --exclude "bootstrap.sh" \
     --exclude "screenshot.png" \
     --exclude "xterm-256color.terminfo" \
