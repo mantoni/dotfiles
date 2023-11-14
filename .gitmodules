@@ -112,3 +112,6 @@
 [submodule ".vim/pack/mantoni/start/fern-git-status"]
 	path = .vim/pack/mantoni/start/fern-git-status
 	url = git@github.com:lambdalisue/fern-git-status.vim.git
+[submodule ".vim/pack/mantoni/start/fern-hijack"]
+	path = .vim/pack/mantoni/start/fern-hijack
+	url = git@github.com:lambdalisue/fern-hijack.vim.git
