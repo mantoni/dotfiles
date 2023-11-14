@@ -104,8 +104,9 @@ vnoremap <leader>f :!eslint_d --stdin --fix-to-stdout<CR>gv
 " Expand %% to directory of current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-augroup my-glyph-palette
+augroup FernGroup
   autocmd! *
+  autocmd FileType fern setlocal nonumber
   autocmd FileType fern call glyph_palette#apply()
 augroup END
 
