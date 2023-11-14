@@ -100,3 +100,6 @@
 [submodule ".vim/pack/mantoni/start/fern"]
 	path = .vim/pack/mantoni/start/fern
 	url = git@github.com:lambdalisue/fern.vim.git
+[submodule ".vim/pack/mantoni/start/nerdfont"]
+	path = .vim/pack/mantoni/start/nerdfont
+	url = git@github.com:lambdalisue/nerdfont.vim.git
