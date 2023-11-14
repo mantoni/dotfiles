@@ -61,9 +61,6 @@
 [submodule ".vim/pack/mantoni/opt/onedark"]
 	path = .vim/pack/mantoni/opt/onedark
 	url = git@github.com:joshdick/onedark.vim.git
-[submodule ".vim/pack/mantoni/start/devicons"]
-	path = .vim/pack/mantoni/start/devicons
-	url = git@github.com:ryanoasis/vim-devicons.git
 [submodule ".vim/pack/mantoni/start/ctrlp"]
 	path = .vim/pack/mantoni/start/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim

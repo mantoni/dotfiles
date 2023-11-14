@@ -181,8 +181,8 @@ let g:snipMate.scope_aliases = {
 let g:snipMate.snippet_version = 1
 " delimitMate
 let g:delimitMate_balance_matchpairs = 1
-" DevIcons
-let g:DevIconsEnableFoldersOpenClose = 1
+" Fern
+let g:fern#renderer = "nerdfont"
 " Ale
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '●'
