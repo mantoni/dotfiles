@@ -106,3 +106,6 @@
 [submodule ".vim/pack/mantoni/start/glyph-palette"]
 	path = .vim/pack/mantoni/start/glyph-palette
 	url = git@github.com:lambdalisue/glyph-palette.vim.git
+[submodule ".vim/pack/mantoni/start/fern-renderer-nerdfont"]
+	path = .vim/pack/mantoni/start/fern-renderer-nerdfont
+	url = git@github.com:lambdalisue/fern-renderer-nerdfont.vim.git
