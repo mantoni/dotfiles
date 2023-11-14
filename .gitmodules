@@ -4,9 +4,6 @@
 [submodule ".vim/pack/mantoni/start/fugitive"]
 	path = .vim/pack/mantoni/start/fugitive
 	url = git@github.com:tpope/vim-fugitive.git
-[submodule ".vim/pack/mantoni/start/nerdtree"]
-	path = .vim/pack/mantoni/start/nerdtree
-	url = git@github.com:preservim/nerdtree.git
 [submodule ".vim/pack/mantoni/start/unimpaired"]
 	path = .vim/pack/mantoni/start/unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
@@ -67,9 +64,6 @@
 [submodule ".vim/pack/mantoni/start/devicons"]
 	path = .vim/pack/mantoni/start/devicons
 	url = git@github.com:ryanoasis/vim-devicons.git
-[submodule ".vim/pack/mantoni/start/nerdtree-git-plugin"]
-	path = .vim/pack/mantoni/start/nerdtree-git-plugin
-	url = git@github.com:Xuyuanp/nerdtree-git-plugin.git
 [submodule ".vim/pack/mantoni/start/ctrlp"]
 	path = .vim/pack/mantoni/start/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim
@@ -82,9 +76,6 @@
 [submodule ".vim/pack/mantoni/start/jsdoc"]
 	path = .vim/pack/mantoni/start/jsdoc
 	url = git@github.com:heavenshell/vim-jsdoc.git
-[submodule ".vim/pack/mantoni/start/nerdtree-syntax-highlight"]
-	path = .vim/pack/mantoni/start/nerdtree-syntax-highlight
-	url = git@github.com:tiagofumo/vim-nerdtree-syntax-highlight.git
 [submodule ".vim/pack/mantoni/opt/one"]
 	path = .vim/pack/mantoni/opt/one
 	url = git@github.com:rakr/vim-one.git

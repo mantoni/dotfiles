@@ -90,9 +90,9 @@ noremap <silent> <Leader>s :Ack! <cword><CR>
 " Show npm version for package name under cursor
 noremap <leader>v yi":!npm show <C-r>0 version<CR>
 " Toggle Nerd Tree
-noremap <silent> <Leader>n :NERDTreeToggle<CR>
+" noremap <silent> <Leader>n :NERDTreeToggle<CR>
 " Reveal in Nerd Tree
-noremap <silent> <Leader>. :NERDTreeFind<CR>
+" noremap <silent> <Leader>. :NERDTreeFind<CR>
 " ALE commands
 noremap <silent> <Leader>d :ALEGoToDefinition<CR>
 noremap <silent> <Leader>r :ALERename<CR>
@@ -181,11 +181,6 @@ let g:snipMate.scope_aliases = {
 let g:snipMate.snippet_version = 1
 " delimitMate
 let g:delimitMate_balance_matchpairs = 1
-" NERDtree
-let g:NERDTreeMinimalUI        = 1
-let g:NERDTreeAutoDeleteBuffer = 1
-let g:NERDTreeWinSize          = 36
-let g:NERDTreeLimitedSyntax    = 1
 " DevIcons
 let g:DevIconsEnableFoldersOpenClose = 1
 " Ale
