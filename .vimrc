@@ -188,6 +188,8 @@ let g:snipMate.snippet_version = 1
 let g:delimitMate_balance_matchpairs = 1
 " Fern
 let g:fern#renderer = "nerdfont"
+" Fern git: Disable listing ignored files/directories
+let g:fern_git_status#disable_ignored = 1
 " Ale
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '●'
