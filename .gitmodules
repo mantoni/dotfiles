@@ -109,3 +109,6 @@
 [submodule ".vim/pack/mantoni/start/fern-renderer-nerdfont"]
 	path = .vim/pack/mantoni/start/fern-renderer-nerdfont
 	url = git@github.com:lambdalisue/fern-renderer-nerdfont.vim.git
+[submodule ".vim/pack/mantoni/start/fern-git-status"]
+	path = .vim/pack/mantoni/start/fern-git-status
+	url = git@github.com:lambdalisue/fern-git-status.vim.git
