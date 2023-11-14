@@ -100,3 +100,6 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = git@github.com:tmux-plugins/tpm.git
+[submodule ".vim/pack/mantoni/start/fern"]
+	path = .vim/pack/mantoni/start/fern
+	url = git@github.com:lambdalisue/fern.vim.git

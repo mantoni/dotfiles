@@ -89,10 +89,10 @@ let mapleader = ","
 noremap <silent> <Leader>s :Ack! <cword><CR>
 " Show npm version for package name under cursor
 noremap <leader>v yi":!npm show <C-r>0 version<CR>
-" Toggle Nerd Tree
-" noremap <silent> <Leader>n :NERDTreeToggle<CR>
-" Reveal in Nerd Tree
-" noremap <silent> <Leader>. :NERDTreeFind<CR>
+" Toggle Fern
+noremap <silent> <Leader>n :Fern . -drawer -toggle -width=40<CR>
+" Reveal in Fern
+noremap <silent> <Leader>. :Fern . -drawer -reveal=% -width=40<CR>
 " ALE commands
 noremap <silent> <Leader>d :ALEGoToDefinition<CR>
 noremap <silent> <Leader>r :ALERename<CR>
