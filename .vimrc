@@ -104,6 +104,11 @@ vnoremap <leader>f :!eslint_d --stdin --fix-to-stdout<CR>gv
 " Expand %% to directory of current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+augroup END
+
 " Spell checking
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,de
 " Markdown specific settings
