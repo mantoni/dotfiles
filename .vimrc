@@ -230,6 +230,7 @@ let g:gitgutter_sign_removed          = '┃'
 let g:gitgutter_sign_modified_removed = '┃'
 " Ctrlp
 let g:ctrlp_open_multiple_files = '1'
+let g:ctrlp_formatline_func = 's:formatline(s:curtype() == "buf" ? v:val : nerdfont#find(expand(v:val)) . " " . v:val) '
 " ag
 if executable('ag')
   " Use ag for ctrlp
