@@ -125,6 +125,9 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | di
 let g:markdown_fenced_languages = ['js=javascript', 'bash=sh', 'json', 'html']
 " JSDoc comments
 let g:javascript_plugin_jsdoc = 1
+" Template literals
+call jspretmpl#register_tag('css', 'css')
+autocmd FileType javascript JsPreTmpl
 
 " Airline
 if $ITERM_PROFILE == "Light"
