@@ -115,9 +115,6 @@
 [submodule ".vim/pack/mantoni/start/fern-hijack"]
 	path = .vim/pack/mantoni/start/fern-hijack
 	url = git@github.com:lambdalisue/fern-hijack.vim.git
-[submodule ".vim/pack/mantoni/start/js-pretty-template"]
-	path = .vim/pack/mantoni/start/js-pretty-template
-	url = git@github.com:Quramy/vim-js-pretty-template.git
 [submodule ".vim/pack/mantoni/start/html-template-literals"]
 	path = .vim/pack/mantoni/start/html-template-literals
 	url = git@github.com:jonsmithers/vim-html-template-literals.git
