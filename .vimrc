@@ -126,6 +126,7 @@ let g:markdown_fenced_languages = ['js=javascript', 'bash=sh', 'json', 'html']
 " JSDoc comments
 let g:javascript_plugin_jsdoc = 1
 " Template literals
+let g:htl_css_templates = 1
 
 " Airline
 if $ITERM_PROFILE == "Light"
