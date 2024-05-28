@@ -15,7 +15,7 @@
 	url = git@github.com:garbas/vim-snipmate.git
 [submodule ".vim/pack/mantoni/start/javascript"]
 	path = .vim/pack/mantoni/start/javascript
-	url = git@github.com:pangloss/vim-javascript.git
+	url = git@github.com:mantoni/vim-javascript.git
 [submodule ".vim/pack/mantoni/start/delimitMate"]
 	path = .vim/pack/mantoni/start/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
