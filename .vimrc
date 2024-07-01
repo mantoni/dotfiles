@@ -94,6 +94,7 @@ noremap <silent> <Leader>n :Fern . -drawer -toggle -width=40<CR>
 " Reveal in Fern
 noremap <silent> <Leader>. :Fern . -drawer -reveal=% -width=40<CR>
 " ALE commands
+noremap <silent> <Leader>t :ALEHover<CR>
 noremap <silent> <Leader>d :ALEGoToDefinition<CR>
 noremap <silent> <Leader>r :ALERename<CR>
 noremap <silent> <Leader>R :ALEFindReferences -relative<CR>
@@ -224,6 +225,10 @@ let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_completion_enabled = 1
 let g:ale_virtualtext_cursor = 0
+let g:ale_hover_cursor = 0
+let g:ale_set_balloons = 1
+let g:ale_floating_preview = 1
+let g:ale_floating_window_border = []
 " Gitgutter
 let g:gitgutter_sign_priority         = 0
 let g:gitgutter_sign_added            = '┃'
