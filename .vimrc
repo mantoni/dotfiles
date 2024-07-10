@@ -95,6 +95,7 @@ noremap <silent> <Leader>n :Fern . -drawer -toggle -width=40<CR>
 noremap <silent> <Leader>. :Fern . -drawer -reveal=% -width=40<CR>
 " ALE commands
 noremap <silent> <Leader>t :ALEHover<CR>
+noremap <silent> <Leader>D :ALEDetail<CR>
 noremap <silent> <Leader>d :ALEGoToDefinition<CR>
 noremap <silent> <Leader>r :ALERename<CR>
 noremap <silent> <Leader>R :ALEFindReferences -relative<CR>
