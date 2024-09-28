@@ -15,9 +15,9 @@ set -gx fish_color_param cyan
 # set -gx fish_color_selection --background=263238
 # set -gx fish_color_search_match --background=263238
 if [ -e /opt/homebrew ]
-  set -g fish_user_paths "/opt/homebrew/bin" "/opt/homebrew/opt/node@14/bin" $fish_user_paths
+  set -g fish_user_paths "/opt/homebrew/bin" "/opt/homebrew/opt/python/libexec/bin" $fish_user_paths
 else
-  set -g fish_user_paths "/usr/local/bin" "/usr/local/opt/node@14/bin" $fish_user_paths
+  set -g fish_user_paths "/usr/local/bin" $fish_user_paths
 end
 
 # Use dark-mode command to change profile to light (npm i -g dark-mode-cli)
