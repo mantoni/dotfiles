@@ -129,6 +129,8 @@ let g:markdown_fenced_languages = ['js=javascript', 'bash=sh', 'json', 'html']
 let g:javascript_plugin_jsdoc = 1
 " Template literals
 let g:htl_css_templates = 1
+call jspretmpl#register_tag('sql', 'sql')
+autocmd FileType javascript JsPreTmpl
 
 " Airline
 if $ITERM_PROFILE == "Light"
