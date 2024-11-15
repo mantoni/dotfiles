@@ -2,7 +2,7 @@ snippet use
 	'use strict';${1}
 snippet test
 	import { assert, refute, match, sinon } from '@sinonjs/referee-sinon';
-	import { ${1} } from './`substitute(expand('%:t'), '\.test\.js$', '.js', 'g')`');
+	import { ${1} } from './`substitute(expand('%:t'), '\.test\.js$', '.js', 'g')`';
 
 	describe('`substitute(@%, '\.test\.js$', '', 'g')`', () => {
 		it('${2}', () => {
