@@ -1,12 +1,12 @@
 # non-interactive users (ssh, sync)
 if not status --is-interactive
-  exit # skips the rest of this file; does not actually exit the shell!
+    exit # skips the rest of this file; does not actually exit the shell!
 end
 
 # set -gx TERM 'xterm-256color'
 # set -gx CLICOLOR 1
-set -gx EDITOR vim
-set -gx BAT_THEME "ansi"
+set -gx EDITOR nvim
+set -gx BAT_THEME ansi
 
 set -gx fish_greeting
 # set -gx fish_color_autosuggestion 707880
@@ -15,27 +15,28 @@ set -gx fish_color_param cyan
 # set -gx fish_color_selection --background=263238
 # set -gx fish_color_search_match --background=263238
 if [ -e /opt/homebrew ]
-  set -g fish_user_paths "/opt/homebrew/bin" "/opt/homebrew/opt/python/libexec/bin" $fish_user_paths
+    set -g fish_user_paths /opt/homebrew/bin /opt/homebrew/opt/python/libexec/bin $fish_user_paths
 else
-  set -g fish_user_paths "/usr/local/bin" $fish_user_paths
+    set -g fish_user_paths /usr/local/bin $fish_user_paths
 end
 
 # Use dark-mode command to change profile to light (npm i -g dark-mode-cli)
 if [ ! $ITERM_DARK_MODE_CHECK ]
-  set -gx ITERM_DARK_MODE_CHECK 1
-  if type -q dark-mode
-    if [ (dark-mode status) = "off" ]
-      echo -e "\033]50;SetProfile=Light\a"
-      # Also change environment variable to let vim know
-      set -x ITERM_PROFILE "Light"
+    set -gx ITERM_DARK_MODE_CHECK 1
+    if type -q dark-mode
+        if [ (dark-mode status) = off ]
+            echo -e "\033]50;SetProfile=Light\a"
+            # Also change environment variable to let vim know
+            set -x ITERM_PROFILE Light
+        end
     end
-  end
 end
 
 set -gx FZF_DEFAULT_OPTS "--border=none --preview-window=up:60%,border:sharp"
 set -gx fzf_preview_dir_cmd lsd -lh --color=always
 set -gx fzf_git_log_opts --preview="git show {1} | diff-so-fancy"
 
+alias v nvim
 alias l 'lsd -lh'
 alias ll 'lsd -alh'
 alias gd 'git diff --color-moved'
@@ -59,5 +60,5 @@ alias t 'tmux attach -t dev; or tmux new-session -s dev'
 alias grep 'grep --color=auto'
 
 if [ -e ~/.secrets ]
-  . ~/.secrets
+    . ~/.secrets
 end
