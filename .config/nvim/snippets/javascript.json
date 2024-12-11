@@ -1,0 +1,54 @@
+{
+  "console.log": {
+    "prefix": "log",
+    "body": "console.log(${0});"
+  },
+  "function": {
+    "prefix": "f",
+    "body": [
+      "function ${1:name}(${2:args}) {",
+      "\t${0}",
+      "}"
+    ]
+  },
+  "describe": {
+    "prefix": "desc",
+    "body": [
+      "describe('${1:description}', () => {",
+      "\t${0}",
+      "});"
+    ]
+  },
+  "it": {
+    "prefix": "it",
+    "body": [
+      "it('${1:description}', () => {",
+      "\t${0}",
+      "});"
+    ]
+  },
+  "beforeEach": {
+    "prefix": "beforeE",
+    "body": [
+      "beforeEach(() => {",
+      "\t${0}",
+      "});"
+    ]
+  },
+  "afterEach": {
+    "prefix": "afterE",
+    "body": [
+      "afterEach(() => {",
+      "\t${0}",
+      "});"
+    ]
+  },
+  "uuid": {
+    "prefix": "uuid",
+    "body": "'$UUID'${0}"
+  },
+  "timestamp": {
+    "prefix": "ts",
+    "body": "'1$RANDOM$RANDOM'${0}"
+  }
+}
