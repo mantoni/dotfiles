@@ -19,6 +19,8 @@ vim.g.conceallevel = 0
 
 vim.g.lazyvim_prettier_needs_config = true
 
+vim.g.root_spec = { "cwd" }
+
 vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
   expr = true,
   replace_keycodes = false,

@@ -5,26 +5,6 @@ return {
     priority = 1000,
   },
   {
-    "ficcdaf/ashen.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-  {
-    "dgox16/oldworld.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = {
-      styles = {
-        comments = { italic = true },
-        keywords = { bold = true },
-        identifiers = {},
-        functions = {},
-        variables = {},
-        booleans = { bold = true },
-      },
-    },
-  },
-  {
     "akinsho/bufferline.nvim",
     opts = {
       options = {
@@ -92,6 +72,12 @@ return {
     opts = {
       keymap = {
         preset = "super-tab",
+        -- Workaround for https://github.com/LazyVim/LazyVim/pull/6183
+        ["<Tab>"] = {
+          require("blink.cmp.keymap.presets").get("super-tab")["<Tab>"][1],
+          require("lazyvim.util.cmp").map({ "snippet_forward", "ai_accept" }),
+          "fallback",
+        },
       },
       appearance = {
         nerd_font_variant = "normal",
@@ -160,8 +146,8 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
       highlight = {
-        keyword = "bg",
-        pattern = [[.*<(KEYWORDS)\s*]],
+        keyword = "fg",
+        -- pattern = [[.*<(KEYWORDS)\s*]],
       },
     },
   },
@@ -248,4 +234,5 @@ return {
   { "folke/tokyonight.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
   { "rafamadriz/friendly-snippets", enabled = false },
+  { "MeanderingProgrammer/render-markdown.nvim", enabled = false },
 }

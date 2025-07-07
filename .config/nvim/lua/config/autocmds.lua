@@ -16,6 +16,7 @@ local function diagnostics_filter(diagnostic)
   -- Add logic to filter specific diagnostics
   local unwanted_messages = {
     "File is a CommonJS module; it may be converted to an ES module.",
+    "Could not find a declaration file for module",
   }
   for _, message in ipairs(unwanted_messages) do
     if diagnostic.message:find(message, 1, true) then
