@@ -57,6 +57,7 @@ alias ns 'npm start'
 alias nt 'npm test'
 alias nw 'npm run watch'
 alias t 'tmux attach -t dev; or tmux new-session -s dev'
+alias tc 'tmux attach -t codex; or tmux new-session -s codex'
 alias grep 'grep --color=auto'
 
 if [ -e ~/.secrets ]
