@@ -1,0 +1,224 @@
+#!/bin/zsh
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+set -euo pipefail
+
+# --- env sanity (debug) ---
+# /bin/echo "PATH=$PATH" >> /tmp/nvim-tmux-open.env.log
+# /usr/bin/command -V tmux >> /tmp/nvim-tmux-open.env.log 2>&1 || true
+# /usr/bin/command -V date >> /tmp/nvim-tmux-open.env.log 2>&1 || true
+# /usr/bin/command -V awk  >> /tmp/nvim-tmux-open.env.log 2>&1 || true
+
+# --- config you might tweak ---
+DEBUG=1
+LOGFILE="/tmp/nvim-tmux-open.log"
+TMUX_SESSION_DEFAULT="dev" # created if no tmux server/sessions exist
+NVIM_BIN="nvim"
+SEP="|||"
+
+TMUX_BIN="$(/usr/bin/command -v tmux)"
+tmux() { "$TMUX_BIN" "$@"; }
+
+# Clear log file on each run when debugging
+[[ "$DEBUG" == "1" ]] && : >"$LOGFILE"
+
+log() {
+  [[ "$DEBUG" == "1" ]] || return 0
+  local ts
+  ts="$(/bin/date '+%Y-%m-%d %H:%M:%S' 2>/dev/null || echo "no-date")"
+  print -r -- "[$ts] [pid $$] $*" >>"$LOGFILE"
+}
+
+# --- helpers ---
+die() {
+  echo "nvim-tmux-open: $*" >&2
+  exit 1
+}
+
+# shell-escape for a single argument (portable-ish)
+shq() {
+  # wraps in single quotes and escapes embedded single quotes: ' -> '\''
+  local s="$1"
+  printf "'%s'" "${s//\'/\'\\\'\'}"
+}
+
+# escape path for vimscript single-quoted string
+vim_sq() {
+  # in Vimscript single quotes, '' means a literal '
+  local s="$1"
+  printf "%s" "${s//\'/\'\'}"
+}
+
+# open file in already-running nvim inside a tmux pane
+# Uses: :e <C-R>=fnameescape('...')<CR><CR>
+nvim_edit_in_pane() {
+  local pane="$1"
+  local file="$2"
+  local vfile
+  vfile="$(vim_sq "$file")"
+
+  tmux send-keys -t "$pane" Escape
+  tmux send-keys -t "$pane" ":e " C-r "=" "fnameescape('$vfile')" Enter Enter
+}
+
+pane_info_lines() {
+  tmux list-panes -a -F "#{pane_id}${SEP}#{pane_current_path}${SEP}#{pane_current_command}"
+}
+
+normpath() {
+  # normalize path without resolving symlinks too aggressively
+  python3 - "$1" <<'PY'
+import os,sys
+print(os.path.abspath(sys.argv[1]))
+PY
+}
+
+git_root_for() {
+  local file="$1"
+  local dir
+  dir="$(cd "$(dirname "$file")" && pwd)"
+  if git -C "$dir" rev-parse --show-toplevel >/dev/null 2>&1; then
+    git -C "$dir" rev-parse --show-toplevel
+  else
+    echo "$dir"
+  fi
+}
+
+ensure_tmux_exists() {
+  # If tmux server doesn't exist, create a detached session.
+  if ! tmux ls >/dev/null 2>&1; then
+    tmux new-session -d -s "$TMUX_SESSION_DEFAULT" -c "$HOME" >/dev/null
+  fi
+}
+
+pick_any_session() {
+  tmux list-sessions -F "#{session_name}" | /usr/bin/head -n1
+}
+
+# --- main ---
+if [[ $# -lt 1 ]]; then
+  die "expected a file path argument"
+fi
+
+# Finder can pass file URLs sometimes; handle file://
+arg="$1"
+if [[ "$arg" == file://* ]]; then
+  # macOS file URL decode via python
+  file="$(
+    python3 - "$arg" <<'PY'
+import sys, urllib.parse
+u = urllib.parse.urlparse(sys.argv[1])
+print(urllib.parse.unquote(u.path))
+PY
+  )"
+else
+  file="$arg"
+fi
+
+# resolve to absolute path
+if [[ -e "$file" ]]; then
+  file="$(cd "$(dirname "$file")" && pwd)/$(/usr/bin/basename "$file")"
+else
+  die "file does not exist: $file"
+fi
+
+root="$(git_root_for "$file")"
+root="$(normpath "$root")"
+file="$(normpath "$file")"
+
+log "arg: $1"
+log "file: $file"
+log "root: $root"
+
+ensure_tmux_exists
+
+log "tmux server ok; sessions: $(tmux list-sessions -F '#{session_name}' 2>/dev/null | tr '\n' ' ')"
+log "all panes:"
+tmux list-panes -a -F "#{pane_id}${SEP}#{session_name}:#{window_index}.#{pane_index}${SEP}#{pane_current_path}${SEP}#{pane_current_command}" |
+  while IFS= read -r line; do
+    id="${line%%${SEP}*}"
+    rest="${line#*${SEP}}"
+    loc="${rest%%${SEP}*}"
+    rest="${rest#*${SEP}}"
+    path="${rest%%${SEP}*}"
+    cmd="${rest#*${SEP}}"
+    log "  $id @ $loc | path=$path | cmd=$cmd"
+  done
+
+# Start kitty if not running
+/usr/bin/open -a "kitty" >/dev/null 2>&1 || true
+# Bring kitty to front
+/usr/bin/osascript -e 'tell application "kitty" to activate' >/dev/null 2>&1 || true
+
+# Gather panes that are "in" this root (pane_current_path equals root)
+# Note: if your panes live in subdirs, change equality to prefix-match.
+panes=()
+pane_info_lines | while IFS= read -r line; do
+  pid="${line%%${SEP}*}"
+  rest="${line#*${SEP}}"
+  ppath="${rest%%${SEP}*}"
+  pcmd="${rest#*${SEP}}"
+
+  [[ "$ppath" == "$root" ]] || continue
+  panes+=("${pid}${SEP}${pcmd}")
+done
+
+log "candidate panes (after root filter): count=${#panes[@]}"
+for row in "${panes[@]}"; do
+  pane="${row%%${SEP}*}"
+  cmd="${row#*${SEP}}"
+  log "  cand: pane=$pane cmd=$cmd"
+done
+
+# 1) Find first tmux pane with this root that already runs nvim → open file there
+log "phase 1: look for existing nvim"
+for row in "${panes[@]}"; do
+  pane="${row%%${SEP}*}"
+  cmd="${row#*${SEP}}"
+  log "  check pane=$pane cmd=$cmd"
+  case "$cmd" in
+  nvim | vim | vi)
+    log "  -> matched nvim in pane=$pane; sending :e"
+    tmux select-window -t "$pane"
+    tmux select-pane -t "$pane"
+    nvim_edit_in_pane "$pane" "$file"
+    exit 0
+    ;;
+  esac
+done
+log "phase 1: no match"
+
+# 2) Else find first pane with this root that looks "idle shell" → start nvim there
+log "phase 2: look for idle shell"
+for row in "${panes[@]}"; do
+  pane="${row%%${SEP}*}"
+  cmd="${row#*${SEP}}"
+  log "  check pane=$pane cmd=$cmd"
+  case "$cmd" in
+  zsh | bash | fish | sh)
+    # Works in fish/bash/zsh: use ';' not '&&', avoid bashisms like "exec" requirements.
+    tmux select-window -t "$pane"
+    tmux select-pane -t "$pane"
+    tmux send-keys -t "$pane" "cd $(shq "$root"); $(shq "$NVIM_BIN") $(shq "$file")" Enter
+    exit 0
+    ;;
+  esac
+done
+log "phase 2: no match"
+
+# 3) Else create a new tmux window in *some* existing session, cd to root, open nvim
+log "phase 3: creating new window (no suitable pane found)"
+win_name="$(/usr/bin/basename "$root")"
+
+# Build the command as an array of lines (no nested quoting problems)
+cmd_lines=(
+  "cd ${(qqq)root} || { echo 'cd failed'; exec ${SHELL:-/bin/zsh}; }"
+  "${NVIM_BIN} ${(qqq)file}"
+  "exec ${SHELL:-/bin/zsh}"
+)
+
+# Join lines with '; '
+cmd="${(j:; :)cmd_lines}"
+
+# Run via a login shell so PATH/env is sane inside the new pane too
+tmux new-window -t "$TMUX_SESSION_DEFAULT" -n "$win_name" "${SHELL:-/bin/zsh} -lc ${(qqq)cmd}" >/dev/null
+exit 0
