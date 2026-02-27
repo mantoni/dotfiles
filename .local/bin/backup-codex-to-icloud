@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SRC="${HOME}/.codex"
+ICLOUD_ROOT="${HOME}/Library/Mobile Documents/com~apple~CloudDocs"
+DEST="${ICLOUD_ROOT}/Backup/codex"
+ARCHIVE="${DEST}/_archive/$(date +%Y-%m-%d_%H-%M-%S)"
+LOGDIR="${DEST}/_logs"
+LOGFILE="${LOGDIR}/backup-$(date +%Y-%m-%d).log"
+
+# Ensure iCloud Drive exists locally (may not if iCloud Drive is disabled)
+if [[ ! -d "$ICLOUD_ROOT" ]]; then
+  echo "ERROR: iCloud Drive folder not found at:"
+  echo "  $ICLOUD_ROOT"
+  echo "Is iCloud Drive enabled on this Mac?"
+  exit 1
+fi
+
+# Ensure source exists
+if [[ ! -d "$SRC" ]]; then
+  echo "ERROR: source folder not found: $SRC"
+  exit 1
+fi
+
+mkdir -p "$DEST" "$ARCHIVE" "$LOGDIR"
+
+# rsync notes:
+# -a : archive mode (recursive, preserves perms/times, etc.)
+# --delete : mirror deletions from source to destination :contentReference[oaicite:1]{index=1}
+# -b + --backup-dir : move replaced/deleted dest files into ARCHIVE :contentReference[oaicite:2]{index=2}
+# --mkpath : create dest path components (newer rsync); harmless if unsupported? (we already mkdir -p)
+# --exclude : skip common junk; adjust as you like
+RSYNC_OPTS=(
+  -a
+  -h
+  -v
+  --delete
+  -b
+  --backup-dir="$ARCHIVE"
+  --exclude="log"
+  --exclude="tmp"
+  --exclude="worktrees"
+  --exclude=".DS_Store"
+  --exclude="**/.DS_Store"
+  --exclude="**/node_modules"
+  --exclude="**/.cache"
+)
+
+{
+  echo "=== $(date) ==="
+  echo "SRC:  $SRC"
+  echo "DEST: $DEST"
+  echo "ARCH: $ARCHIVE"
+  echo
+
+  # Trailing slash on SRC copies contents into DEST (not the folder itself)
+  rsync "${RSYNC_OPTS[@]}" "$SRC/" "$DEST/"
+  echo
+  echo "OK"
+} | tee -a "$LOGFILE"
