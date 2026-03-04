@@ -40,6 +40,7 @@ RSYNC_OPTS=(
   --exclude="log"
   --exclude="tmp"
   --exclude="worktrees"
+  --exclude="vendor_imports"
   --exclude=".DS_Store"
   --exclude="**/.DS_Store"
   --exclude="**/node_modules"
