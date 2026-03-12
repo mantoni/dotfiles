@@ -7,7 +7,7 @@ vim.opt.conceallevel = 0
 
 vim.env.ESLINT_D_PPID = vim.fn.getpid()
 
-vim.g.sonokai_style = "atlantis"
+-- vim.g.sonokai_style = "atlantis"
 vim.g.sonokai_enable_italic = true
 vim.g.sonokai_float_style = "dim"
 
