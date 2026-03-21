@@ -39,9 +39,9 @@ set -gx fzf_git_log_opts --preview="git show {1} | diff-so-fancy"
 alias v nvim
 alias l 'lsd -lh'
 alias ll 'lsd -alh'
-alias gd 'git diff --color-moved'
-alias gdw 'git diff --color-moved -w'
-alias gdc 'git diff --color-moved --cached'
+alias gd 'git diff'
+alias gdw 'git diff -w'
+alias gdc 'git diff --cached'
 alias gl 'git log --graph --decorate --date=relative'
 alias glo 'git log --graph --decorate --date=relative --oneline'
 alias gbr 'git for-each-ref --sort=-committerdate refs/heads/ --format=\'%(HEAD) %(color:green)%(refname:short)%(color:reset) - %(color:yellow)%(objectname:short)%(color:reset) - %(color:white)%(authorname)%(color:reset) (%(committerdate:relative))\''

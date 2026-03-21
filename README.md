@@ -13,6 +13,7 @@ brew install fzf
 brew install fd
 brew install ripgrep
 brew install bat
+brew install delta
 brew install fisher
 fisher install PatrickF1/fzf.fish
 ```
@@ -28,9 +29,6 @@ chsh -s `which fish`
 
 ```bash
 npm i -g eslint_d
-npm i -g json
-npm i -g diff-so-fancy
-npm i -g dark-mode-cli
 ```
 
 **Dotfiles:**

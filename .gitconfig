@@ -2,7 +2,18 @@
 	editor = nvim
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true # use n and N to move between diff sections
+	dark = true
+	hyperlinks = true
+	syntax-theme = "Monokai Extended"
+[merge]
+	conflictStyle = zdiff3
+[diff]
+	colorMoved = default
 [push]
 	default = upstream
 [alias]
@@ -12,7 +23,7 @@
 	st = status
 	br = branch
 	co = checkout
-	d = diff --color-moved
+	d = diff
 	l = log --graph --decorate --date=relative
 	t = tag
 	re = rebase
@@ -21,18 +32,6 @@
 	ui = true
 [credential]
 	helper = cache --timeout 86400
-[color "diff-highlight"]
-	oldNormal = red
-	oldHighlight = red 52
-	newNormal = green
-	newHighlight = green 22
-[color "diff"]
-	meta = 11
-	frag = magenta
-	commit = yellow
-	old = red
-	new = green
-	whitespace = red reverse
 [rebase]
 	autosquash = true
 [pull]
@@ -41,3 +40,6 @@
 	prune = true
 [init]
 	defaultBranch = main
+[user]
+	email = mail@maxantoni.de
+	name = Maximilian Antoni
