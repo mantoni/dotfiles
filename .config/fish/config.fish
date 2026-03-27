@@ -6,7 +6,7 @@ end
 # set -gx TERM 'xterm-256color'
 # set -gx CLICOLOR 1
 set -gx EDITOR nvim
-set -gx BAT_THEME ansi
+set -gx BAT_THEME "Monokai Extended"
 
 set -gx fish_greeting
 # set -gx fish_color_autosuggestion 707880
@@ -18,18 +18,6 @@ if [ -e /opt/homebrew ]
     set -g fish_user_paths /opt/homebrew/bin /opt/homebrew/opt/python/libexec/bin ~/.local/bin $fish_user_paths
 else
     set -g fish_user_paths /usr/local/bin ~/.local/bin $fish_user_paths
-end
-
-# Use dark-mode command to change profile to light (npm i -g dark-mode-cli)
-if [ ! $ITERM_DARK_MODE_CHECK ]
-    set -gx ITERM_DARK_MODE_CHECK 1
-    if type -q dark-mode
-        if [ (dark-mode status) = off ]
-            echo -e "\033]50;SetProfile=Light\a"
-            # Also change environment variable to let vim know
-            set -x ITERM_PROFILE Light
-        end
-    end
 end
 
 set -gx FZF_DEFAULT_OPTS "--border=none --preview-window=up:60%,border:sharp"
