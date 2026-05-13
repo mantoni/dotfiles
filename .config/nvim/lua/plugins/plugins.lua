@@ -72,12 +72,6 @@ return {
     opts = {
       keymap = {
         preset = "super-tab",
-        -- Workaround for https://github.com/LazyVim/LazyVim/pull/6183
-        ["<Tab>"] = {
-          require("blink.cmp.keymap.presets").get("super-tab")["<Tab>"][1],
-          require("lazyvim.util.cmp").map({ "snippet_forward", "ai_accept" }),
-          "fallback",
-        },
       },
       appearance = {
         nerd_font_variant = "normal",
@@ -87,6 +81,19 @@ return {
           enabled = false,
         },
       },
+      -- dependencies = { "milanglacier/minuet-ai.nvim" },
+      -- sources = {
+      --   default = { "minuet" },
+      --   providers = {
+      --     minuet = {
+      --       name = "minuet",
+      --       module = "minuet.blink",
+      --       async = true,
+      --       timeout_ms = 3000,
+      --       score_offset = 50,
+      --     },
+      --   },
+      -- },
     },
   },
   {
@@ -151,43 +158,45 @@ return {
       },
     },
   },
+  -- {
+  --   "milanglacier/minuet-ai.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  --   config = function()
+  --     require("minuet").setup({
+  --       virtualtext = {
+  --         auto_trigger_ft = {
+  --           "*",
+  --         },
+  --         keymap = {
+  --           -- accept whole completion
+  --           accept = "<C-J>",
+  --         },
+  --       },
+  --       provider = "openai_fim_compatible",
+  --       n_completions = 1,
+  --       throttle = 1000,
+  --       debounce = 100,
+  --       context_window = 512,
+  --       provider_options = {
+  --         openai_fim_compatible = {
+  --           api_key = "TERM",
+  --           name = "ollama",
+  --           end_point = "http://localhost:11434/v1/completions",
+  --           model = "qwen2.5-coder:7b",
+  --           optional = {
+  --             max_tokens = 56,
+  --             top_p = 0.9,
+  --             -- temperature = 0.1,
+  --           },
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
   {
     "github/copilot.vim",
-  },
-  {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    lazy = false,
-    version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
-    opts = {
-      provider = "copilot",
-      -- provider = "deepseek",
-      -- vendors = {
-      --   deepseek = {
-      --     __inherited_from = "openai",
-      --     api_key_name = "DEEPSEEK_API_KEY",
-      --     endpoint = "https://api.deepseek.com",
-      --     model = "deepseek-coder",
-      --   },
-      -- },
-    },
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    build = "make",
-    dependencies = {
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      --- The below dependencies are optional,
-      "ibhagwan/fzf-lua", -- for file_selector provider fzf
-      "echasnovski/mini.icons",
-      {
-        "MeanderingProgrammer/render-markdown.nvim",
-        opts = {
-          file_types = { "markdown", "Avante" },
-        },
-        ft = { "markdown", "Avante" },
-      },
-    },
   },
   {
     "mfussenegger/nvim-lint",

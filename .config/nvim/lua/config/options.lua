@@ -19,9 +19,3 @@ vim.g.trouble_lualine = false
 vim.g.lazyvim_prettier_needs_config = true
 
 vim.g.root_spec = { "cwd" }
-
-vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false,
-})
-vim.g.copilot_no_tab_map = true
