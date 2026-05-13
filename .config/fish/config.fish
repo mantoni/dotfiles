@@ -22,7 +22,6 @@ end
 
 set -gx FZF_DEFAULT_OPTS "--border=none --preview-window=up:60%,border:sharp"
 set -gx fzf_preview_dir_cmd lsd -lh --color=always
-set -gx fzf_git_log_opts --preview="git show {1} | diff-so-fancy"
 
 alias v nvim
 alias l 'lsd -lh'
