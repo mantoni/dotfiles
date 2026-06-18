@@ -1,4 +1,4 @@
-function git-handoff-main --description "Rebase current branch onto main, let Codex resolve conflicts, then fast-forward main"
+function git-handoff-main --description "Rebase current branch onto main, then fast-forward main"
     set -l main_branch main
 
     # Ensure we're inside a git repo.
@@ -39,40 +39,11 @@ function git-handoff-main --description "Rebase current branch onto main, let Co
 
     if test $rebase_status -ne 0
         if test -d .git/rebase-merge -o -d .git/rebase-apply
-            echo
-            echo "Rebase has conflicts. Handing off to Codex..."
-            echo
-
-            codex exec \
-                --model gpt-5.4 \
-                --config model_reasoning_effort='"high"' \
-                "You are in a Git repository with an in-progress 'git rebase $main_branch' on branch '$feature_branch'.
-Resolve the current rebase conflicts."
-
-            set -l codex_status $status
-            if test $codex_status -ne 0
-                echo "Codex exited with status $codex_status." >&2
-                return $codex_status
-            end
-
-            if test -d .git/rebase-merge -o -d .git/rebase-apply
-                echo "Rebase is still in progress after Codex. Please inspect manually." >&2
-                return 1
-            end
-
-            if not git diff --quiet --ignore-submodules --cached
-                echo "There are still staged changes after Codex. Please inspect manually." >&2
-                return 1
-            end
-
-            if not git diff --quiet --ignore-submodules
-                echo "There are still unstaged changes after Codex. Please inspect manually." >&2
-                return 1
-            end
+            echo "Rebase has conflicts."
         else
             echo "git rebase failed, but no in-progress rebase was detected." >&2
-            return $rebase_status
         end
+        return $rebase_status
     end
 
     echo
